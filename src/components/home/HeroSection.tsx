@@ -1,281 +1,262 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Sparkles, FlaskConical, Atom, Star, Zap, Shield, Award } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { Input } from "@/components/ui/input";
+import {
+  ArrowLeft,
+  Sparkles,
+  FlaskConical,
+  Atom,
+  Shield,
+  Award,
+  Search,
+  CheckCircle2,
+  Droplets,
+  Layers,
+  FileCheck,
+  Building2,
+  PhoneCall,
+} from "lucide-react";
 
-function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const [started, setStarted] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started) {
-          setStarted(true);
-          let start = 0;
-          const duration = 2000;
-          const step = target / (duration / 16);
-          const timer = setInterval(() => {
-            start += step;
-            if (start >= target) {
-              setCount(target);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(start));
-            }
-          }, 16);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [target, started]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
-}
+const quickCategories = [
+  { name: "الزيوت والمستخلصات", count: 82, slug: "oils-and-extracts" },
+  { name: "البودرات والفعالة", count: 81, slug: "raw-powders-and-actives" },
+  { name: "السوائل والسيليكون", count: 59, slug: "chemical-liquids-and-solvents" },
+  { name: "الفيتامينات والمغذيات", count: 29, slug: "vitamins-and-nutrients" },
+  { name: "الألوان والمايكا", count: 83, slug: "colors-and-pigments" },
+  { name: "العطور المركزة", count: 68, slug: "fragrances-and-scents" },
+];
 
 export default function HeroSection() {
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/shop?q=${encodeURIComponent(searchQuery.trim())}`);
+    } else {
+      router.push("/shop");
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 gradient-hero" />
-      
-      {/* Animated particles/shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-20 right-10 w-72 h-72 bg-sky-400/10 rounded-full blur-3xl"
-          animate={{ y: [0, -30, 0], x: [0, 15, 0], scale: [1, 1.1, 1] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-20 left-10 w-96 h-96 bg-navy-900/10 rounded-full blur-3xl"
-          animate={{ y: [0, 20, 0], x: [0, -20, 0], scale: [1, 1.15, 1] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        />
-        <motion.div
-          className="absolute top-1/2 right-1/4 w-48 h-48 bg-white/5 rounded-full blur-2xl"
-          animate={{ y: [0, -40, 0], scale: [1, 1.2, 1] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        />
-        
-        {/* Floating decorative icons */}
-        <motion.div
-          className="absolute top-32 left-[15%] text-white/10"
-          animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <FlaskConical className="w-16 h-16" />
-        </motion.div>
-        <motion.div
-          className="absolute bottom-32 right-[20%] text-white/10"
-          animate={{ y: [0, -15, 0], rotate: [0, -15, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-        >
-          <Atom className="w-20 h-20" />
-        </motion.div>
-        <motion.div
-          className="absolute top-[40%] left-[10%] text-white/10"
-          animate={{ y: [0, -25, 0], rotate: [0, 20, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        >
-          <Sparkles className="w-12 h-12" />
-        </motion.div>
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-gradient-to-br from-navy-950 via-navy-900 to-sky-950 text-white">
+      {/* Background Tech Grid & Molecule Overlay */}
+      <div
+        className="absolute inset-0 opacity-15 pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.4) 1px, transparent 0)`,
+          backgroundSize: "32px 32px",
+        }}
+      />
 
-        {/* Particle dots */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-white/20 rounded-full"
-            style={{
-              top: `${20 + i * 15}%`,
-              left: `${10 + i * 16}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.8, 0.2],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 3 + i * 0.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.3,
-            }}
-          />
-        ))}
-      </div>
+      {/* Ambient Gradient Glows */}
+      <div className="absolute top-1/4 -right-24 w-96 h-96 bg-sky-500/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-10 left-1/3 w-64 h-64 bg-cyan-400/10 rounded-full blur-2xl pointer-events-none" />
 
-      {/* Grid overlay */}
-      <div className="absolute inset-0" style={{
-        backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)",
-        backgroundSize: "40px 40px",
-      }} />
-
-      <div className="container mx-auto px-4 relative z-10 pt-24 pb-32">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          {/* Text Content (Right side in RTL) */}
-          <div className="flex-1 max-w-3xl">
+      <div className="container mx-auto px-4 relative z-10 pt-28 pb-20 lg:pt-32 lg:pb-28">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* Main Content (Right in RTL) */}
+          <div className="lg:col-span-7">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
             >
-              {/* Badge */}
-              <motion.div
-                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6 border border-white/20"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-              >
-                <motion.div animate={{ rotate: [0, 360] }} transition={{ duration: 3, repeat: Infinity, ease: "linear" }}>
-                  <FlaskConical className="w-4 h-4 text-sky-300" />
-                </motion.div>
-                <span className="text-sm text-white/90">توريد المواد الخام الكيميائية B2B لمصانع التجميل</span>
-              </motion.div>
-
-              {/* Headline */}
-              <div className="relative">
-                <motion.div 
-                  className="absolute -inset-1 rounded-lg bg-gradient-to-r from-sky-300 via-white to-sky-300 opacity-20 blur-lg"
-                  animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                  style={{ backgroundSize: "200% 200%" }}
-                />
-                <h1 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
-                  <motion.span
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.6 }}
-                    className="block"
-                  >
-                    شريككم المعتمد في توريد{" "}
-                  </motion.span>
-                  <motion.span
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6, duration: 0.6 }}
-                    className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-sky-100 to-white drop-shadow-[0_0_15px_rgba(56,189,248,0.5)]"
-                  >
-                    المواد الخام الكيميائية
-                  </motion.span>{" "}
-                  <motion.span
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8, duration: 0.6 }}
-                    className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-sky-100 mt-2"
-                  >
-                    لصناعة مستحضرات التجميل والعناية الشخصية
-                  </motion.span>
-                </h1>
+              {/* Trust Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-sky-400/30 backdrop-blur-md mb-6 shadow-sm">
+                <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-xs sm:text-sm font-medium text-sky-200">
+                  التوريد الصناعي المعتمد B2B لمصانع ومعامل التجميل في مصر
+                </span>
               </div>
 
-              {/* Subheadline */}
-              <motion.p
-                className="text-base md:text-lg text-sky-50 mb-8 leading-relaxed max-w-2xl font-normal drop-shadow-sm"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.6 }}
-              >
-                نوفر لمصانع التجميل، معامل التركيبات الكيميائية، الكيميائيين (Formulators)، وأصحاب البراندات أجود المواد الخام المعتمدة، الخامات الفعالة، والزيوت الطبيعية مع شهادات التحليل (COA/MSDS) وخدمات التصنيع للغير (Private Label).
-              </motion.p>
+              {/* Main Headline */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black leading-[1.2] mb-6 tracking-tight">
+                شريككم الاستراتيجي في توريد{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-sky-200 to-white drop-shadow-[0_0_25px_rgba(56,189,248,0.35)]">
+                  المواد الخام الكيميائية
+                </span>{" "}
+                ومكونات مستحضرات التجميل
+              </h1>
 
-              {/* CTA Buttons */}
-              <motion.div
-                className="flex flex-wrap gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.6 }}
+              {/* Sub-headline */}
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8 max-w-2xl font-normal">
+                نوفر للمصانع، معامل التركيبات الكيميائية، ومطوري المنتجات أكثر من <strong className="text-white font-bold">430 مادة خام معتمدة</strong> (زيوت نقية، خلاصات، بودرات فعالة، مذيبات، وعطور مركزة) مع شهادات التحليل (COA) وصحائف الأمان (MSDS) مع خدمات التصنيع للغير (Private Label).
+              </p>
+
+              {/* Integrated B2B Catalog Search */}
+              <form
+                onSubmit={handleSearch}
+                className="mb-8 p-1.5 sm:p-2 bg-white/10 backdrop-blur-xl border border-sky-400/25 rounded-2xl shadow-2xl flex flex-col sm:flex-row gap-2 max-w-2xl"
               >
+                <div className="relative flex-1 flex items-center">
+                  <Search className="w-5 h-5 text-sky-300 mr-3 shrink-0" />
+                  <Input
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="ابحث باسم المادة الخام، رقم CAS، أو الفئة (مثال: سالسيلك، أرجان، كربابول)..."
+                    className="bg-transparent border-0 text-white placeholder:text-slate-400 focus-visible:ring-0 focus-visible:ring-offset-0 text-sm sm:text-base h-11"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  className="bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500 text-white font-bold h-11 px-6 rounded-xl shadow-lg shadow-sky-500/25 shrink-0"
+                >
+                  بحث في الكتالوج
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                </Button>
+              </form>
+
+              {/* Quick Category Launchers */}
+              <div className="flex flex-wrap items-center gap-2 mb-8">
+                <span className="text-xs text-slate-400 font-medium ml-1">الأقسام الأكثر طلباً:</span>
+                {quickCategories.map((cat) => (
+                  <Link
+                    key={cat.slug}
+                    href={`/shop?category=${cat.slug}`}
+                    className="text-xs px-3 py-1.5 rounded-lg bg-white/5 hover:bg-sky-500/20 border border-white/10 hover:border-sky-400/40 text-slate-300 hover:text-sky-200 transition-all duration-200 flex items-center gap-1.5"
+                  >
+                    <span>{cat.name}</span>
+                    <span className="text-[10px] text-sky-400 bg-sky-950/80 px-1.5 py-0.2 rounded-full border border-sky-800/50">
+                      {cat.count}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-4">
                 <Link href="/shop">
-                  <Button size="lg" className="bg-white text-navy-900 hover:bg-sky-50 shadow-xl shadow-white/20 hover:shadow-2xl text-base px-8 group h-14 font-bold">
-                    كتالوج المواد الخام
-                    <motion.span className="inline-block" animate={{ x: [0, -5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
-                      <ArrowLeft className="w-5 h-5 mr-2" />
-                    </motion.span>
+                  <Button
+                    size="lg"
+                    className="bg-white text-navy-950 hover:bg-sky-50 font-bold h-13 px-8 rounded-xl shadow-xl shadow-white/10 text-base"
+                  >
+                    استعراض الكتالوج (430+ مادة)
+                    <ArrowLeft className="w-4 h-4 mr-2" />
                   </Button>
                 </Link>
-                <a href="https://wa.me/201119446474?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D8%AA%D9%88%D8%B1%D9%8A%D8%AF%20%D9%85%D9%88%D8%A7%D8%AF%20%D8%AE%D8%A7%D9%85%20(RFQ)%20%D9%84%D9%85%D8%B5%D9%86%D8%B9%D9%86%D8%A7" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10 text-base px-8 h-14 font-bold">
-                    طلب عرض سعر توريد (RFQ)
+                <a
+                  href="https://wa.me/201119446474?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D8%AA%D9%88%D8%B1%D9%8A%D8%AF%20%D9%85%D9%88%D8%A7%D8%AF%20%D8%AE%D8%A7%D9%85%20(RFQ)%20%D9%84%D9%85%D8%B5%D9%86%D8%B9%D9%86%D8%A7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-sky-400/40 text-sky-200 hover:bg-sky-500/10 hover:border-sky-400 font-bold h-13 px-7 rounded-xl text-base"
+                  >
+                    <PhoneCall className="w-4 h-4 ml-2 text-sky-400" />
+                    طلب تسعير فوري للمصانع (RFQ)
                   </Button>
                 </a>
-              </motion.div>
-
-              {/* Trust indicators */}
-              <motion.div
-                className="flex flex-wrap items-center gap-6 mt-12 pt-8 border-t border-white/10"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5, duration: 0.8 }}
-              >
-                {[
-                  { target: 350, suffix: "+", label: "مصنع ومعمل تركيبات", icon: Star },
-                  { target: 200, suffix: "+", label: "مادة خام متوفرة", icon: Zap },
-                  { target: 10, suffix: "+", label: "سنوات خبرة في التوريد", icon: Shield },
-                  { target: 100, suffix: "%", label: "شهادات تحليل COA معتمدة", icon: Award },
-                ].map((stat, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    {i > 0 && <div className="w-px h-10 bg-white/20 hidden sm:block" />}
-                    <div className="text-center">
-                      <p className="text-2xl md:text-3xl font-bold text-white">
-                        <AnimatedCounter target={stat.target} suffix={stat.suffix} />
-                      </p>
-                      <p className="text-xs text-white/60 flex items-center gap-1 justify-center">
-                        <stat.icon className="w-3 h-3" />
-                        {stat.label}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </motion.div>
+              </div>
             </motion.div>
           </div>
 
-          {/* Image Content (Left side in RTL) */}
-          <motion.div 
-            className="flex-1 hidden lg:block relative w-full"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 1, type: "spring", stiffness: 50 }}
-          >
-            <div className="relative w-full max-w-[550px] aspect-square mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-tr from-sky-400/30 to-white/10 rounded-full blur-3xl animate-pulse" />
-              <div className="absolute inset-4 bg-white/10 rounded-[3rem] backdrop-blur-sm border border-white/20 transform rotate-6" />
-              <img 
-                src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1000&auto=format&fit=crop" 
-                alt="منتجات تجميل طبيعية" 
-                className="w-full h-full object-cover rounded-[3rem] border-8 border-white/20 shadow-2xl relative z-10 transform -rotate-3 hover:rotate-0 transition-transform duration-500" 
-              />
-              {/* Floating Badge */}
-              <motion.div 
-                className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-2xl z-20 border border-gray-100 flex items-center gap-4"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center">
-                  <Shield className="w-6 h-6 text-sky-500" />
+          {/* Interactive Industrial Feature Showcase (Left in RTL) */}
+          <div className="lg:col-span-5">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="relative"
+            >
+              {/* Outer Glowing Frame */}
+              <div className="relative rounded-3xl p-6 sm:p-8 bg-gradient-to-b from-white/10 to-white/5 border border-white/20 backdrop-blur-2xl shadow-2xl overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-sky-400/20 rounded-full blur-2xl pointer-events-none" />
+
+                {/* Card Header */}
+                <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center shadow-lg shadow-sky-500/30">
+                      <FlaskConical className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-white text-base">المواصفات القياسية للتوريد</h3>
+                      <p className="text-xs text-sky-300 font-mono">INDUSTRIAL GRADE COMPLIANCE</p>
+                    </div>
+                  </div>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    معتمد للمصانع
+                  </span>
                 </div>
-                <div>
-                  <p className="font-bold text-navy-900">جودة معتمدة</p>
-                  <p className="text-xs text-gray-500">مكونات طبيعية 100%</p>
+
+                {/* 4 B2B Technical Pillars */}
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-sky-400/30 transition-colors">
+                    <FileCheck className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-sm font-bold text-white">شهادات تحليل مخبرية (COA) مع كل شحنة</h4>
+                      <p className="text-xs text-slate-300 mt-0.5">توثيق نسب النقاء، اللزوجة، الكثافة، والرقم الهيدروجيني pH.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-sky-400/30 transition-colors">
+                    <Shield className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-sm font-bold text-white">صحائف بيانات أمان المواد (MSDS / SDS)</h4>
+                      <p className="text-xs text-slate-300 mt-0.5">مطابقة للمواصفات القياسية المصرية وتوجيهات GHS العالمية.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-sky-400/30 transition-colors">
+                    <Layers className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-sm font-bold text-white">مرونة أحجام التوريد الصناعي</h4>
+                      <p className="text-xs text-slate-300 mt-0.5">من عبوات معملية 1 كجم إلى براميل 200 كجم وكونتينرات وأطنان.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-sky-400/30 transition-colors">
+                    <Building2 className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-sm font-bold text-white">عقود توريد وتوفير مستمر للمصانع</h4>
+                      <p className="text-xs text-slate-300 mt-0.5">ضمان ثبات أسعار الخامات واستقرار سلاسل الإمداد لخطوط الإنتاج.</p>
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
-            </div>
-          </motion.div>
+
+                {/* Footer Metrics */}
+                <div className="grid grid-cols-3 gap-2 pt-4 border-t border-white/10 text-center">
+                  <div className="p-2 rounded-lg bg-white/5">
+                    <p className="text-lg font-black text-white font-mono">+430</p>
+                    <p className="text-[11px] text-slate-400">مادة بالكتالوج</p>
+                  </div>
+                  <div className="p-2 rounded-lg bg-white/5">
+                    <p className="text-lg font-black text-sky-400 font-mono">100%</p>
+                    <p className="text-[11px] text-slate-400">فحص مخبري</p>
+                  </div>
+                  <div className="p-2 rounded-lg bg-white/5">
+                    <p className="text-lg font-black text-emerald-400 font-mono">48H</p>
+                    <p className="text-[11px] text-slate-400">توريد للمحافظات</p>
+                  </div>
+                </div>
+
+              </div>
+            </motion.div>
+          </div>
+
         </div>
       </div>
 
-      {/* Bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Modern Wave Divider */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none z-10">
+        <svg
+          className="relative block w-full h-8 sm:h-12 text-slate-50"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
           <path
-            d="M0 120L60 110C120 100 240 80 360 75C480 70 600 80 720 85C840 90 960 90 1080 85C1200 80 1320 70 1380 65L1440 60V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-            fill="white"
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,121.31,201,114.65,241.6,110.8,282.16,92.87,321.39,56.44Z"
+            fill="currentColor"
           />
         </svg>
       </div>
