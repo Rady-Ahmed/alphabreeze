@@ -10,14 +10,14 @@ import { useState, useEffect } from "react";
 import { getProducts } from "@/lib/db";
 
 const fallbackProducts = [
-  { id: "1", name: "زبدة الشيا الخام", category: "خامات طبيعية", price: 250, oldPrice: 320, emoji: "🧴", badge: "الأكثر مبيعاً" },
-  { id: "2", name: "زيت الأرجان المغربي", category: "زيوت طبيعية", price: 180, oldPrice: null, emoji: "🫒", badge: "جديد" },
-  { id: "3", name: "شمع العسل الطبيعي", category: "شموع", price: 150, oldPrice: 200, emoji: "🍯", badge: "عرض" },
-  { id: "4", name: "حمض الهيالورونيك", category: "مواد فعالة", price: 450, oldPrice: null, emoji: "💧", badge: "مميز" },
-  { id: "5", name: "فيتامين سي بودرة", category: "فيتامينات", price: 380, oldPrice: 450, emoji: "✨", badge: "الأكثر مبيعاً" },
-  { id: "6", name: "زيت جوز الهند العضوي", category: "زيوت طبيعية", price: 120, oldPrice: null, emoji: "🥥", badge: "جديد" },
-  { id: "7", name: "الكولاجين البحري", category: "مواد فعالة", price: 550, oldPrice: 700, emoji: "🐚", badge: "عرض" },
-  { id: "8", name: "زبدة الكاكاو", category: "خامات طبيعية", price: 200, oldPrice: null, emoji: "🍫", badge: "مميز" },
+  { id: "mpg", name: "مونو بروبيلين جلايكول (MPG)", category: "مواد فعالة", price: 135, oldPrice: null, image: "/images/products/mpg.jpg", emoji: "🧪", badge: "نقاء 99.8%" },
+  { id: "d-panthenol", name: "البانثينول (D-Panthenol)", category: "مواد فعالة", price: 1100, oldPrice: null, image: "/images/products/d-panthenol.jpg", emoji: "💧", badge: "برو فيتامين B5" },
+  { id: "lanette-16", name: "لانيت 16 (Lanette 16)", category: "خامات طبيعية", price: 180, oldPrice: null, image: "/images/products/lanette-16.jpg", emoji: "🕯️", badge: "Suriachem" },
+  { id: "lanolin-anhydrous", name: "اللانولين اللامائي (Lanolin)", category: "خامات طبيعية", price: 850, oldPrice: null, image: "/images/products/lanolin.jpg", emoji: "🐑", badge: "براميل 50 كجم" },
+  { id: "vitamin-e", name: "فيتامين E (أسيتات التوكوفيرول)", category: "فيتامينات", price: 1800, oldPrice: null, image: "/images/products/vitamin-e.jpg", emoji: "✨", badge: "Zhejiang NHU" },
+  { id: "stearic-acid", name: "حمض الشمع (Stearic Acid)", category: "شموع", price: 135, oldPrice: null, image: "/images/products/stearic-acid.jpg", emoji: "🕯️", badge: "Palmera/Zanyu" },
+  { id: "ipm", name: "أيزوبروبيل ميرستات (IPM)", category: "مواد فعالة", price: 0, oldPrice: null, image: "/images/products/ipm.jpg", emoji: "🧴", badge: "اطلب عرض سعر" },
+  { id: "4", name: "حمض الهيالورونيك النقي", category: "مواد فعالة", price: 450, oldPrice: null, emoji: "💧", badge: "مادة فعالة" },
 ];
 
 export default function FeaturedProducts() {
@@ -61,9 +61,9 @@ export default function FeaturedProducts() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="text-sky-500 font-semibold text-sm mb-2 block">منتجاتنا</span>
-          <h2 className="section-title">منتجات مميزة</h2>
-          <p className="section-subtitle">اكتشف مجموعة متنوعة من أجود الخامات والمنتجات التجميلية</p>
+          <span className="text-sky-500 font-semibold text-sm mb-2 block">المواد الخام الأكثر طلباً</span>
+          <h2 className="section-title">خامات كيميائية ومكونات فعالة معتمدة</h2>
+          <p className="section-subtitle">توريد مباشر لمصانع مستحضرات التجميل ومعامل التركيبات مع توفير شهادات التحليل (COA/MSDS)</p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
@@ -80,43 +80,51 @@ export default function FeaturedProducts() {
               transition={{ delay: index * 0.05 }}
             >
               <Link href={`/shop/${product.id}`}>
-                <motion.div 
+                <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   className="relative bg-white rounded-3xl border border-sky-100 overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-sky-500/10 group z-10"
                 >
                   {/* Decorative background glow on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-sky-400/0 to-sky-400/0 group-hover:from-sky-400/5 group-hover:to-sky-300/10 transition-colors duration-500 z-0" />
-                  
+
                   {/* Image */}
                   <div className="relative aspect-square bg-gradient-to-b from-sky-50/50 to-white flex items-center justify-center z-10 overflow-hidden">
                     {/* Animated background shape */}
                     <div className="absolute inset-0 bg-sky-200/20 rounded-full blur-3xl scale-0 group-hover:scale-150 transition-transform duration-700 ease-out" />
-                    
-                    {product.image && (product.image.startsWith('http') || product.image.startsWith('data:image')) ? (
+
+                    {product.image && (product.image.startsWith('http') || product.image.startsWith('/') || product.image.startsWith('data:image')) ? (
                       <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-10" onError={(e) => (e.currentTarget.style.display = "none")} />
                     ) : (
-                      <motion.span 
+                      <motion.span
                         className="text-6xl group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500 z-10 drop-shadow-sm"
                       >
                         {product.emoji || "📦"}
                       </motion.span>
                     )}
-                    
-                    <Badge className="absolute top-4 right-4 z-20 backdrop-blur-md bg-white/80 border-white shadow-sm text-navy-900" variant={product.badge === "عرض" ? "destructive" : "default"}>
-                      {product.badge}
-                    </Badge>
+
+                    {product.badge && (
+                      <Badge className="absolute top-4 right-4 z-20 backdrop-blur-md bg-white/80 border-white shadow-sm text-navy-900" variant={product.badge === "عرض" ? "destructive" : "default"}>
+                        {product.badge}
+                      </Badge>
+                    )}
                   </div>
-                  
+
                   {/* Info */}
                   <div className="p-5 relative z-10 bg-white/80 backdrop-blur-md border-t border-sky-50/50">
                     <p className="text-[11px] font-bold text-sky-500 mb-1.5 uppercase tracking-wider">{product.category}</p>
                     <h3 className="font-bold text-navy-900 text-sm mb-3 line-clamp-1 group-hover:text-sky-600 transition-colors">{product.name}</h3>
                     <div className="flex items-center justify-between">
                       <div className="flex flex-col">
-                        <span className="font-bold text-lg text-sky-600">{product.price} <span className="text-xs font-normal">ج.م</span></span>
+                        {product.price && product.price > 0 ? (
+                          <span className="font-bold text-lg text-sky-600">{product.price} <span className="text-xs font-normal">جنيه</span></span>
+                        ) : (
+                          <span className="font-bold text-xs text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
+                            السعر عند الاستفسار
+                          </span>
+                        )}
                         {product.oldPrice && (
-                          <span className="text-xs text-gray-400 line-through">{product.oldPrice} ج.م</span>
+                          <span className="text-xs text-gray-400 line-through">{product.oldPrice} جنيه</span>
                         )}
                       </div>
                       <div className="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center text-sky-500 group-hover:bg-sky-500 group-hover:text-white transition-all duration-300 shadow-sm">
@@ -132,9 +140,9 @@ export default function FeaturedProducts() {
 
         <div className="text-center mt-10">
           <Link href="/shop">
-            <Button size="lg">
-              <ShoppingBag className="w-5 h-5" />
-              عرض جميع المنتجات
+            <Button size="lg" className="h-12 px-8 font-bold">
+              <ShoppingBag className="w-5 h-5 ml-2" />
+              تصفح كتالوج المواد الخام بالكامل
             </Button>
           </Link>
         </div>

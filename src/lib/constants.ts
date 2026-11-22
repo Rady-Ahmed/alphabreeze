@@ -42,6 +42,37 @@ export function formatPrice(price: number): string {
   return `${price.toLocaleString("ar-EG")} ج.م`;
 }
 
+export function calculateShipping(governorate?: string, subtotal: number = 0): number {
+  if (subtotal >= 1000) return 0; // شحن مجاني للطلبات 1000 ج.م فما فوق
+  if (!governorate) return 50;
+
+  // القاهرة والجيزة
+  if (["القاهرة", "الجيزة"].includes(governorate)) {
+    return 45;
+  }
+  // الإسكندرية ومحافظات الدلتا والقناة
+  if ([
+    "الإسكندرية", "الدقهلية", "الشرقية", "الغربية", "المنوفية",
+    "البحيرة", "كفر الشيخ", "دمياط", "بورسعيد", "السويس", "الإسماعيلية"
+  ].includes(governorate)) {
+    return 55;
+  }
+  // الصعيد
+  if ([
+    "الفيوم", "بني سويف", "المنيا", "أسيوط", "سوهاج", "قنا", "الأقصر", "أسوان"
+  ].includes(governorate)) {
+    return 70;
+  }
+  // المحافظات الحدودية والنائية
+  if ([
+    "البحر الأحمر", "الوادي الجديد", "مطروح", "شمال سيناء", "جنوب سيناء"
+  ].includes(governorate)) {
+    return 85;
+  }
+
+  return 50;
+}
+
 export function calculateDiscount(price: number, oldPrice: number): number {
   return Math.round(((oldPrice - price) / oldPrice) * 100);
 }

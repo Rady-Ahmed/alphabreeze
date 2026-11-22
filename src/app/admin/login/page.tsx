@@ -31,21 +31,47 @@ export default function AdminLoginPage() {
     setLoading(true);
 
     try {
-      const user = await attemptLogin(email, password);
+      // 1. First attempt secure server-side login
+      const res = await fetch("/api/admin/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-      if (!user) {
-        toast.error("البريد الإلكتروني أو كلمة المرور غير صحيحة");
-        setLoading(false);
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        localStorage.setItem("alphabreeze_current_user", JSON.stringify(data.user));
+        toast.success(`أهلاً بك، ${data.user.name} 👋`);
+        router.push("/admin");
         return;
       }
 
-      // Set session
-      localStorage.setItem("alphabreeze_current_user", JSON.stringify(user));
-      document.cookie = "alphabreeze_auth=1; path=/; max-age=86400";
-      toast.success(`أهلاً بك، ${user.name} 👋`);
-      router.push("/admin");
+      // 2. Fallback to local auth if API reports client credentials match
+      const localUser = await attemptLogin(email, password);
+      if (localUser) {
+        localStorage.setItem("alphabreeze_current_user", JSON.stringify(localUser));
+        document.cookie = "alphabreeze_auth=1; path=/; max-age=86400";
+        toast.success(`أهلاً بك، ${localUser.name} 👋`);
+        router.push("/admin");
+        return;
+      }
+
+      toast.error(data.error || "البريد الإلكتروني أو كلمة المرور غير صحيحة");
+      setLoading(false);
     } catch {
-      toast.error("حدث خطأ، يرجى المحاولة مجدداً");
+      // Offline fallback
+      try {
+        const localUser = await attemptLogin(email, password);
+        if (localUser) {
+          localStorage.setItem("alphabreeze_current_user", JSON.stringify(localUser));
+          document.cookie = "alphabreeze_auth=1; path=/; max-age=86400";
+          toast.success(`أهلاً بك، ${localUser.name} 👋`);
+          router.push("/admin");
+          return;
+        }
+      } catch {}
+      toast.error("حدث خطأ أثناء تسجيل الدخول، يرجى المحاولة مجدداً");
       setLoading(false);
     }
   };

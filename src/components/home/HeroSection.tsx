@@ -133,9 +133,9 @@ export default function HeroSection() {
                 transition={{ delay: 0.3, duration: 0.6 }}
               >
                 <motion.div animate={{ rotate: [0, 360] }} transition={{ duration: 3, repeat: Infinity, ease: "linear" }}>
-                  <Sparkles className="w-4 h-4 text-sky-300" />
+                  <FlaskConical className="w-4 h-4 text-sky-300" />
                 </motion.div>
-                <span className="text-sm text-white/90">الشريك الرائد في صناعة التجميل</span>
+                <span className="text-sm text-white/90">توريد المواد الخام الكيميائية B2B لمصانع التجميل</span>
               </motion.div>
 
               {/* Headline */}
@@ -146,41 +146,42 @@ export default function HeroSection() {
                   transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
                   style={{ backgroundSize: "200% 200%" }}
                 />
-                <h1 className="relative text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                <h1 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
                   <motion.span
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.6 }}
                     className="block"
                   >
-                    شريك نجاحك في{" "}
+                    شريككم المعتمد في توريد{" "}
                   </motion.span>
                   <motion.span
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.6 }}
-                    className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white drop-shadow-[0_0_15px_rgba(56,189,248,0.5)]"
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-sky-100 to-white drop-shadow-[0_0_15px_rgba(56,189,248,0.5)]"
                   >
-                    صناعة التجميل
+                    المواد الخام الكيميائية
                   </motion.span>{" "}
                   <motion.span
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8, duration: 0.6 }}
+                    className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-sky-100 mt-2"
                   >
-                    والخامات
+                    لصناعة مستحضرات التجميل والعناية الشخصية
                   </motion.span>
                 </h1>
               </div>
 
               {/* Subheadline */}
               <motion.p
-                className="text-lg md:text-xl text-sky-50 mb-8 leading-relaxed max-w-2xl font-medium drop-shadow-md"
+                className="text-base md:text-lg text-sky-50 mb-8 leading-relaxed max-w-2xl font-normal drop-shadow-sm"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.6 }}
               >
-                نجمع بين الفخامة والدقة العلمية. نوفر لك أجود الخامات التجميلية، خدمات التصنيع المتكاملة (Private Label)، وتطوير التركيبات لبناء علامتك التجارية بامتياز.
+                نوفر لمصانع التجميل، معامل التركيبات الكيميائية، الكيميائيين (Formulators)، وأصحاب البراندات أجود المواد الخام المعتمدة، الخامات الفعالة، والزيوت الطبيعية مع شهادات التحليل (COA/MSDS) وخدمات التصنيع للغير (Private Label).
               </motion.p>
 
               {/* CTA Buttons */}
@@ -191,16 +192,16 @@ export default function HeroSection() {
                 transition={{ delay: 1.2, duration: 0.6 }}
               >
                 <Link href="/shop">
-                  <Button size="lg" className="bg-white text-navy-900 hover:bg-sky-50 shadow-xl shadow-white/20 hover:shadow-2xl text-base px-8 group h-14">
-                    تسوق الآن
+                  <Button size="lg" className="bg-white text-navy-900 hover:bg-sky-50 shadow-xl shadow-white/20 hover:shadow-2xl text-base px-8 group h-14 font-bold">
+                    كتالوج المواد الخام
                     <motion.span className="inline-block" animate={{ x: [0, -5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
                       <ArrowLeft className="w-5 h-5 mr-2" />
                     </motion.span>
                   </Button>
                 </Link>
-                <a href="https://wa.me/201119446474?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D8%B9%20(Private%20Label)" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-base px-8 h-14">
-                    طلب خدمة تصنيع
+                <a href="https://wa.me/201119446474?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D8%AA%D9%88%D8%B1%D9%8A%D8%AF%20%D9%85%D9%88%D8%A7%D8%AF%20%D8%AE%D8%A7%D9%85%20(RFQ)%20%D9%84%D9%85%D8%B5%D9%86%D8%B9%D9%86%D8%A7" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10 text-base px-8 h-14 font-bold">
+                    طلب عرض سعر توريد (RFQ)
                   </Button>
                 </a>
               </motion.div>
@@ -213,10 +214,10 @@ export default function HeroSection() {
                 transition={{ delay: 1.5, duration: 0.8 }}
               >
                 {[
-                  { target: 500, suffix: "+", label: "عميل سعيد", icon: Star },
-                  { target: 200, suffix: "+", label: "منتج", icon: Zap },
-                  { target: 10, suffix: "+", label: "سنوات خبرة", icon: Shield },
-                  { target: 50, suffix: "+", label: "براند ناجح", icon: Award },
+                  { target: 350, suffix: "+", label: "مصنع ومعمل تركيبات", icon: Star },
+                  { target: 200, suffix: "+", label: "مادة خام متوفرة", icon: Zap },
+                  { target: 10, suffix: "+", label: "سنوات خبرة في التوريد", icon: Shield },
+                  { target: 100, suffix: "%", label: "شهادات تحليل COA معتمدة", icon: Award },
                 ].map((stat, i) => (
                   <div key={i} className="flex items-center gap-3">
                     {i > 0 && <div className="w-px h-10 bg-white/20 hidden sm:block" />}

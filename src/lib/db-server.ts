@@ -103,6 +103,35 @@ export async function createOrderForDashboard(orderData: any, items: any[]) {
   if (orderItems.length > 0) {
     const { error: itemsError } = await supabase.from("order_items").insert(orderItems);
     if (itemsError) throw new Error(itemsError.message);
+
+    // Auto-deduct stock for products that have a valid UUID
+    for (const item of items) {
+      if (isUuid(item.product_id)) {
+        try {
+          const { data: prod } = await supabase
+            .from("products")
+            .select("stock_quantity")
+            .eq("id", item.product_id)
+            .single();
+
+          if (prod && typeof prod.stock_quantity === "number") {
+            const currentStock = prod.stock_quantity;
+            const deduction = Number(item.quantity || 1);
+            const updatedStock = Math.max(0, currentStock - deduction);
+
+            await supabase
+              .from("products")
+              .update({
+                stock_quantity: updatedStock,
+                updated_at: new Date().toISOString(),
+              })
+              .eq("id", item.product_id);
+          }
+        } catch (stockErr) {
+          console.warn("Could not decrement stock for product:", item.product_id, stockErr);
+        }
+      }
+    }
   }
 
   return { ...order, items: orderItems };

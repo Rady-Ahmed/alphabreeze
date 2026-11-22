@@ -159,7 +159,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} <Link href="/admin/login" className="cursor-default">AlphaBreeze</Link>. جميع الحقوق محفوظة.
+            © {new Date().getFullYear()} <Link href="/admin/login" suppressHydrationWarning className="cursor-default">AlphaBreeze</Link>. جميع الحقوق محفوظة.
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

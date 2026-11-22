@@ -25,3 +25,6 @@ Thumbs.db
 
 ## Debug
 npm-debug.log*
+*.log
+test*.mjs
+tsconfig.tsbuildinfo

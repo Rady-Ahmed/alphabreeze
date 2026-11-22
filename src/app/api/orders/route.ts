@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createOrderForDashboard } from "@/lib/db-server";
-import { generateOrderNumber } from "@/lib/constants";
+import { generateOrderNumber, calculateShipping } from "@/lib/constants";
 import { sendOrderConfirmation, sendAdminOrderNotification } from "@/lib/email";
 
 export async function POST(request: Request) {
@@ -13,8 +13,8 @@ export async function POST(request: Request) {
     }
 
     const orderNumber = generateOrderNumber();
-    const subtotal = items.reduce((sum: number, item: any) => sum + item.unit_price * item.quantity, 0);
-    const shippingCost = subtotal >= 500 ? 0 : 50;
+    const subtotal = items.reduce((sum: number, item: any) => sum + (Number(item.unit_price) || 0) * (Number(item.quantity) || 1), 0);
+    const shippingCost = calculateShipping(customer.governorate, subtotal);
     const total = subtotal + shippingCost;
 
     const orderData = {
@@ -33,11 +33,12 @@ export async function POST(request: Request) {
     };
 
     const orderItems = items.map((item: any) => ({
+      product_id: item.product_id || null,
       product_name: item.product_name,
       product_image: item.product_image || "",
-      quantity: item.quantity,
-      unit_price: item.unit_price,
-      total_price: item.unit_price * item.quantity,
+      quantity: Number(item.quantity || 1),
+      unit_price: Number(item.unit_price || 0),
+      total_price: (Number(item.unit_price) || 0) * (Number(item.quantity) || 1),
     }));
 
     const order = await createOrderForDashboard(orderData, orderItems);

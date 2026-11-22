@@ -8,27 +8,35 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  preload: false,
+  fallback: ["system-ui", "arial"],
 });
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
   variable: "--font-cairo",
   display: "swap",
+  preload: false,
+  fallback: ["system-ui", "arial"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "AlphaBreeze | شريك نجاحك في صناعة مستحضرات التجميل",
-    template: "%s | AlphaBreeze",
+    default: "AlphaBreeze | توريد المواد الخام الكيميائية لصناعة التجميل B2B",
+    template: "%s | AlphaBreeze Raw Materials",
   },
   description:
-    "ألفا بريز - الشريك الرائد لرواد الأعمال ومصنعي مستحضرات التجميل وأصحاب العلامات التجارية في مصر. خامات تجميل، تصنيع برايفت ليبل، تطوير تركيبات.",
+    "شركة ألفا بريز (Alpha Breeze) - المورد المعتمد للمواد الخام الكيميائية والمكونات الفعالة لمصانع مستحضرات التجميل، معامل التركيبات ومطوري التركيبات (Formulators) في مصر والشرق الأوسط.",
   keywords: [
-    "خامات تجميل",
-    "تصنيع مستحضرات تجميل",
-    "برايفت ليبل",
-    "cosmetic raw materials",
-    "private label",
+    "توريد مواد خام تجميل",
+    "مواد خام كيميائية",
+    "خامات مستحضرات تجميل",
+    "Cosmetic Raw Materials",
+    "Chemical Suppliers Egypt",
+    "CAS Number",
+    "شهادات COA",
+    "تصنيع برايفت ليبل",
+    "تطوير تركيبات كيميائية",
     "AlphaBreeze",
   ],
   openGraph: {

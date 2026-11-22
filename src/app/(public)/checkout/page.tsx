@@ -10,8 +10,10 @@ import { CheckCircle, CreditCard, Banknote, Smartphone, ArrowLeft, Loader2, Shie
 import Link from "next/link";
 import { toast } from "sonner";
 import { trackPurchase } from "@/components/Analytics";
+import { GOVERNORATES, calculateShipping } from "@/lib/constants";
+import { useRouter } from "next/navigation";
 
-const governorates = ["القاهرة", "الجيزة", "الإسكندرية", "الدقهلية", "الشرقية", "المنيا", "أسيوط", "الغربية", "المنوفية", "البحيرة", "كفر الشيخ", "بني سويف", "الفيوم", "قنا", "سوهاج", "الأقصر", "أسوان", "البحر الأحمر", "الوادي الجديد", "مطروح", "شمال سيناء", "جنوب سيناء", "بورسعيد", "السويس", "الإسماعيلية", "دمياط"];
+const governorates = GOVERNORATES;
 
 const paymentMethods = [
   { id: "cod", label: "الدفع عند الاستلام", icon: Banknote, desc: "ادفع كاش عند استلام الطلب" },
@@ -19,8 +21,6 @@ const paymentMethods = [
   { id: "vodafone_cash", label: "فودافون كاش", icon: Smartphone, desc: "ادفع عبر فودافون كاش" },
   { id: "instapay", label: "إنستاباي", icon: Smartphone, desc: "ادفع عبر إنستاباي" },
 ];
-
-import { useRouter } from "next/navigation";
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -72,7 +72,7 @@ export default function CheckoutPage() {
   };
 
   const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0);
-  const shipping = subtotal >= 500 ? 0 : 50;
+  const shipping = calculateShipping(formData.governorate, subtotal);
   const total = subtotal + shipping;
 
   const handleConfirmOrder = async (e: React.FormEvent) => {

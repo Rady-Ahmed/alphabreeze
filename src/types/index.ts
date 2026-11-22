@@ -2,6 +2,21 @@ export interface Product {
   id: string;
   name_ar: string;
   name_en?: string;
+  scientific_name?: string;
+  inci_name?: string;
+  cas_number?: string;
+  purity_grade?: string;
+  origin_country?: string;
+  manufacturer?: string;
+  package_size?: string;
+  net_weight?: string;
+  gross_weight?: string;
+  pricing_unit?: string;
+  industrial_applications?: string[];
+  cosmetic_applications?: string[];
+  coa_available?: boolean;
+  msds_available?: boolean;
+  availability_status?: "in_stock" | "on_order" | "request_quote";
   slug: string;
   description_ar?: string;
   description_en?: string;
@@ -12,7 +27,6 @@ export interface Product {
   price: number;
   old_price?: number;
   discount_percentage?: number;
-  package_size?: string;
   sku?: string;
   stock_quantity: number;
   is_active: boolean;
@@ -27,6 +41,22 @@ export interface Product {
   images?: ProductImage[];
   created_at: string;
   updated_at: string;
+}
+
+export interface QuoteRequest {
+  id?: string;
+  product_id?: string;
+  product_name: string;
+  cas_number?: string;
+  company_name: string;
+  contact_person: string;
+  phone: string;
+  email?: string;
+  facility_type: "factory" | "lab" | "brand_owner" | "formulator" | "distributor" | "other";
+  quantity: string;
+  target_application?: string;
+  notes?: string;
+  created_at?: string;
 }
 
 export interface ProductImage {

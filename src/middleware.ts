@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const authCookie = request.cookies.get('alphabreeze_auth');
+  const authCookie = request.cookies.get('alphabreeze_auth') || request.cookies.get('alphabreeze_session');
 
   if (request.nextUrl.pathname.startsWith('/admin') && !request.nextUrl.pathname.startsWith('/admin/login')) {
     if (!authCookie) {

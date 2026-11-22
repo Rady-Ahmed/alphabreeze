@@ -11,10 +11,10 @@ import { getSiteSettings } from "@/lib/db";
 const navLinks = [
   { href: "/", label: "الرئيسية" },
   { href: "/about", label: "من نحن" },
-  { href: "/services", label: "خدماتنا" },
-  { href: "/shop", label: "المتجر" },
-  { href: "/articles", label: "المقالات" },
-  { href: "/contact", label: "تواصل معنا" },
+  { href: "/services", label: "خدماتنا الصناعية" },
+  { href: "/shop", label: "كتالوج المواد الخام" },
+  { href: "/articles", label: "المقالات الفنية" },
+  { href: "/contact", label: "طلب تسعير وتواصل" },
 ];
 
 export default function Header() {
@@ -25,6 +25,7 @@ export default function Header() {
     en: "AlphaBreeze",
     ar: "شريك نجاحك"
   });
+  const [mounted, setMounted] = useState(false);
 
   const updateCartCount = () => {
     try {
@@ -41,6 +42,8 @@ export default function Header() {
     window.addEventListener("cart_updated", updateCartCount);
 
     updateCartCount();
+
+    setMounted(true);
 
     const loadSettings = async () => {
       try {
@@ -83,11 +86,14 @@ export default function Header() {
               )}>
                 {siteNames.en}
               </h1>
-              <p className={cn(
-                "text-[10px] -mt-1 transition-colors",
-                scrolled ? "text-sky-600" : "text-sky-200"
-              )}>
-                {siteNames.ar}
+              <p
+                suppressHydrationWarning
+                className={cn(
+                  "text-[10px] -mt-1 transition-colors",
+                  scrolled ? "text-sky-600" : "text-sky-200"
+                )}
+              >
+                {mounted ? siteNames.ar : "شريك نجاحك"}
               </p>
             </div>
           </Link>

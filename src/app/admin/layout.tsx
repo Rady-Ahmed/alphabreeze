@@ -39,8 +39,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const router = useRouter();
   const [newNotificationsCount, setNewNotificationsCount] = useState(0);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/admin/auth", { method: "DELETE" });
+    } catch {}
     document.cookie = "alphabreeze_auth=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    document.cookie = "alphabreeze_session=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
     localStorage.removeItem("alphabreeze_current_user");
     toast.success("تم تسجيل الخروج بنجاح");
     router.push("/admin/login");

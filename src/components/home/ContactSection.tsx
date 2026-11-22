@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 const contactInfo = [
   { icon: Phone, label: "الهاتف", value: "01119446474 - 01016067979" },
@@ -17,6 +18,50 @@ const contactInfo = [
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.phone || !formData.message) {
+      toast.error("يرجى تعبئة الحقول المطلوبة (الاسم، الهاتف، الرسالة)");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          full_name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error("فشل في الإرسال");
+      }
+
+      setSubmitted(true);
+      toast.success("تم إرسال رسالتك بنجاح!");
+    } catch (err) {
+      toast.error("حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section className="section-padding bg-white" id="contact">
@@ -67,32 +112,66 @@ export default function ContactSection() {
                   <p className="text-gray-500">سنتواصل معك في أقرب وقت</p>
                 </div>
               ) : (
-                <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <Label>الاسم الكامل</Label>
-                      <Input placeholder="أدخل اسمك" className="mt-1" required />
+                      <Label>الاسم الكامل <span className="text-red-500">*</span></Label>
+                      <Input
+                        placeholder="أدخل اسمك"
+                        className="mt-1"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      />
                     </div>
                     <div>
-                      <Label>رقم الهاتف</Label>
-                      <Input placeholder="01xxxxxxxxx" className="mt-1" required />
+                      <Label>رقم الهاتف <span className="text-red-500">*</span></Label>
+                      <Input
+                        placeholder="01xxxxxxxxx"
+                        className="mt-1"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      />
                     </div>
                   </div>
                   <div>
                     <Label>البريد الإلكتروني</Label>
-                    <Input type="email" placeholder="email@example.com" className="mt-1" />
+                    <Input
+                      type="email"
+                      placeholder="email@example.com"
+                      className="mt-1"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    />
                   </div>
                   <div>
                     <Label>الموضوع</Label>
-                    <Input placeholder="موضوع الرسالة" className="mt-1" />
+                    <Input
+                      placeholder="موضوع الرسالة"
+                      className="mt-1"
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    />
                   </div>
                   <div>
-                    <Label>الرسالة</Label>
-                    <Textarea placeholder="اكتب رسالتك هنا..." className="mt-1" rows={5} required />
+                    <Label>الرسالة <span className="text-red-500">*</span></Label>
+                    <Textarea
+                      placeholder="اكتب رسالتك هنا..."
+                      className="mt-1"
+                      rows={5}
+                      required
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    />
                   </div>
-                  <Button type="submit" className="w-full" size="lg">
-                    <Send className="w-4 h-4" />
-                    إرسال الرسالة
+                  <Button type="submit" className="w-full" size="lg" disabled={loading}>
+                    {loading ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <Send className="w-4 h-4" />
+                    )}
+                    {loading ? "جاري الإرسال..." : "إرسال الرسالة"}
                   </Button>
                 </form>
               )}
