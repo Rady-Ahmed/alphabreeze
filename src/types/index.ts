@@ -22,6 +22,9 @@ export interface Product {
   description_en?: string;
   usage_instructions_ar?: string;
   technical_specs?: Record<string, string>;
+  subcategory?: string;
+  product_form?: string;
+  original_source_text?: string;
   category_id?: string;
   category?: Category;
   price: number;
@@ -162,6 +165,9 @@ export interface Article {
   excerpt_ar?: string;
   content_ar?: string;
   featured_image?: string;
+  subcategory?: string;
+  product_form?: string;
+  original_source_text?: string;
   category_id?: string;
   category?: ArticleCategory;
   is_published: boolean;

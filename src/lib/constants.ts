@@ -1,3 +1,15 @@
+export const B2B_CATEGORIES = [
+  { slug: "all", name_ar: "الكل", name_en: "All Categories", icon: "Package" },
+  { slug: "oils-and-extracts", name_ar: "الزيوت والمستخلصات النباتية", name_en: "Oils & Botanical Extracts", icon: "Droplets" },
+  { slug: "raw-powders-and-actives", name_ar: "البودرات والمواد الفعالة", name_en: "Raw Powders & Active Ingredients", icon: "Sparkles" },
+  { slug: "chemical-liquids-and-solvents", name_ar: "السوائل الكيميائية والمذيبات والسيليكون", name_en: "Chemical Liquids, Solvents & Silicones", icon: "FlaskConical" },
+  { slug: "vitamins-and-nutrients", name_ar: "الفيتامينات والأحماض الأمينية والمغذيات", name_en: "Vitamins, Amino Acids & Nutrients", icon: "Atom" },
+  { slug: "waxes-and-polymers", name_ar: "الشموع والبوليمرات", name_en: "Waxes & Polymers", icon: "Flame" },
+  { slug: "colors-and-pigments", name_ar: "الألوان والأصباغ والمايكا", name_en: "Colors, Pigments & Micas", icon: "Palette" },
+  { slug: "fragrances-and-scents", name_ar: "العطور والزيوت العطرية المركزة", name_en: "Fragrances & Essential Scents", icon: "Heart" },
+  { slug: "flavors", name_ar: "النكهات الغذائية والصناعية", name_en: "Flavors", icon: "Apple" },
+];
+
 export const GOVERNORATES = [
   "القاهرة", "الجيزة", "الإسكندرية", "الدقهلية", "الشرقية", "المنيا", "أسيوط",
   "الغربية", "المنوفية", "البحيرة", "كفر الشيخ", "بني سويف", "الفيوم", "قنا",

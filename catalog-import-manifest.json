@@ -1,0 +1,4249 @@
+{
+  "timestamp": "2026-11-22T20:11:59.539Z",
+  "total_source_items": 424,
+  "imported_count": 424,
+  "skipped_count": 0,
+  "failed_count": 0,
+  "manifest": [
+    {
+      "index": 1,
+      "original_text": "زيت زعتر",
+      "name_ar": "زيت زعتر",
+      "name_en": "Thyme Oil",
+      "slug": "thyme-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت طبيعية وعطرية",
+      "status": "imported"
+    },
+    {
+      "index": 2,
+      "original_text": "زيت برجمونت",
+      "name_ar": "زيت برجمونت",
+      "name_en": "Bergamot Oil",
+      "slug": "bergamot-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت طبيعية وعطرية",
+      "status": "imported"
+    },
+    {
+      "index": 3,
+      "original_text": "زيت بندق",
+      "name_ar": "زيت بندق",
+      "name_en": "Hazelnut Oil",
+      "slug": "hazelnut-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت ناقلة ومغذية",
+      "status": "imported"
+    },
+    {
+      "index": 4,
+      "original_text": "زيت كفيار",
+      "name_ar": "زيت كفيار",
+      "name_en": "Caviar Oil",
+      "slug": "caviar-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت فاخرة ومغذية",
+      "status": "imported"
+    },
+    {
+      "index": 5,
+      "original_text": "زيت كافور",
+      "name_ar": "زيت كافور",
+      "name_en": "Camphor Oil",
+      "slug": "camphor-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت علاجية ومساج",
+      "status": "imported"
+    },
+    {
+      "index": 6,
+      "original_text": "زيت لوز حلو",
+      "name_ar": "زيت لوز حلو",
+      "name_en": "Sweet Almond Oil",
+      "slug": "sweet-almond-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت ناقلة ومغذية",
+      "status": "imported"
+    },
+    {
+      "index": 7,
+      "original_text": "زيت لوز مر",
+      "name_ar": "زيت لوز مر",
+      "name_en": "Bitter Almond Oil",
+      "slug": "bitter-almond-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت علاجية وتفتيح",
+      "status": "imported"
+    },
+    {
+      "index": 8,
+      "original_text": "زيت جوز هند",
+      "name_ar": "زيت جوز هند",
+      "name_en": "Coconut Oil",
+      "slug": "coconut-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت ناقلة ومغذية",
+      "status": "imported"
+    },
+    {
+      "index": 9,
+      "original_text": "زيت شجرة الشاي عالي",
+      "name_ar": "زيت شجرة الشاي (عالي التركيز)",
+      "name_en": "Tea Tree Oil (High Grade)",
+      "slug": "tea-tree-oil-high-grade",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت علاجية ومطهرة",
+      "status": "imported"
+    },
+    {
+      "index": 10,
+      "original_text": "زيت شجرة الشاي عادي",
+      "name_ar": "زيت شجرة الشاي (عادي)",
+      "name_en": "Tea Tree Oil (Standard Grade)",
+      "slug": "tea-tree-oil-standard-grade",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت علاجية ومطهرة",
+      "status": "imported"
+    },
+    {
+      "index": 11,
+      "original_text": "زيت حنضل",
+      "name_ar": "زيت حنضل",
+      "name_en": "Colocynth Oil",
+      "slug": "colocynth-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت علاجية ومساج",
+      "status": "imported"
+    },
+    {
+      "index": 12,
+      "original_text": "زيت خردل",
+      "name_ar": "زيت خردل",
+      "name_en": "Mustard Oil",
+      "slug": "mustard-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت تنشيط الدورة الدموية",
+      "status": "imported"
+    },
+    {
+      "index": 13,
+      "original_text": "زيت فول سوداني",
+      "name_ar": "زيت فول سوداني",
+      "name_en": "Peanut Oil",
+      "slug": "peanut-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت ناقلة ومغذية",
+      "status": "imported"
+    },
+    {
+      "index": 14,
+      "original_text": "زيت خشب أرز",
+      "name_ar": "زيت خشب أرز",
+      "name_en": "Cedarwood Oil",
+      "slug": "cedarwood-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت خشبية وعطرية",
+      "status": "imported"
+    },
+    {
+      "index": 15,
+      "original_text": "زيت تربنتين",
+      "name_ar": "زيت تربنتين",
+      "name_en": "Turpentine Oil",
+      "slug": "turpentine-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "مذيبات وزيوت نباتية",
+      "status": "imported"
+    },
+    {
+      "index": 16,
+      "original_text": "زيت كاموميل",
+      "name_ar": "زيت كاموميل",
+      "name_en": "Chamomile Oil",
+      "slug": "chamomile-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت مهدئة للبشرة",
+      "status": "imported"
+    },
+    {
+      "index": 17,
+      "original_text": "زيت بردقوش",
+      "name_ar": "زيت بردقوش",
+      "name_en": "Marjoram Oil",
+      "slug": "marjoram-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت عشبية وعطرية",
+      "status": "imported"
+    },
+    {
+      "index": 18,
+      "original_text": "زيت زيتون",
+      "name_ar": "زيت زيتون",
+      "name_en": "Olive Oil",
+      "slug": "olive-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت ناقلة ومغذية",
+      "status": "imported"
+    },
+    {
+      "index": 19,
+      "original_text": "زيت جوجوبا",
+      "name_ar": "زيت جوجوبا",
+      "name_en": "Jojoba Golden Oil",
+      "slug": "jojoba-golden-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت شمعية وفاخرة",
+      "status": "imported"
+    },
+    {
+      "index": 20,
+      "original_text": "زيت نخاع",
+      "name_ar": "زيت نخاع",
+      "name_en": "Bone Marrow Oil",
+      "slug": "bone-marrow-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت عناية بالشعر",
+      "status": "imported"
+    },
+    {
+      "index": 21,
+      "original_text": "زيت حنة",
+      "name_ar": "زيت حنة",
+      "name_en": "Henna Oil",
+      "slug": "henna-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت عناية بالشعر",
+      "status": "imported"
+    },
+    {
+      "index": 22,
+      "original_text": "زيت نخيل",
+      "name_ar": "زيت نخيل",
+      "name_en": "Palm Oil",
+      "slug": "palm-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت تصبين وقوام",
+      "status": "imported"
+    },
+    {
+      "index": 23,
+      "original_text": "زيت صنوبر",
+      "name_ar": "زيت صنوبر",
+      "name_en": "Pine Oil",
+      "slug": "pine-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت مطهرة ومنعشة",
+      "status": "imported"
+    },
+    {
+      "index": 24,
+      "original_text": "زيت جوزة الطيب",
+      "name_ar": "زيت جوزة الطيب",
+      "name_en": "Nutmeg Oil",
+      "slug": "nutmeg-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت دافئة وعطرية",
+      "status": "imported"
+    },
+    {
+      "index": 25,
+      "original_text": "زيت قرع العسل",
+      "name_ar": "زيت قرع العسل",
+      "name_en": "Pumpkin Seed Oil",
+      "slug": "pumpkin-seed-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت بذور مغذية",
+      "status": "imported"
+    },
+    {
+      "index": 26,
+      "original_text": "زيت شمر",
+      "name_ar": "زيت شمر",
+      "name_en": "Fennel Oil",
+      "slug": "fennel-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت عشبية",
+      "status": "imported"
+    },
+    {
+      "index": 27,
+      "original_text": "زيت بذور رمان",
+      "name_ar": "زيت بذور رمان",
+      "name_en": "Pomegranate Seed Oil",
+      "slug": "pomegranate-seed-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "مضادات أكسدة وتجديد خلايا",
+      "status": "imported"
+    },
+    {
+      "index": 28,
+      "original_text": "زيت حلبة",
+      "name_ar": "زيت حلبة",
+      "name_en": "Fenugreek Oil",
+      "slug": "fenugreek-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت تسمين وتغذية",
+      "status": "imported"
+    },
+    {
+      "index": 29,
+      "original_text": "زيت جيرانيوم",
+      "name_ar": "زيت جيرانيوم",
+      "name_en": "Geranium Oil",
+      "slug": "geranium-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت زهرية موازنة",
+      "status": "imported"
+    },
+    {
+      "index": 30,
+      "original_text": "زيت زعفران",
+      "name_ar": "زيت زعفران",
+      "name_en": "Saffron Oil",
+      "slug": "saffron-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت فاخرة وتفتيح",
+      "status": "imported"
+    },
+    {
+      "index": 31,
+      "original_text": "زيت ينسون",
+      "name_ar": "زيت ينسون",
+      "name_en": "Anise Seed Oil",
+      "slug": "anise-seed-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت عطرية ومنعشة",
+      "status": "imported"
+    },
+    {
+      "index": 32,
+      "original_text": "زيت مشمش",
+      "name_ar": "زيت مشمش",
+      "name_en": "Apricot Kernel Oil",
+      "slug": "apricot-kernel-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت ناقلة خفيفة",
+      "status": "imported"
+    },
+    {
+      "index": 33,
+      "original_text": "زيت دهن الحية",
+      "name_ar": "زيت دهن الحية",
+      "name_en": "Snake Oil Blend",
+      "slug": "snake-oil-blend",
+      "category": "oils-and-extracts",
+      "subcategory": "خلطات زيتية لتقوية الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 34,
+      "original_text": "زيت جنزبيل",
+      "name_ar": "زيت جنزبيل",
+      "name_en": "Ginger Oil",
+      "slug": "ginger-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت تنشيط وتدفئة",
+      "status": "imported"
+    },
+    {
+      "index": 35,
+      "original_text": "زيت ياسمين",
+      "name_ar": "زيت ياسمين",
+      "name_en": "Jasmine Oil",
+      "slug": "jasmine-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت زهرية فاخرة",
+      "status": "imported"
+    },
+    {
+      "index": 36,
+      "original_text": "زيت نواة التمر",
+      "name_ar": "زيت نواة التمر",
+      "name_en": "Date Seed Oil",
+      "slug": "date-seed-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت ترطيب ومضادة للأكسدة",
+      "status": "imported"
+    },
+    {
+      "index": 37,
+      "original_text": "زيت دم التين",
+      "name_ar": "زيت دم التين",
+      "name_en": "Fig Latex / Fig Oil",
+      "slug": "fig-latex-fig-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت ومستخلصات تقليدية",
+      "status": "imported"
+    },
+    {
+      "index": 38,
+      "original_text": "زيت أرجان",
+      "name_ar": "زيت أرجان مغربي أصلي",
+      "name_en": "Pure Moroccan Argan Oil",
+      "slug": "pure-moroccan-argan-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت فاخرة ومغذية",
+      "status": "imported"
+    },
+    {
+      "index": 39,
+      "original_text": "زيت شطة",
+      "name_ar": "زيت شطة (كابسيسين)",
+      "name_en": "Chili Seed Oil (Capsicum)",
+      "slug": "chili-seed-oil-capsicum",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت محفزة لبصيلات الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 40,
+      "original_text": "زيت ذيل حصان",
+      "name_ar": "زيت ذيل حصان",
+      "name_en": "Horsetail Herb Infused Oil",
+      "slug": "horsetail-herb-infused-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت غنية بالسيليكا للشعر",
+      "status": "imported"
+    },
+    {
+      "index": 41,
+      "original_text": "زيت أفوكادو",
+      "name_ar": "زيت أفوكادو",
+      "name_en": "Avocado Extra Virgin Oil",
+      "slug": "avocado-extra-virgin-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت غنية بالفيتامينات",
+      "status": "imported"
+    },
+    {
+      "index": 42,
+      "original_text": "زيت قرنفل",
+      "name_ar": "زيت قرنفل",
+      "name_en": "Clove Bud Oil",
+      "slug": "clove-bud-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت مطهرة ومسكنة",
+      "status": "imported"
+    },
+    {
+      "index": 43,
+      "original_text": "زيت حبة البركة",
+      "name_ar": "زيت حبة البركة (الحبة السوداء)",
+      "name_en": "Black Seed Oil (Nigella Sativa)",
+      "slug": "black-seed-oil-nigella-sativa",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت مقوية ومغذية",
+      "status": "imported"
+    },
+    {
+      "index": 44,
+      "original_text": "زيت كركم",
+      "name_ar": "زيت كركم",
+      "name_en": "Turmeric Essential Oil",
+      "slug": "turmeric-essential-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "مضادات التهاب وتوحيد لون",
+      "status": "imported"
+    },
+    {
+      "index": 45,
+      "original_text": "زيت برتقال",
+      "name_ar": "زيت برتقال حلو",
+      "name_en": "Sweet Orange Oil",
+      "slug": "sweet-orange-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت حمضيات منعشة",
+      "status": "imported"
+    },
+    {
+      "index": 46,
+      "original_text": "زيت جرجير",
+      "name_ar": "زيت جرجير",
+      "name_en": "Arugula / Watercress Oil",
+      "slug": "arugula-watercress-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت إنبات وتقوية الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 47,
+      "original_text": "زيت كتان",
+      "name_ar": "زيت كتان (بذر الكتان)",
+      "name_en": "Flaxseed Oil (Linseed)",
+      "slug": "flaxseed-oil-linseed",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت غنية بالأوميجا 3",
+      "status": "imported"
+    },
+    {
+      "index": 48,
+      "original_text": "زيت نمل",
+      "name_ar": "زيت نمل أصلي",
+      "name_en": "Ant Oil Formic Infusion",
+      "slug": "ant-oil-formic-infusion",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت تقليل نمو الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 49,
+      "original_text": "زيت لبان دكر",
+      "name_ar": "زيت لبان دكر (بخور)",
+      "name_en": "Frankincense Essential Oil",
+      "slug": "frankincense-essential-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "شد البشرة ومقاومة التجاعيد",
+      "status": "imported"
+    },
+    {
+      "index": 50,
+      "original_text": "زيت ليمون",
+      "name_ar": "زيت ليمون",
+      "name_en": "Lemon Cold Pressed Oil",
+      "slug": "lemon-cold-pressed-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت حمضيات منقية",
+      "status": "imported"
+    },
+    {
+      "index": 51,
+      "original_text": "زيت سعد",
+      "name_ar": "زيت سعد",
+      "name_en": "Cyperus (Saad) Oil",
+      "slug": "cyperus-saad-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "تثبيط بصيلات الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 52,
+      "original_text": "زيت عرقسوس",
+      "name_ar": "زيت عرقسوس",
+      "name_en": "Licorice Root Infused Oil",
+      "slug": "licorice-root-infused-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "تفتيح وتوحيد لون البشرة",
+      "status": "imported"
+    },
+    {
+      "index": 53,
+      "original_text": "زيت نيم",
+      "name_ar": "زيت نيم",
+      "name_en": "Neem Cold Pressed Oil",
+      "slug": "neem-cold-pressed-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت علاجية ومضادة للبكتيريا",
+      "status": "imported"
+    },
+    {
+      "index": 54,
+      "original_text": "زيت عباد الشمس",
+      "name_ar": "زيت عباد الشمس نقي",
+      "name_en": "Sunflower Carrier Oil",
+      "slug": "sunflower-carrier-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت ناقلة خفيفة",
+      "status": "imported"
+    },
+    {
+      "index": 55,
+      "original_text": "زيت سمسم",
+      "name_ar": "زيت سمسم نقي معصور ع البارد",
+      "name_en": "Cold Pressed Sesame Oil",
+      "slug": "cold-pressed-sesame-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت مغذية وواقية للشعر",
+      "status": "imported"
+    },
+    {
+      "index": 56,
+      "original_text": "زيت بابونج",
+      "name_ar": "زيت بابونج روماني",
+      "name_en": "Roman Chamomile Oil",
+      "slug": "roman-chamomile-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "تهدئة التهيجات والحساسية",
+      "status": "imported"
+    },
+    {
+      "index": 57,
+      "original_text": "زيت سمك",
+      "name_ar": "زيت سمك نقي (أوميجا 3)",
+      "name_en": "Pure Fish Oil (Omega-3)",
+      "slug": "pure-fish-oil-omega-3",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت مغذية مركزة",
+      "status": "imported"
+    },
+    {
+      "index": 58,
+      "original_text": "زيت إكليل الجبل / روزماري",
+      "name_ar": "زيت إكليل الجبل (روزماري)",
+      "name_en": "Rosemary Essential Oil",
+      "slug": "rosemary-essential-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "تحفيز الدورة الدموية للشعر",
+      "status": "imported"
+    },
+    {
+      "index": 59,
+      "original_text": "زيت الورد",
+      "name_ar": "زيت الورد الجوري",
+      "name_en": "Damask Rose Oil",
+      "slug": "damask-rose-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "زيوت فاخرة وترطيب",
+      "status": "imported"
+    },
+    {
+      "index": 60,
+      "original_text": "زيت قهوة",
+      "name_ar": "زيت قهوة مركز",
+      "name_en": "Green Coffee Bean Oil",
+      "slug": "green-coffee-bean-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "شد البشرة ومقاومة السيلوليت",
+      "status": "imported"
+    },
+    {
+      "index": 61,
+      "original_text": "زيت سدر",
+      "name_ar": "زيت سدر نقي",
+      "name_en": "Sidr / Nabq Leaf Oil",
+      "slug": "sidr-nabq-leaf-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "عناية تقليدية بالشعر",
+      "status": "imported"
+    },
+    {
+      "index": 62,
+      "original_text": "زيت خروع",
+      "name_ar": "زيت خروع نقي",
+      "name_en": "Castor Pure Oil",
+      "slug": "castor-pure-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "تكثيف الرموش والحواجب والشعر",
+      "status": "imported"
+    },
+    {
+      "index": 63,
+      "original_text": "زيت لافندر",
+      "name_ar": "زيت لافندر فرنسي",
+      "name_en": "French Lavender Essential Oil",
+      "slug": "french-lavender-essential-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "استرخاء ومهدئ للبشرة",
+      "status": "imported"
+    },
+    {
+      "index": 64,
+      "original_text": "زيت جزر",
+      "name_ar": "زيت جزر غني بالبيتاكاروتين",
+      "name_en": "Carrot Seed & Root Oil",
+      "slug": "carrot-seed-root-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "نضارة وتسمير ومكافحة أكسدة",
+      "status": "imported"
+    },
+    {
+      "index": 65,
+      "original_text": "زيت صبار",
+      "name_ar": "زيت صبار",
+      "name_en": "Aloe Vera Infused Oil",
+      "slug": "aloe-vera-infused-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "ترطيب عميق وتهدئة حروق",
+      "status": "imported"
+    },
+    {
+      "index": 66,
+      "original_text": "زيت بذور العنب",
+      "name_ar": "زيت بذور العنب خفيف الامتصاص",
+      "name_en": "Grapeseed Oil",
+      "slug": "grapeseed-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "مضادات أكسدة للبشرة الدهنية",
+      "status": "imported"
+    },
+    {
+      "index": 67,
+      "original_text": "زيت بصل",
+      "name_ar": "زيت بصل نقي",
+      "name_en": "Pure Red Onion Oil",
+      "slug": "pure-red-onion-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "علاج تساقط الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 68,
+      "original_text": "زيت ثوم",
+      "name_ar": "زيت ثوم مركز",
+      "name_en": "Garlic Oil Extract",
+      "slug": "garlic-oil-extract",
+      "category": "oils-and-extracts",
+      "subcategory": "تطهير الفروة وإنبات الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 69,
+      "original_text": "زيت دهن نعام",
+      "name_ar": "زيت دهن نعام أصلي",
+      "name_en": "Pure Ostrich Oil",
+      "slug": "pure-ostrich-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "مسكن آلام ومغذي فائق",
+      "status": "imported"
+    },
+    {
+      "index": 70,
+      "original_text": "زيت ترمس",
+      "name_ar": "زيت ترمس مر",
+      "name_en": "Bitter Lupin Seed Oil",
+      "slug": "bitter-lupin-seed-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "تفتيح وتقليل نمو الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 71,
+      "original_text": "زيت نعناع مصري",
+      "name_ar": "زيت نعناع مصري",
+      "name_en": "Egyptian Peppermint Oil",
+      "slug": "egyptian-peppermint-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "انتعاش وتبريد الفروة",
+      "status": "imported"
+    },
+    {
+      "index": 72,
+      "original_text": "زيت نعناع مستورد",
+      "name_ar": "زيت نعناع مستورد نقي",
+      "name_en": "Imported Pure Peppermint Oil",
+      "slug": "imported-pure-peppermint-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "انتعاش وتبريد الفروة",
+      "status": "imported"
+    },
+    {
+      "index": 73,
+      "original_text": "زيت قرفة",
+      "name_ar": "زيت قرفة نقي",
+      "name_en": "Cinnamon Bark Oil",
+      "slug": "cinnamon-bark-oil",
+      "category": "oils-and-extracts",
+      "subcategory": "تنشيط الدورة الدموية ومورد شفايف",
+      "status": "imported"
+    },
+    {
+      "index": 74,
+      "original_text": "خلاصة نعناع",
+      "name_ar": "خلاصة نعناع مائية جليكولية",
+      "name_en": "Peppermint Botanical Extract",
+      "slug": "peppermint-botanical-extract",
+      "category": "oils-and-extracts",
+      "subcategory": "مستخلصات عشبية",
+      "status": "imported"
+    },
+    {
+      "index": 75,
+      "original_text": "خلاصة روزماري",
+      "name_ar": "خلاصة روزماري مركزة",
+      "name_en": "Rosemary Botanical Extract",
+      "slug": "rosemary-botanical-extract",
+      "category": "oils-and-extracts",
+      "subcategory": "مستخلصات عشبية",
+      "status": "imported"
+    },
+    {
+      "index": 76,
+      "original_text": "خلاصة كاموميل",
+      "name_ar": "خلاصة كاموميل مهدئة",
+      "name_en": "Chamomile Botanical Extract",
+      "slug": "chamomile-botanical-extract",
+      "category": "oils-and-extracts",
+      "subcategory": "مستخلصات عشبية",
+      "status": "imported"
+    },
+    {
+      "index": 77,
+      "original_text": "خلاصة جينسنج",
+      "name_ar": "خلاصة جينسنج منشطة",
+      "name_en": "Ginseng Root Extract",
+      "slug": "ginseng-root-extract",
+      "category": "oils-and-extracts",
+      "subcategory": "مستخلصات عشبية",
+      "status": "imported"
+    },
+    {
+      "index": 78,
+      "original_text": "خلاصة ألوفيرا",
+      "name_ar": "خلاصة ألوفيرا مركزة",
+      "name_en": "Aloe Vera Concentrated Extract",
+      "slug": "aloe-vera-concentrated-extract",
+      "category": "oils-and-extracts",
+      "subcategory": "مستخلصات مرطبة",
+      "status": "imported"
+    },
+    {
+      "index": 79,
+      "original_text": "خلاصة سانتيلا",
+      "name_ar": "خلاصة سانتيلا (سيكا)",
+      "name_en": "Centella Asiatica (Cica) Extract",
+      "slug": "centella-asiatica-cica-extract",
+      "category": "oils-and-extracts",
+      "subcategory": "ترميم حاجز البشرة",
+      "status": "imported"
+    },
+    {
+      "index": 80,
+      "original_text": "خلاصة عرقسوس",
+      "name_ar": "خلاصة عرقسوس لتفتيح التصبغات",
+      "name_en": "Licorice Glycyrrhiza Extract",
+      "slug": "licorice-glycyrrhiza-extract",
+      "category": "oils-and-extracts",
+      "subcategory": "تفتيح ونضارة",
+      "status": "imported"
+    },
+    {
+      "index": 81,
+      "original_text": "خلاصة بذور عنب",
+      "name_ar": "خلاصة بذور العنب المضادة للأكسدة",
+      "name_en": "Grape Seed Proanthocyanidins Extract",
+      "slug": "grape-seed-proanthocyanidins-extract",
+      "category": "oils-and-extracts",
+      "subcategory": "مضادات أكسدة فائقة",
+      "status": "imported"
+    },
+    {
+      "index": 82,
+      "original_text": "خلاصة صبار شفافة",
+      "name_ar": "خلاصة صبار شفافة نقية",
+      "name_en": "Pure Clear Aloe Vera Gel Extract",
+      "slug": "pure-clear-aloe-vera-gel-extract",
+      "category": "oils-and-extracts",
+      "subcategory": "مستخلصات مرطبة",
+      "status": "imported"
+    },
+    {
+      "index": 83,
+      "original_text": "لانت استيارك اسيد / حمض الشمع",
+      "name_ar": "حمض الشمع (ستياريك أسيد)",
+      "name_en": "Stearic Acid Triple Pressed",
+      "slug": "stearic-acid-triple-pressed",
+      "category": "raw-powders-and-actives",
+      "subcategory": "أحماض دهنية ومكثفات",
+      "status": "imported"
+    },
+    {
+      "index": 84,
+      "original_text": "GMS",
+      "name_ar": "جلسرين مونوستيارات (GMS)",
+      "name_en": "Glycerol Monostearate (GMS 60/40)",
+      "slug": "glycerol-monostearate-gms-6040",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مستحلبات صناعية",
+      "status": "imported"
+    },
+    {
+      "index": 85,
+      "original_text": "بودرة تلك",
+      "name_ar": "بودرة تلك نقية درجة تجميلية",
+      "name_en": "Cosmetic Talc Powder Superfine",
+      "slug": "cosmetic-talc-powder-superfine",
+      "category": "raw-powders-and-actives",
+      "subcategory": "بودرات مالئة وامتصاص",
+      "status": "imported"
+    },
+    {
+      "index": 86,
+      "original_text": "سالسيلك أسيد",
+      "name_ar": "حمض الساليسيليك نقي (BHA)",
+      "name_en": "Salicylic Acid USP/BP (BHA)",
+      "slug": "salicylic-acid-uspbp-bha",
+      "category": "raw-powders-and-actives",
+      "subcategory": "أحماض تقشير ومكافحة حب الشباب",
+      "status": "imported"
+    },
+    {
+      "index": 87,
+      "original_text": "يوريا",
+      "name_ar": "يوريا صناعية",
+      "name_en": "Urea Technical Grade",
+      "slug": "urea-technical-grade",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مرطبات ومذيبات كيراتين",
+      "status": "imported"
+    },
+    {
+      "index": 88,
+      "original_text": "يوريا تجميلي",
+      "name_ar": "يوريا نقية درجة تجميلية",
+      "name_en": "Urea Cosmetic Grade Pure",
+      "slug": "urea-cosmetic-grade-pure",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مرطبات ومذيبات كيراتين",
+      "status": "imported"
+    },
+    {
+      "index": 89,
+      "original_text": "CMC",
+      "name_ar": "كربوكسي ميثيل سليلوز (CMC)",
+      "name_en": "Carboxymethyl Cellulose (CMC)",
+      "slug": "carboxymethyl-cellulose-cmc",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مغلظات قوام بوليمرية",
+      "status": "imported"
+    },
+    {
+      "index": 90,
+      "original_text": "صمغ زانثان جم",
+      "name_ar": "صمغ الزانثان الشفاف",
+      "name_en": "Xanthan Gum Transparent Grade",
+      "slug": "xanthan-gum-transparent-grade",
+      "category": "raw-powders-and-actives",
+      "subcategory": "صموغ طبيعية ومغلظات",
+      "status": "imported"
+    },
+    {
+      "index": 91,
+      "original_text": "جوار جم",
+      "name_ar": "صمغ الجوار الطبيعي",
+      "name_en": "Guar Gum Natural Grade",
+      "slug": "guar-gum-natural-grade",
+      "category": "raw-powders-and-actives",
+      "subcategory": "صموغ طبيعية ومغلظات",
+      "status": "imported"
+    },
+    {
+      "index": 92,
+      "original_text": "كوزميديا جوار",
+      "name_ar": "كوزميديا جوار (بلسمي)",
+      "name_en": "Cosmedia Guar (Guar Hydroxypropyltrimonium)",
+      "slug": "cosmedia-guar-guar-hydroxypropyltrimonium",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مكيفات بلسمية كاتيونية",
+      "status": "imported"
+    },
+    {
+      "index": 93,
+      "original_text": "ستريك أسيد",
+      "name_ar": "حمض الستريك (ملح الليمون)",
+      "name_en": "Citric Acid Anhydrous Food/Cosmetic",
+      "slug": "citric-acid-anhydrous-foodcosmetic",
+      "category": "raw-powders-and-actives",
+      "subcategory": "ضبط الحموضة ومقشرات",
+      "status": "imported"
+    },
+    {
+      "index": 94,
+      "original_text": "تكسابون بودر",
+      "name_ar": "تكسابون بودرة نقي (SLS)",
+      "name_en": "Texapon Powder / Sodium Lauryl Sulfate Needle",
+      "slug": "texapon-powder-sodium-lauryl-sulfate-needle",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مواد رغوية ومنظفة",
+      "status": "imported"
+    },
+    {
+      "index": 95,
+      "original_text": "فيسكولام أبيض",
+      "name_ar": "فيسكولام أبيض بوليمري",
+      "name_en": "Viscolam White Polymer Thickener",
+      "slug": "viscolam-white-polymer-thickener",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مغلظات مستحلبات ومستقرات",
+      "status": "imported"
+    },
+    {
+      "index": 96,
+      "original_text": "لانولين أبيض",
+      "name_ar": "لانولين صيدلاني أبيض نقي",
+      "name_en": "White Lanolin EP/USP Grade",
+      "slug": "white-lanolin-epusp-grade",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مطريات ومستحلبات دهنية",
+      "status": "imported"
+    },
+    {
+      "index": 97,
+      "original_text": "لانولين أصفر",
+      "name_ar": "لانولين أصفر خام لامائي",
+      "name_en": "Yellow Lanolin Anhydrous",
+      "slug": "yellow-lanolin-anhydrous",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مطريات ومستحلبات دهنية",
+      "status": "imported"
+    },
+    {
+      "index": 98,
+      "original_text": "لانولين عادي",
+      "name_ar": "لانولين تجاري معتمد",
+      "name_en": "Standard Lanolin",
+      "slug": "standard-lanolin",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مطريات ومستحلبات دهنية",
+      "status": "imported"
+    },
+    {
+      "index": 99,
+      "original_text": "فازلين",
+      "name_ar": "فازلين طبي نقي درجة أولى",
+      "name_en": "Pure White Petroleum Jelly USP",
+      "slug": "pure-white-petroleum-jelly-usp",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مطريات عازلة وحاجز وقائي",
+      "status": "imported"
+    },
+    {
+      "index": 100,
+      "original_text": "BEG12",
+      "name_ar": "BEG12 مستحلب",
+      "name_en": "BEG-12 Functional Surfactant",
+      "slug": "beg-12-functional-surfactant",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مستحلبات ومواد مساعدة",
+      "status": "imported"
+    },
+    {
+      "index": 101,
+      "original_text": "BEG12 ثيو جليكونات",
+      "name_ar": "BEG12 ثيوجلايكولات",
+      "name_en": "BEG-12 Thioglycolate Active",
+      "slug": "beg-12-thioglycolate-active",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مواد فرد وإزالة شعر",
+      "status": "imported"
+    },
+    {
+      "index": 102,
+      "original_text": "BEG400",
+      "name_ar": "BEG400 بوليمري",
+      "name_en": "BEG-400 Polymeric Base",
+      "slug": "beg-400-polymeric-base",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مستحلبات ومواد مساعدة",
+      "status": "imported"
+    },
+    {
+      "index": 103,
+      "original_text": "إيديتا (EDTA)",
+      "name_ar": "إيديتا ثنائية الصوديوم (EDTA)",
+      "name_en": "Disodium EDTA Chelating Agent",
+      "slug": "disodium-edta-chelating-agent",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مواد إخفاء وعوامل كلابية",
+      "status": "imported"
+    },
+    {
+      "index": 104,
+      "original_text": "BTMS50",
+      "name_ar": "BTMS-50 شمع بلسمي ومكيف",
+      "name_en": "BTMS-50 Cationic Conditioning Wax",
+      "slug": "btms-50-cationic-conditioning-wax",
+      "category": "raw-powders-and-actives",
+      "subcategory": "شمع بلسم ومكيفات شعر",
+      "status": "imported"
+    },
+    {
+      "index": 105,
+      "original_text": "BTMS80",
+      "name_ar": "BTMS-80 مركز مكيف",
+      "name_en": "BTMS-80 Concentrated Conditioning Agent",
+      "slug": "btms-80-concentrated-conditioning-agent",
+      "category": "raw-powders-and-actives",
+      "subcategory": "شمع بلسم ومكيفات شعر",
+      "status": "imported"
+    },
+    {
+      "index": 106,
+      "original_text": "PVA",
+      "name_ar": "بولي فينيل الكحول (PVA)",
+      "name_en": "Polyvinyl Alcohol (PVA)",
+      "slug": "polyvinyl-alcohol-pva",
+      "category": "raw-powders-and-actives",
+      "subcategory": "بوليمرات تكوين أفلام وماسكات",
+      "status": "imported"
+    },
+    {
+      "index": 107,
+      "original_text": "قشور",
+      "name_ar": "شمع قشور مستحلب",
+      "name_en": "Emulsifying Flakes / Cetearyl Alcohol Flakes",
+      "slug": "emulsifying-flakes-cetearyl-alcohol-flakes",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مستحلبات قشور",
+      "status": "imported"
+    },
+    {
+      "index": 108,
+      "original_text": "تيتانيوم",
+      "name_ar": "تيتانيوم ديوكسيد درجة تجميلية فائق النقاء",
+      "name_en": "Titanium Dioxide Rutile Cosmetic Ultra-Pure",
+      "slug": "titanium-dioxide-rutile-cosmetic-ultra-pure",
+      "category": "raw-powders-and-actives",
+      "subcategory": "فلاتر شمسية وملونات بيضاء",
+      "status": "imported"
+    },
+    {
+      "index": 109,
+      "original_text": "كاربابول 940",
+      "name_ar": "كاربابول 940 عالي الشفافية",
+      "name_en": "Carbopol 940 Carbomer High Clarity",
+      "slug": "carbopol-940-carbomer-high-clarity",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مغلظات جل كربومير",
+      "status": "imported"
+    },
+    {
+      "index": 110,
+      "original_text": "كربابول",
+      "name_ar": "كربابول قياسي",
+      "name_en": "Standard Carbomer Resin",
+      "slug": "standard-carbomer-resin",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مغلظات جل كربومير",
+      "status": "imported"
+    },
+    {
+      "index": 111,
+      "original_text": "كبريت أصفر",
+      "name_ar": "كبريت أصفر ميكروني طبي",
+      "name_en": "Precipitated Yellow Sulfur Micronized",
+      "slug": "precipitated-yellow-sulfur-micronized",
+      "category": "raw-powders-and-actives",
+      "subcategory": "علاج حب الشباب وقشرة الرأس",
+      "status": "imported"
+    },
+    {
+      "index": 112,
+      "original_text": "صوديوم ميتاباي سلفات",
+      "name_ar": "صوديوم ميتاباي سلفايت",
+      "name_en": "Sodium Metabisulfite Food/Cosmetic",
+      "slug": "sodium-metabisulfite-foodcosmetic",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مضادات أكسدة واختزال",
+      "status": "imported"
+    },
+    {
+      "index": 113,
+      "original_text": "FD21 أكريليت كو بوليمر",
+      "name_ar": "FD21 أكريليت كوبوليمر معلق",
+      "name_en": "FD21 Acrylates Copolymer Suspending Agent",
+      "slug": "fd21-acrylates-copolymer-suspending-agent",
+      "category": "raw-powders-and-actives",
+      "subcategory": "بوليمرات تعليق وتغليظ",
+      "status": "imported"
+    },
+    {
+      "index": 114,
+      "original_text": "PHT مانع تزنخ",
+      "name_ar": "BHT / PHT مانع تزنخ الزيوت",
+      "name_en": "BHT (Butylated Hydroxytoluene) Antioxidant",
+      "slug": "bht-butylated-hydroxytoluene-antioxidant",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مضادات أكسدة للزيوت والدهون",
+      "status": "imported"
+    },
+    {
+      "index": 115,
+      "original_text": "DCMX",
+      "name_ar": "DCMX مطهر مضاد للبكتيريا",
+      "name_en": "DCMX (Dichlorometaxylenol) Antimicrobial",
+      "slug": "dcmx-dichlorometaxylenol-antimicrobial",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مطهرات ومواد مضادة للميكروبات",
+      "status": "imported"
+    },
+    {
+      "index": 116,
+      "original_text": "كليمبازول",
+      "name_ar": "كليمبازول مضاد قشرة نقي",
+      "name_en": "Climbazole Antidandruff Active 99%",
+      "slug": "climbazole-antidandruff-active-99",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مضادات قشرة وفطريات",
+      "status": "imported"
+    },
+    {
+      "index": 117,
+      "original_text": "منتول كريستال",
+      "name_ar": "كريستالات المنتول الطبيعي النقي",
+      "name_en": "Natural Menthol Crystals 99.5%",
+      "slug": "natural-menthol-crystals-995",
+      "category": "raw-powders-and-actives",
+      "subcategory": "انتعاش وتبريد الفروة والجلد",
+      "status": "imported"
+    },
+    {
+      "index": 118,
+      "original_text": "طين بنتونيت أبيض",
+      "name_ar": "طين بنتونيت أبيض نقي",
+      "name_en": "White Bentonite Clay Superfine",
+      "slug": "white-bentonite-clay-superfine",
+      "category": "raw-powders-and-actives",
+      "subcategory": "طين تجميلي وأقنعة تنقية",
+      "status": "imported"
+    },
+    {
+      "index": 119,
+      "original_text": "بوتاسيوم استيارك",
+      "name_ar": "بوتاسيوم ستيارات",
+      "name_en": "Potassium Stearate Cosmetic Grade",
+      "slug": "potassium-stearate-cosmetic-grade",
+      "category": "raw-powders-and-actives",
+      "subcategory": "أملاح أحماض دهنية ومستحلبات",
+      "status": "imported"
+    },
+    {
+      "index": 120,
+      "original_text": "أكسيد زنك",
+      "name_ar": "أكسيد الزنك النقي درجة فارما",
+      "name_en": "Zinc Oxide USP Pharmaceutical Pure",
+      "slug": "zinc-oxide-usp-pharmaceutical-pure",
+      "category": "raw-powders-and-actives",
+      "subcategory": "واقيات شمسية ومهدئات طفح",
+      "status": "imported"
+    },
+    {
+      "index": 121,
+      "original_text": "بينزوفين 3",
+      "name_ar": "بنزوفينون 3 (أوكسي بنزون)",
+      "name_en": "Benzophenone-3 (Oxybenzone UV Filter)",
+      "slug": "benzophenone-3-oxybenzone-uv-filter",
+      "category": "raw-powders-and-actives",
+      "subcategory": "فلاتر شمسية UVA/UVB",
+      "status": "imported"
+    },
+    {
+      "index": 122,
+      "original_text": "بينزوفين 4",
+      "name_ar": "بنزوفينون 4 (سوليسوبنزون)",
+      "name_en": "Benzophenone-4 (Sulisobenzone Water Soluble)",
+      "slug": "benzophenone-4-sulisobenzone-water-soluble",
+      "category": "raw-powders-and-actives",
+      "subcategory": "فلاتر شمسية قابلة للذوبان بالماء",
+      "status": "imported"
+    },
+    {
+      "index": 123,
+      "original_text": "بنزوات صوديوم",
+      "name_ar": "بنزوات الصوديوم مادة حافظة",
+      "name_en": "Sodium Benzoate Food/Cosmetic Preservative",
+      "slug": "sodium-benzoate-foodcosmetic-preservative",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مواد حافظة آمنة",
+      "status": "imported"
+    },
+    {
+      "index": 124,
+      "original_text": "سوربات بوتاسيوم",
+      "name_ar": "سوربات البوتاسيوم",
+      "name_en": "Potassium Sorbate Preservative",
+      "slug": "potassium-sorbate-preservative",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مواد حافظة آمنة",
+      "status": "imported"
+    },
+    {
+      "index": 125,
+      "original_text": "كافيين",
+      "name_ar": "كافيين نقي لا مائي",
+      "name_en": "Pure Caffeine Anhydrous Powder 99%",
+      "slug": "pure-caffeine-anhydrous-powder-99",
+      "category": "raw-powders-and-actives",
+      "subcategory": "شد البشرة وإنبات الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 126,
+      "original_text": "كوجيك أسيد",
+      "name_ar": "حمض الكوجيك نقي 99%",
+      "name_en": "Kojic Acid Pure 99% Skin Lightening",
+      "slug": "kojic-acid-pure-99-skin-lightening",
+      "category": "raw-powders-and-actives",
+      "subcategory": "تفتيح وتثبيط الميلانين",
+      "status": "imported"
+    },
+    {
+      "index": 127,
+      "original_text": "مانع رغوة سايل",
+      "name_ar": "مانع رغوة سيليكوني سائل",
+      "name_en": "Silicone Antifoam / Defoamer Liquid",
+      "slug": "silicone-antifoam-defoamer-liquid",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مساعدات تصنيع وموانع رغوة",
+      "status": "imported"
+    },
+    {
+      "index": 128,
+      "original_text": "مانع رغوة بودر",
+      "name_ar": "مانع رغوة بودرة عالي الفعالية",
+      "name_en": "Powder Antifoam / Defoamer Compound",
+      "slug": "powder-antifoam-defoamer-compound",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مساعدات تصنيع وموانع رغوة",
+      "status": "imported"
+    },
+    {
+      "index": 129,
+      "original_text": "كولاجين عادي",
+      "name_ar": "كولاجين هيدرولايزد بحري/بقري",
+      "name_en": "Hydrolyzed Collagen Powder",
+      "slug": "hydrolyzed-collagen-powder",
+      "category": "raw-powders-and-actives",
+      "subcategory": "بروتينات ومرونة البشرة",
+      "status": "imported"
+    },
+    {
+      "index": 130,
+      "original_text": "بيوتين",
+      "name_ar": "بيوتين نقي (فيتامين H / B7)",
+      "name_en": "Pure D-Biotin (Vitamin B7) Active",
+      "slug": "pure-d-biotin-vitamin-b7-active",
+      "category": "raw-powders-and-actives",
+      "subcategory": "تقوية بصيلات الشعر والأظافر",
+      "status": "imported"
+    },
+    {
+      "index": 131,
+      "original_text": "بيوتين بودر",
+      "name_ar": "بيوتين بودرة معيارية 1%",
+      "name_en": "Biotin 1% Cosmetic Grade Powder",
+      "slug": "biotin-1-cosmetic-grade-powder",
+      "category": "raw-powders-and-actives",
+      "subcategory": "تقوية بصيلات الشعر والأظافر",
+      "status": "imported"
+    },
+    {
+      "index": 132,
+      "original_text": "هيدروكينون",
+      "name_ar": "هيدروكينون نقي USP",
+      "name_en": "Hydroquinone USP Pure Grade",
+      "slug": "hydroquinone-usp-pure-grade",
+      "category": "raw-powders-and-actives",
+      "subcategory": "تفتيح وتبييض تصبغات مستعصية",
+      "status": "imported"
+    },
+    {
+      "index": 133,
+      "original_text": "ميثيل برابيل",
+      "name_ar": "ميثيل بارابين حافظ",
+      "name_en": "Methylparaben Preservative Pure",
+      "slug": "methylparaben-preservative-pure",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مواد حافظة كلاسيكية",
+      "status": "imported"
+    },
+    {
+      "index": 134,
+      "original_text": "بيوتايل برابيل",
+      "name_ar": "بيوتيل بارابين حافظ",
+      "name_en": "Butylparaben Preservative Pure",
+      "slug": "butylparaben-preservative-pure",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مواد حافظة كلاسيكية",
+      "status": "imported"
+    },
+    {
+      "index": 135,
+      "original_text": "ألاننتوين",
+      "name_ar": "ألانينتوين نقي مهدئ للبشرة",
+      "name_en": "Pure Allantoin Skin Soothing Powder",
+      "slug": "pure-allantoin-skin-soothing-powder",
+      "category": "raw-powders-and-actives",
+      "subcategory": "تهدئة وتجديد خلايا الجلد",
+      "status": "imported"
+    },
+    {
+      "index": 136,
+      "original_text": "PVPK90",
+      "name_ar": "بوليمر تثبيت الشعر PVP K-90",
+      "name_en": "PVP K-90 Hair Fixative Polymer Powder",
+      "slug": "pvp-k-90-hair-fixative-polymer-powder",
+      "category": "raw-powders-and-actives",
+      "subcategory": "بوليمرات تثبيت الجل ومصففات الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 137,
+      "original_text": "PVPK30",
+      "name_ar": "بوليمر تثبيت الشعر PVP K-30",
+      "name_en": "PVP K-30 Film Forming Polymer",
+      "slug": "pvp-k-30-film-forming-polymer",
+      "category": "raw-powders-and-actives",
+      "subcategory": "بوليمرات تثبيت الجل ومصففات الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 138,
+      "original_text": "POV10",
+      "name_ar": "بوليمر POV-10 كاتيوني",
+      "name_en": "POV-10 Cationic Styling Polymer",
+      "slug": "pov-10-cationic-styling-polymer",
+      "category": "raw-powders-and-actives",
+      "subcategory": "بوليمرات تثبيت الجل ومصففات الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 139,
+      "original_text": "ريد نسيل بودر",
+      "name_ar": "ريدينسيل بودرة محفزة للإنبات",
+      "name_en": "Redensyl Hair Growth Booster Powder",
+      "slug": "redensyl-hair-growth-booster-powder",
+      "category": "raw-powders-and-actives",
+      "subcategory": "خلايا جذعية وببتيدات إنبات الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 140,
+      "original_text": "الفا أولفين بودر",
+      "name_ar": "ألفا أوليفين سلفونات بودرة (AOS 92%)",
+      "name_en": "Alpha Olefin Sulfonate (AOS) 92% Powder",
+      "slug": "alpha-olefin-sulfonate-aos-92-powder",
+      "category": "raw-powders-and-actives",
+      "subcategory": "خافضات توتر سطحي رغوية بودرة",
+      "status": "imported"
+    },
+    {
+      "index": 141,
+      "original_text": "Hydrophobic Silica",
+      "name_ar": "سيليكا كارهة للماء (هيدروفوبيك)",
+      "name_en": "Fumed Hydrophobic Silica Powder",
+      "slug": "fumed-hydrophobic-silica-powder",
+      "category": "raw-powders-and-actives",
+      "subcategory": "ماتيفاير وتعديل لزوجة البودرات",
+      "status": "imported"
+    },
+    {
+      "index": 142,
+      "original_text": "IPM",
+      "name_ar": "أيزوبروبيل ميرستات (IPM)",
+      "name_en": "Isopropyl Myristate (IPM Cosmetic Grade)",
+      "slug": "isopropyl-myristate-ipm-cosmetic-grade",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مطريات ومحفزات امتصاص سريعة",
+      "status": "imported"
+    },
+    {
+      "index": 143,
+      "original_text": "أرجانين",
+      "name_ar": "إل-أرجينين نقي قاعدة",
+      "name_en": "L-Arginine Pure Base Amino Acid",
+      "slug": "l-arginine-pure-base-amino-acid",
+      "category": "raw-powders-and-actives",
+      "subcategory": "أحماض أمينية لتقوية الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 144,
+      "original_text": "أرجانين بيز",
+      "name_ar": "أرجينين قاعدة هيدروكسيلية",
+      "name_en": "Arginine Base Cosmetic Grade",
+      "slug": "arginine-base-cosmetic-grade",
+      "category": "raw-powders-and-actives",
+      "subcategory": "أحماض أمينية لتقوية الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 145,
+      "original_text": "بروتكون أولامين",
+      "name_ar": "بيروكتون أولامين مضاد قشرة",
+      "name_en": "Piroctone Olamine Anti-Dandruff Active",
+      "slug": "piroctone-olamine-anti-dandruff-active",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مضادات قشرة وفطريات فروة الرأس",
+      "status": "imported"
+    },
+    {
+      "index": 146,
+      "original_text": "بروكابيل",
+      "name_ar": "بروكابيل ببتيد مقاوم لتساقط الشعر",
+      "name_en": "Procapil Active Peptide Complex",
+      "slug": "procapil-active-peptide-complex",
+      "category": "raw-powders-and-actives",
+      "subcategory": "ببتيدات وقف تساقط الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 147,
+      "original_text": "ترانيكساميك أسيد",
+      "name_ar": "حمض الترانيكساميك لتفتيح الكلف",
+      "name_en": "Tranexamic Acid Melasma Brightening Active",
+      "slug": "tranexamic-acid-melasma-brightening-active",
+      "category": "raw-powders-and-actives",
+      "subcategory": "تفتيح تصبغات وكلف عميق",
+      "status": "imported"
+    },
+    {
+      "index": 148,
+      "original_text": "جلوتاثيون",
+      "name_ar": "إل-جلوتاثيون نقي مختزل 99%",
+      "name_en": "L-Glutathione Reduced (GSH) 99%",
+      "slug": "l-glutathione-reduced-gsh-99",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مضاد أكسدة رئيسي وتفتيح البشرة",
+      "status": "imported"
+    },
+    {
+      "index": 149,
+      "original_text": "زبدة شيا",
+      "name_ar": "زبدة شيا أفريقية خام غير مكررة",
+      "name_en": "Raw Unrefined African Shea Butter Grade A",
+      "slug": "raw-unrefined-african-shea-butter-grade-a",
+      "category": "raw-powders-and-actives",
+      "subcategory": "زبدات طبيعية ومطريات غنية",
+      "status": "imported"
+    },
+    {
+      "index": 150,
+      "original_text": "زبدة كاكاو أصلي",
+      "name_ar": "زبدة كاكاو طبيعية نقية أصلية",
+      "name_en": "Pure Prime Pressed Natural Cocoa Butter",
+      "slug": "pure-prime-pressed-natural-cocoa-butter",
+      "category": "raw-powders-and-actives",
+      "subcategory": "زبدات طبيعية ومطريات غنية",
+      "status": "imported"
+    },
+    {
+      "index": 151,
+      "original_text": "زنك بيريثيون",
+      "name_ar": "زنك بيريثيون (ZPT) 48% / نقي",
+      "name_en": "Zinc Pyrithione (ZPT Anti-Dandruff Active)",
+      "slug": "zinc-pyrithione-zpt-anti-dandruff-active",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مضادات قشرة وفطريات فروة الرأس",
+      "status": "imported"
+    },
+    {
+      "index": 152,
+      "original_text": "فايبر هانس",
+      "name_ar": "فايبرهانس مرمم روابط ألياف الشعر",
+      "name_en": "FiberHance BM Hair Bond Multiplier",
+      "slug": "fiberhance-bm-hair-bond-multiplier",
+      "category": "raw-powders-and-actives",
+      "subcategory": "ترميم وتدعيم الروابط الكيميائية للشعر",
+      "status": "imported"
+    },
+    {
+      "index": 153,
+      "original_text": "فيسكو جيل",
+      "name_ar": "فيسكوجيل مغلظ سيليكونات وزيوت",
+      "name_en": "Viscogel Rheological Additive Organoclay",
+      "slug": "viscogel-rheological-additive-organoclay",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مغلظات أطوار زيتية وسيليكونية",
+      "status": "imported"
+    },
+    {
+      "index": 154,
+      "original_text": "قشور عين جمل",
+      "name_ar": "بودرة قشور عين الجمل المقشرة",
+      "name_en": "Walnut Shell Micro-Exfoliating Powder",
+      "slug": "walnut-shell-micro-exfoliating-powder",
+      "category": "raw-powders-and-actives",
+      "subcategory": "حبيبات ومقشرات طبيعية للجسم",
+      "status": "imported"
+    },
+    {
+      "index": 155,
+      "original_text": "قشور مشمش",
+      "name_ar": "بودرة قشور بذور المشمش المقشرة",
+      "name_en": "Apricot Seed Exfoliating Scrub Granules",
+      "slug": "apricot-seed-exfoliating-scrub-granules",
+      "category": "raw-powders-and-actives",
+      "subcategory": "حبيبات ومقشرات طبيعية للجسم",
+      "status": "imported"
+    },
+    {
+      "index": 156,
+      "original_text": "لانت 16",
+      "name_ar": "لانيت 16 (كحول سيتيلي نباتي ماليزي)",
+      "name_en": "Lanette 16 (Cetyl Alcohol 98% Suriachem)",
+      "slug": "lanette-16-cetyl-alcohol-98-suriachem",
+      "category": "raw-powders-and-actives",
+      "subcategory": "كحولات دهنية ومحسنات قوام",
+      "status": "imported"
+    },
+    {
+      "index": 157,
+      "original_text": "لانت O",
+      "name_ar": "لانيت أو (كحول سيتوستياريل 50/50)",
+      "name_en": "Lanette O (Cetearyl Alcohol 50/50)",
+      "slug": "lanette-o-cetearyl-alcohol-5050",
+      "category": "raw-powders-and-actives",
+      "subcategory": "كحولات دهنية ومحسنات قوام",
+      "status": "imported"
+    },
+    {
+      "index": 158,
+      "original_text": "ليدوكاين HCL",
+      "name_ar": "ليدوكائين هيدروكلوريد مخدر موضعي",
+      "name_en": "Lidocaine Hydrochloride (HCL) USP",
+      "slug": "lidocaine-hydrochloride-hcl-usp",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مخدرات موضعية ومسكنات جلدية",
+      "status": "imported"
+    },
+    {
+      "index": 159,
+      "original_text": "ليدوكاين بيز",
+      "name_ar": "ليدوكائين قاعدة نقي",
+      "name_en": "Lidocaine Base USP Pure Grade",
+      "slug": "lidocaine-base-usp-pure-grade",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مخدرات موضعية ومسكنات جلدية",
+      "status": "imported"
+    },
+    {
+      "index": 160,
+      "original_text": "مثبت إشلانت",
+      "name_ar": "مثبت إسكالول للتركيبات والعطور",
+      "name_en": "Escalol UV & Color Stabilizer",
+      "slug": "escalol-uv-color-stabilizer",
+      "category": "raw-powders-and-actives",
+      "subcategory": "مثبتات لون وحماية التركيبات من الضوء",
+      "status": "imported"
+    },
+    {
+      "index": 161,
+      "original_text": "نيلة زرقاء",
+      "name_ar": "نيلة زرقاء مغربية حرة أصلية",
+      "name_en": "Authentic Moroccan Blue Nila Powder",
+      "slug": "authentic-moroccan-blue-nila-powder",
+      "category": "raw-powders-and-actives",
+      "subcategory": "بودرات تفتيح وتنقية تقليدية",
+      "status": "imported"
+    },
+    {
+      "index": 162,
+      "original_text": "كوالينا أبيض",
+      "name_ar": "كاولين طين أبيض صيدلاني ناعم",
+      "name_en": "White Kaolin Clay Pharmaceutical Grade",
+      "slug": "white-kaolin-clay-pharmaceutical-grade",
+      "category": "raw-powders-and-actives",
+      "subcategory": "طين وماسكات طمي تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 163,
+      "original_text": "كوالينا بني",
+      "name_ar": "كاولين طين بني غني بالمعادن",
+      "name_en": "Brown Mineral Kaolin Clay",
+      "slug": "brown-mineral-kaolin-clay",
+      "category": "raw-powders-and-actives",
+      "subcategory": "طين وماسكات طمي تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 164,
+      "original_text": "سلفونيك",
+      "name_ar": "حمض السلفونيك الخطي 90% (LABSA)",
+      "name_en": "Linear Alkyl Benzene Sulfonic Acid 90%",
+      "slug": "linear-alkyl-benzene-sulfonic-acid-90",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "خافضات توتر سطحي أنيونية",
+      "status": "imported"
+    },
+    {
+      "index": 165,
+      "original_text": "سيليكون إيمالشن",
+      "name_ar": "سيليكون إيمالشن مائي 60%",
+      "name_en": "Silicone Emulsion 60% Water Soluble",
+      "slug": "silicone-emulsion-60-water-soluble",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "سيليكونات مستحلبة",
+      "status": "imported"
+    },
+    {
+      "index": 166,
+      "original_text": "بيتائين",
+      "name_ar": "كوكاميدوبروبيل بيتائين 30% (CAPB)",
+      "name_en": "Cocamidopropyl Betaine 30% (CAPB)",
+      "slug": "cocamidopropyl-betaine-30-capb",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "معززات رغوة وخافضات مذبذبة",
+      "status": "imported"
+    },
+    {
+      "index": 167,
+      "original_text": "BB4",
+      "name_ar": "بيتائين BB4 فائق النقاء",
+      "name_en": "Betaine BB-4 Surfactant Pure",
+      "slug": "betaine-bb-4-surfactant-pure",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "معززات رغوة وخافضات مذبذبة",
+      "status": "imported"
+    },
+    {
+      "index": 168,
+      "original_text": "مصدف",
+      "name_ar": "مصدف لؤلؤي سائل (بيرل إيجنت)",
+      "name_en": "Pearlizing Agent Liquid (Glycol Distearate Blend)",
+      "slug": "pearlizing-agent-liquid-glycol-distearate-blend",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "معدلات مظهر ومصدفات للشامبو",
+      "status": "imported"
+    },
+    {
+      "index": 169,
+      "original_text": "جلسرين",
+      "name_ar": "جلسرين نباتي مكرر نقي 99.7% USP",
+      "name_en": "Pure USP Refined Vegetable Glycerin 99.7%",
+      "slug": "pure-usp-refined-vegetable-glycerin-997",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مرطبات وجليكولات",
+      "status": "imported"
+    },
+    {
+      "index": 170,
+      "original_text": "كريموفور",
+      "name_ar": "كريموفور RH40 (زيت خروع مهدروج)",
+      "name_en": "Cremophor RH 40 (PEG-40 Castor Oil)",
+      "slug": "cremophor-rh-40-peg-40-castor-oil",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مذيبات عطور ومستحلبات ذائبة",
+      "status": "imported"
+    },
+    {
+      "index": 171,
+      "original_text": "PQ7",
+      "name_ar": "بولي كواتيرنيوم 7 مكيف شعر",
+      "name_en": "Polyquaternium-7 (PQ-7) Conditioner",
+      "slug": "polyquaternium-7-pq-7-conditioner",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "بوليمرات تكييف كاتيونية",
+      "status": "imported"
+    },
+    {
+      "index": 172,
+      "original_text": "PQ4",
+      "name_ar": "بولي كواتيرنيوم 4",
+      "name_en": "Polyquaternium-4 (PQ-4)",
+      "slug": "polyquaternium-4-pq-4",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "بوليمرات تكييف كاتيونية",
+      "status": "imported"
+    },
+    {
+      "index": 173,
+      "original_text": "PQ10",
+      "name_ar": "بولي كواتيرنيوم 10",
+      "name_en": "Polyquaternium-10 (PQ-10)",
+      "slug": "polyquaternium-10-pq-10",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "بوليمرات تكييف كاتيونية",
+      "status": "imported"
+    },
+    {
+      "index": 174,
+      "original_text": "PQ11",
+      "name_ar": "بولي كواتيرنيوم 11 لموس الشعر",
+      "name_en": "Polyquaternium-11 (PQ-11) Styling Polymer",
+      "slug": "polyquaternium-11-pq-11-styling-polymer",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "بوليمرات تكييف كاتيونية",
+      "status": "imported"
+    },
+    {
+      "index": 175,
+      "original_text": "CCT زيتي",
+      "name_ar": "دهون ثلاثية كابريليك/كابريك (CCT)",
+      "name_en": "Caprylic/Capric Triglyceride (CCT Oil)",
+      "slug": "capryliccapric-triglyceride-cct-oil",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "زيوت دهنية وإسترات خفيفة",
+      "status": "imported"
+    },
+    {
+      "index": 176,
+      "original_text": "زيت برافين",
+      "name_ar": "زيت برافين أبيض نقي (زيت معدني)",
+      "name_en": "Pure White Mineral Oil / Liquid Paraffin USP",
+      "slug": "pure-white-mineral-oil-liquid-paraffin-usp",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "زيوت معدنية وهيدروكربونية",
+      "status": "imported"
+    },
+    {
+      "index": 177,
+      "original_text": "فينوكسي إيثانول",
+      "name_ar": "فينوكسي إيثانول مادة حافظة نقية",
+      "name_en": "Phenoxyethanol 99.5% Preservative",
+      "slug": "phenoxyethanol-995-preservative",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مواد حافظة ومعقمات",
+      "status": "imported"
+    },
+    {
+      "index": 178,
+      "original_text": "كوكو جليكوزيليك",
+      "name_ar": "كوكو جلوكوسايد منظف نباتي خفيف",
+      "name_en": "Coco Glucoside Natural Non-Ionic Surfactant",
+      "slug": "coco-glucoside-natural-non-ionic-surfactant",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "خافضات غير أيونية طبيعية للأطفال",
+      "status": "imported"
+    },
+    {
+      "index": 179,
+      "original_text": "جليكوزيليك أسيد",
+      "name_ar": "حمض الجليكوليك 70% للتقشير",
+      "name_en": "Glycolic Acid 70% Solution (AHA)",
+      "slug": "glycolic-acid-70-solution-aha",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "أحماض ألفا هيدروكسي مقشرة",
+      "status": "imported"
+    },
+    {
+      "index": 180,
+      "original_text": "جليكوليك",
+      "name_ar": "حمض جليكوليك نقي كوزمتيك",
+      "name_en": "Glycolic Acid High Purity Liquid",
+      "slug": "glycolic-acid-high-purity-liquid",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "أحماض ألفا هيدروكسي مقشرة",
+      "status": "imported"
+    },
+    {
+      "index": 181,
+      "original_text": "سيتول H",
+      "name_ar": "سيتول HE (بولي إيثيلين جلايكول جوز هند)",
+      "name_en": "Cetiol HE (PEG-7 Glyceryl Cocoate)",
+      "slug": "cetiol-he-peg-7-glyceryl-cocoate",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مطريات ومزيلات مكياج ذائبة",
+      "status": "imported"
+    },
+    {
+      "index": 182,
+      "original_text": "سيليكون 350",
+      "name_ar": "دايميثيكون سيليكون 350 لزوجة خفيفة",
+      "name_en": "Dimethicone Silicone Oil 350 cSt",
+      "slug": "dimethicone-silicone-oil-350-cst",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "سيليكونات ودايميثيكون",
+      "status": "imported"
+    },
+    {
+      "index": 183,
+      "original_text": "سيليكون 1000",
+      "name_ar": "دايميثيكون سيليكون 1000 لزوجة متوسطة",
+      "name_en": "Dimethicone Silicone Fluid 1000 cSt",
+      "slug": "dimethicone-silicone-fluid-1000-cst",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "سيليكونات ودايميثيكون",
+      "status": "imported"
+    },
+    {
+      "index": 184,
+      "original_text": "سيليكون 6000",
+      "name_ar": "دايميثيكون سيليكون 6000 لزوجة عالية",
+      "name_en": "Dimethicone High Viscosity 6000 cSt",
+      "slug": "dimethicone-high-viscosity-6000-cst",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "سيليكونات ودايميثيكون",
+      "status": "imported"
+    },
+    {
+      "index": 185,
+      "original_text": "سيليكون 12500",
+      "name_ar": "دايميثيكون سيليكون 12500 فائق اللزوجة",
+      "name_en": "Dimethicone Ultra High Viscosity 12500 cSt",
+      "slug": "dimethicone-ultra-high-viscosity-12500-cst",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "سيليكونات ودايميثيكون",
+      "status": "imported"
+    },
+    {
+      "index": 186,
+      "original_text": "سيليكون 1501",
+      "name_ar": "سيليكون 1501 بليند لسيروم الشعر",
+      "name_en": "Cyclopentasiloxane & Dimethiconol Blend 1501",
+      "slug": "cyclopentasiloxane-dimethiconol-blend-1501",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "سيليكونات ودايميثيكون",
+      "status": "imported"
+    },
+    {
+      "index": 187,
+      "original_text": "سيليكون CPS",
+      "name_ar": "سيكلوبنتاسيلوكسان طيار (CPS)",
+      "name_en": "Cyclopentasiloxane Volatile Silicone (D5 / CPS)",
+      "slug": "cyclopentasiloxane-volatile-silicone-d5-cps",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "سيليكونات طيارة",
+      "status": "imported"
+    },
+    {
+      "index": 188,
+      "original_text": "سيليكون Elastomer",
+      "name_ar": "سيليكون إيلاستومر جل مخملي",
+      "name_en": "Silicone Elastomer Gel Velvet Texture",
+      "slug": "silicone-elastomer-gel-velvet-texture",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "إيلاستومرات وبرايمر مخملي",
+      "status": "imported"
+    },
+    {
+      "index": 189,
+      "original_text": "كمبرلان",
+      "name_ar": "كمبرلان كوكاميد دي إي إيه (CDEA)",
+      "name_en": "Comperlan (Cocamide DEA 85% Foam Booster)",
+      "slug": "comperlan-cocamide-dea-85-foam-booster",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "معززات ومثبتات رغوة",
+      "status": "imported"
+    },
+    {
+      "index": 190,
+      "original_text": "سارفو ساكسينت",
+      "name_ar": "داي صوديوم لوريث سلفوساكسينات نقي",
+      "name_en": "Disodium Laureth Sulfosuccinate (DLS) Mild",
+      "slug": "disodium-laureth-sulfosuccinate-dls-mild",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "منظفات رغوية لطيفة خالية من السلفات",
+      "status": "imported"
+    },
+    {
+      "index": 191,
+      "original_text": "داي بروبلين جليكول",
+      "name_ar": "داي بروبيلين جلايكول معطر (DPG)",
+      "name_en": "Dipropylene Glycol (DPG Fragrance Grade)",
+      "slug": "dipropylene-glycol-dpg-fragrance-grade",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مذيبات وحوامل عطور",
+      "status": "imported"
+    },
+    {
+      "index": 192,
+      "original_text": "توين 20",
+      "name_ar": "بولي سوربات 20 (توين 20)",
+      "name_en": "Polysorbate 20 (Tween 20 Emulsifier)",
+      "slug": "polysorbate-20-tween-20-emulsifier",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مستحلبات ومذيبات زيت في ماء",
+      "status": "imported"
+    },
+    {
+      "index": 193,
+      "original_text": "توين 80",
+      "name_ar": "بولي سوربات 80 (توين 80)",
+      "name_en": "Polysorbate 80 (Tween 80 High HLB)",
+      "slug": "polysorbate-80-tween-80-high-hlb",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مستحلبات ومذيبات زيت في ماء",
+      "status": "imported"
+    },
+    {
+      "index": 194,
+      "original_text": "مونوبروبلين",
+      "name_ar": "مونو بروبيلين جلايكول فائق النقاء 99.8% (MPG)",
+      "name_en": "Mono Propylene Glycol USP 99.8% (MPG)",
+      "slug": "mono-propylene-glycol-usp-998-mpg",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مذيبات ومرطبات تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 195,
+      "original_text": "تراي إيثانول",
+      "name_ar": "تراي إيثانول أمين 99% (TEA)",
+      "name_en": "Triethanolamine 99% Pure (TEA)",
+      "slug": "triethanolamine-99-pure-tea",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "معادلات حموضة ومستحلبات صابونية",
+      "status": "imported"
+    },
+    {
+      "index": 196,
+      "original_text": "أسيتون",
+      "name_ar": "أسيتون نقي 99.5% لإزالة طلاء الأظافر",
+      "name_en": "Pure Acetone 99.5% Technical/Cosmetic",
+      "slug": "pure-acetone-995-technicalcosmetic",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مذيبات عضوية ومزيلات طلاء",
+      "status": "imported"
+    },
+    {
+      "index": 197,
+      "original_text": "بيوتايل",
+      "name_ar": "بيوتيل جلايكول / بيوتيل أسيتات",
+      "name_en": "Butyl Glycol / Butyl Acetate Solvent",
+      "slug": "butyl-glycol-butyl-acetate-solvent",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مذيبات عضوية ومزيلات طلاء",
+      "status": "imported"
+    },
+    {
+      "index": 198,
+      "original_text": "PEG400",
+      "name_ar": "بولي إيثيلين جلايكول 400 سائل (PEG-400)",
+      "name_en": "Polyethylene Glycol 400 (PEG-400)",
+      "slug": "polyethylene-glycol-400-peg-400",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مذيبات ومرطبات بولي إيثيلين",
+      "status": "imported"
+    },
+    {
+      "index": 199,
+      "original_text": "PEG6",
+      "name_ar": "بولي إيثيلين جلايكول 6 (PEG-6)",
+      "name_en": "Polyethylene Glycol 6 (PEG-6)",
+      "slug": "polyethylene-glycol-6-peg-6",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مذيبات ومرطبات بولي إيثيلين",
+      "status": "imported"
+    },
+    {
+      "index": 200,
+      "original_text": "PEG150",
+      "name_ar": "PEG-150 دايستيارات مغلظ شامبو",
+      "name_en": "PEG-150 Distearate Flakes/Liquid Thickener",
+      "slug": "peg-150-distearate-flakesliquid-thickener",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مغلظات منظفات وشامبو",
+      "status": "imported"
+    },
+    {
+      "index": 201,
+      "original_text": "PEG",
+      "name_ar": "بولي إيثيلين جلايكول عام",
+      "name_en": "Polyethylene Glycol (PEG General)",
+      "slug": "polyethylene-glycol-peg-general",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مذيبات ومرطبات بولي إيثيلين",
+      "status": "imported"
+    },
+    {
+      "index": 202,
+      "original_text": "لاني سوفت",
+      "name_ar": "لاني سوفت منعم ومكيف مائي",
+      "name_en": "LaniSoft Liquid Fabric & Hair Softener",
+      "slug": "lanisoft-liquid-fabric-hair-softener",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "منعمات ومكيفات أنيونية/كاتيونية",
+      "status": "imported"
+    },
+    {
+      "index": 203,
+      "original_text": "كحول بولي فينيل",
+      "name_ar": "محلول كحول بولي فينيل السائل",
+      "name_en": "Polyvinyl Alcohol Liquid Formulation",
+      "slug": "polyvinyl-alcohol-liquid-formulation",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "بوليمرات تكوين أفلام وماسكات",
+      "status": "imported"
+    },
+    {
+      "index": 204,
+      "original_text": "كحول ميثانول",
+      "name_ar": "ميثانول صناعي 99%",
+      "name_en": "Methanol 99% Industrial Grade",
+      "slug": "methanol-99-industrial-grade",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "كحولات صناعية",
+      "status": "imported"
+    },
+    {
+      "index": 205,
+      "original_text": "بنزيل كحول",
+      "name_ar": "بنزيل ألكوهول حافظ ومذيب",
+      "name_en": "Benzyl Alcohol NF/FCC Grade",
+      "slug": "benzyl-alcohol-nffcc-grade",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "كحولات عطرية ومواد حافظة",
+      "status": "imported"
+    },
+    {
+      "index": 206,
+      "original_text": "فاتي كحول",
+      "name_ar": "فاتي ألكوهول سائل مخلوط",
+      "name_en": "Liquid Fatty Alcohol Blend",
+      "slug": "liquid-fatty-alcohol-blend",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "كحولات دهنية مستحلبة",
+      "status": "imported"
+    },
+    {
+      "index": 207,
+      "original_text": "بروتين قمح",
+      "name_ar": "بروتين القمح المنحل سائل نقي",
+      "name_en": "Hydrolyzed Wheat Protein Liquid",
+      "slug": "hydrolyzed-wheat-protein-liquid",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "بروتينات وببتيدات شعر وبشرة",
+      "status": "imported"
+    },
+    {
+      "index": 208,
+      "original_text": "ماء بحر",
+      "name_ar": "ماء بحر مكرر غني بأملاح البحر",
+      "name_en": "Purified Marine Sea Water Mineral Solution",
+      "slug": "purified-marine-sea-water-mineral-solution",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "محاليل معدنية وبحرية",
+      "status": "imported"
+    },
+    {
+      "index": 209,
+      "original_text": "بيكرول",
+      "name_ar": "بيكرول مادة حافظة معقمة",
+      "name_en": "Picrol Preservative Antimicrobial Solution",
+      "slug": "picrol-preservative-antimicrobial-solution",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مواد حافظة ومعقمات",
+      "status": "imported"
+    },
+    {
+      "index": 210,
+      "original_text": "ألومنيوم كلورهيدرات",
+      "name_ar": "ألومنيوم كلوروهيدرات 50% لمزيلات العرق",
+      "name_en": "Aluminum Chlorohydrate 50% Aqueous (ACH)",
+      "slug": "aluminum-chlorohydrate-50-aqueous-ach",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مضادات التعرق ومزيلات الرائحة",
+      "status": "imported"
+    },
+    {
+      "index": 211,
+      "original_text": "سوربتول",
+      "name_ar": "سوربيتول محلول سكري 70%",
+      "name_en": "Sorbitol 70% Non-Crystallizing Solution",
+      "slug": "sorbitol-70-non-crystallizing-solution",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مرطبات بديلة للجلسرين",
+      "status": "imported"
+    },
+    {
+      "index": 212,
+      "original_text": "لاكتيك أسيد",
+      "name_ar": "حمض اللاكتيك 88% (AHA) مقشر ومرطب",
+      "name_en": "Lactic Acid 88% Natural USP (AHA)",
+      "slug": "lactic-acid-88-natural-usp-aha",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "أحماض ألفا هيدروكسي مقشرة",
+      "status": "imported"
+    },
+    {
+      "index": 213,
+      "original_text": "ميثيل سالسيلات",
+      "name_ar": "ميثيل ساليسيلات (زيت وينترجرين)",
+      "name_en": "Methyl Salicylate Pure (Wintergreen Oil)",
+      "slug": "methyl-salicylate-pure-wintergreen-oil",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "زيوت مسكنة وكريمات مساج",
+      "status": "imported"
+    },
+    {
+      "index": 214,
+      "original_text": "أيزو",
+      "name_ar": "أيزوبروبانول كحول نقي 99% (IPA)",
+      "name_en": "Isopropyl Alcohol 99% Pure (IPA)",
+      "slug": "isopropyl-alcohol-99-pure-ipa",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "كحولات تطهير ومذيبات سريعة الجفاف",
+      "status": "imported"
+    },
+    {
+      "index": 215,
+      "original_text": "تكسابون ماغنسيوم",
+      "name_ar": "تكسابون ماغنسيوم شامبو أطفال فائق اللطف",
+      "name_en": "Magnesium Laureth Sulfate (Ultra Mild)",
+      "slug": "magnesium-laureth-sulfate-ultra-mild",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "منظفات رغوية لطيفة خالية من التحسس",
+      "status": "imported"
+    },
+    {
+      "index": 216,
+      "original_text": "تكسابون جل",
+      "name_ar": "تكسابون جل 70% (صوديوم لوريث سلفات SLES)",
+      "name_en": "Texapon 70% Sodium Laureth Sulfate (SLES)",
+      "slug": "texapon-70-sodium-laureth-sulfate-sles",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "خافضات توتر سطحي رغوية رئيسية",
+      "status": "imported"
+    },
+    {
+      "index": 217,
+      "original_text": "إيبارول / هيمارول",
+      "name_ar": "إيبارول / هيمارول مستحلب ملين",
+      "name_en": "Iparol / Hemarol Emollient Complex",
+      "slug": "iparol-hemarol-emollient-complex",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مستحلبات ومطريات متخصصة",
+      "status": "imported"
+    },
+    {
+      "index": 218,
+      "original_text": "حمض الفسفوريك",
+      "name_ar": "حمض الفوسفوريك 85% غذائي وصناعي",
+      "name_en": "Phosphoric Acid 85% Technical/Food",
+      "slug": "phosphoric-acid-85-technicalfood",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "أحماض صناعية وضبط حموضة",
+      "status": "imported"
+    },
+    {
+      "index": 219,
+      "original_text": "كرياتين منحل",
+      "name_ar": "كرياتين منحل سائل لعلاج الشعر",
+      "name_en": "Hydrolyzed Keratin / Creatine Protein Liquid",
+      "slug": "hydrolyzed-keratin-creatine-protein-liquid",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "بروتينات وببتيدات شعر وبشرة",
+      "status": "imported"
+    },
+    {
+      "index": 220,
+      "original_text": "دم دم",
+      "name_ar": "دي إم دي إم هايدانتوين حافظة سائلة",
+      "name_en": "DMDM Hydantoin Broad Spectrum Preservative",
+      "slug": "dmdm-hydantoin-broad-spectrum-preservative",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "مواد حافظة واسعة المجال",
+      "status": "imported"
+    },
+    {
+      "index": 221,
+      "original_text": "الفا أولفين سايل",
+      "name_ar": "ألفا أوليفين سلفونات سائل 38% (AOS)",
+      "name_en": "Alpha Olefin Sulfonate 38% Liquid (AOS)",
+      "slug": "alpha-olefin-sulfonate-38-liquid-aos",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "خافضات توتر سطحي رغوية سائلة",
+      "status": "imported"
+    },
+    {
+      "index": 222,
+      "original_text": "ماء بلسم",
+      "name_ar": "ماء بلسم مركز 29% (سيتريمونيوم كلورايد CTAC)",
+      "name_en": "Cetrimonium Chloride 29% (CTAC Balsam Water)",
+      "slug": "cetrimonium-chloride-29-ctac-balsam-water",
+      "category": "chemical-liquids-and-solvents",
+      "subcategory": "قواعد بلسم ومضادات استاتيكية للشعر",
+      "status": "imported"
+    },
+    {
+      "index": 223,
+      "original_text": "L-CYSTEINE HCL",
+      "name_ar": "إل-سيستايين هيدروكلوريد نقي",
+      "name_en": "L-Cysteine Hydrochloride (HCL) USP",
+      "slug": "l-cysteine-hydrochloride-hcl-usp",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "أحماض أمينية ومضادات أكسدة",
+      "status": "imported"
+    },
+    {
+      "index": 224,
+      "original_text": "L-TYROSIN",
+      "name_ar": "إل-تيروزين نقي",
+      "name_en": "L-Tyrosine Pure Powder Active",
+      "slug": "l-tyrosine-pure-powder-active",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "أحماض أمينية ومضادات أكسدة",
+      "status": "imported"
+    },
+    {
+      "index": 225,
+      "original_text": "فيتامين A بالميتات بودر",
+      "name_ar": "فيتامين أ بالميتات بودرة ميكرونية",
+      "name_en": "Vitamin A Retinyl Palmitate 250,000 IU/g Powder",
+      "slug": "vitamin-a-retinyl-palmitate-250000-iug-powder",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "فيتامينات مكافحة الشيخوخة",
+      "status": "imported"
+    },
+    {
+      "index": 226,
+      "original_text": "فيتامين B12",
+      "name_ar": "فيتامين ب12 نقي (سيانوكوبالامين)",
+      "name_en": "Vitamin B12 (Cyanocobalamin) Pure Active",
+      "slug": "vitamin-b12-cyanocobalamin-pure-active",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "فيتامينات مجموعة ب",
+      "status": "imported"
+    },
+    {
+      "index": 227,
+      "original_text": "فيتامين B3",
+      "name_ar": "فيتامين ب3 (نياسيناميد نقي)",
+      "name_en": "Vitamin B3 (Niacinamide Pure USP)",
+      "slug": "vitamin-b3-niacinamide-pure-usp",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "فيتامينات مجموعة ب",
+      "status": "imported"
+    },
+    {
+      "index": 228,
+      "original_text": "فيتامين B6",
+      "name_ar": "فيتامين ب6 (بيريدوكسين هيدروكلوريد)",
+      "name_en": "Vitamin B6 (Pyridoxine HCL USP)",
+      "slug": "vitamin-b6-pyridoxine-hcl-usp",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "فيتامينات مجموعة ب",
+      "status": "imported"
+    },
+    {
+      "index": 229,
+      "original_text": "فيتامين D3",
+      "name_ar": "فيتامين د3 تجميلي ومغذي",
+      "name_en": "Vitamin D3 (Cholecalciferol) 100,000 IU/g",
+      "slug": "vitamin-d3-cholecalciferol-100000-iug",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "فيتامينات ذائبة في الدهون",
+      "status": "imported"
+    },
+    {
+      "index": 230,
+      "original_text": "فيتامين K2",
+      "name_ar": "فيتامين ك2 (ميناكينون 7)",
+      "name_en": "Vitamin K2 (Menaquinone-7) Active Powder",
+      "slug": "vitamin-k2-menaquinone-7-active-powder",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "فيتامينات الهالات والأوعية الدموية",
+      "status": "imported"
+    },
+    {
+      "index": 231,
+      "original_text": "فيتامين E",
+      "name_ar": "فيتامين هـ أسيتات ألفا توكوفيرول 98%",
+      "name_en": "Vitamin E (DL-Alpha Tocopheryl Acetate 98% NHU)",
+      "slug": "vitamin-e-dl-alpha-tocopheryl-acetate-98-nhu",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "فيتامينات مضادة للأكسدة وحماية الزيوت",
+      "status": "imported"
+    },
+    {
+      "index": 232,
+      "original_text": "أسكوربيك فوسفات + ماغنسيوم",
+      "name_ar": "ماغنسيوم أسكوربيل فوسفات (فيتامين سي ثابت MAP)",
+      "name_en": "Magnesium Ascorbyl Phosphate (MAP Vitamin C)",
+      "slug": "magnesium-ascorbyl-phosphate-map-vitamin-c",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "مشتقات فيتامين سي المستقرة والتفتيح",
+      "status": "imported"
+    },
+    {
+      "index": 233,
+      "original_text": "ال - ثيانين",
+      "name_ar": "إل-ثيانين نقي",
+      "name_en": "L-Theanine Pure Amino Acid Powder",
+      "slug": "l-theanine-pure-amino-acid-powder",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "أحماض أمينية مهدئة",
+      "status": "imported"
+    },
+    {
+      "index": 234,
+      "original_text": "بترفيون 3",
+      "name_ar": "بترفيون 3 فعال تجميلي",
+      "name_en": "Petrovin-3 Bioactive Complex",
+      "slug": "petrovin-3-bioactive-complex",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "مغذيات حيوية متطورة",
+      "status": "imported"
+    },
+    {
+      "index": 235,
+      "original_text": "كالسيوم ثيوغليكولات",
+      "name_ar": "كالسيوم ثيوجلايكولات لإزالة الشعر",
+      "name_en": "Calcium Thioglycolate Trihydrate",
+      "slug": "calcium-thioglycolate-trihydrate",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "أملاح كيميائية ومزيلات شعر",
+      "status": "imported"
+    },
+    {
+      "index": 236,
+      "original_text": "خلاصة الأشوجاندا",
+      "name_ar": "خلاصة الأشواغاندا المركزة (Adaptogen)",
+      "name_en": "Ashwagandha Withania Somnifera Extract",
+      "slug": "ashwagandha-withania-somnifera-extract",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "مستخلصات نباتية غذائية وتجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 237,
+      "original_text": "خلاصة الزعتر",
+      "name_ar": "خلاصة الزعتر البري المركزة",
+      "name_en": "Thymus Vulgaris Concentrated Extract",
+      "slug": "thymus-vulgaris-concentrated-extract",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "مستخلصات نباتية غذائية وتجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 238,
+      "original_text": "خلاصة بالميتو",
+      "name_ar": "خلاصة ساو بالميتو (البلميط المنشاري)",
+      "name_en": "Saw Palmetto Berry Extract (DHT Blocker)",
+      "slug": "saw-palmetto-berry-extract-dht-blocker",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "مستخلصات تثبيط DHT وتساقط الشعر",
+      "status": "imported"
+    },
+    {
+      "index": 239,
+      "original_text": "خلاصة ثمر الورد الهيب روز",
+      "name_ar": "خلاصة ثمر الورد (روز هيب) غنية بفيتامين C",
+      "name_en": "Rosehip Extract (Rosa Canina)",
+      "slug": "rosehip-extract-rosa-canina",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "مستخلصات نباتية غذائية وتجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 240,
+      "original_text": "خلاصة جارسينيا",
+      "name_ar": "خلاصة الجارسينيا كامبوجيا المركزة",
+      "name_en": "Garcinia Cambogia HCA Extract",
+      "slug": "garcinia-cambogia-hca-extract",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "مستخلصات نباتية غذائية وتجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 241,
+      "original_text": "خلاصة بذور العنب المغذية",
+      "name_ar": "خلاصة بذور العنب (بوليفينول 95%)",
+      "name_en": "Grape Seed Extract 95% Polyphenols Nutritive",
+      "slug": "grape-seed-extract-95-polyphenols-nutritive",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "مضادات أكسدة وتغذية خلوية",
+      "status": "imported"
+    },
+    {
+      "index": 242,
+      "original_text": "خلاصة الحنة",
+      "name_ar": "خلاصة الحناء الطبيعية المركزة",
+      "name_en": "Lawsonia Inermis (Henna) Leaf Extract",
+      "slug": "lawsonia-inermis-henna-leaf-extract",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "مستخلصات نباتية للشعر",
+      "status": "imported"
+    },
+    {
+      "index": 243,
+      "original_text": "صوديوم هالورونات عالي الجزيء",
+      "name_ar": "صوديوم هيالورونات عالي الوزن الجزيئي (HMW)",
+      "name_en": "Sodium Hyaluronate High Molecular Weight (HMW)",
+      "slug": "sodium-hyaluronate-high-molecular-weight-hmw",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "هيالورونيك أسيد وترطيب حاجز البشرة",
+      "status": "imported"
+    },
+    {
+      "index": 244,
+      "original_text": "هالورونيك أسيد",
+      "name_ar": "حمض الهيالورونيك نقي بودرة فائق النقاء",
+      "name_en": "Pure Hyaluronic Acid Powder Multi-Weight",
+      "slug": "pure-hyaluronic-acid-powder-multi-weight",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "هيالورونيك أسيد وترطيب حاجز البشرة",
+      "status": "imported"
+    },
+    {
+      "index": 245,
+      "original_text": "فوسفات ثنائي الكالسيوم",
+      "name_ar": "فوسفات ثنائي الكالسيوم لمعاجين الأسنان",
+      "name_en": "Dicalcium Phosphate Dihydrate (DCP)",
+      "slug": "dicalcium-phosphate-dihydrate-dcp",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "معادن وأملاح مغذية للمستحضرات",
+      "status": "imported"
+    },
+    {
+      "index": 246,
+      "original_text": "كالسيوم أسكوربات",
+      "name_ar": "كالسيوم أسكوربات (فيتامين سي لطيف متعادل)",
+      "name_en": "Calcium Ascorbate (Buffered Vitamin C)",
+      "slug": "calcium-ascorbate-buffered-vitamin-c",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "مشتقات فيتامين سي المستقرة والتفتيح",
+      "status": "imported"
+    },
+    {
+      "index": 247,
+      "original_text": "كرياتين هيدرو بودر",
+      "name_ar": "كرياتين هيدروكلوريد بودرة نقية",
+      "name_en": "Creatine HCL Pure Bioactive Powder",
+      "slug": "creatine-hcl-pure-bioactive-powder",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "أحماض أمينية وطاقة خلايا الجلد",
+      "status": "imported"
+    },
+    {
+      "index": 248,
+      "original_text": "كرياتين مونوهيدريت بودر",
+      "name_ar": "كرياتين مونوهيدرات نقي 99.9%",
+      "name_en": "Creatine Monohydrate Pure Micronized Powder",
+      "slug": "creatine-monohydrate-pure-micronized-powder",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "أحماض أمينية وطاقة خلايا الجلد",
+      "status": "imported"
+    },
+    {
+      "index": 249,
+      "original_text": "ماغنسيوم أكسيد",
+      "name_ar": "أكسيد المغنيسيوم درجة نقية",
+      "name_en": "Magnesium Oxide Heavy/Light USP",
+      "slug": "magnesium-oxide-heavylight-usp",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "معادن ومغذيات للبشرة",
+      "status": "imported"
+    },
+    {
+      "index": 250,
+      "original_text": "نياسيناميد",
+      "name_ar": "نياسيناميد كوزمتيك فائق النقاء (فيتامين B3)",
+      "name_en": "Niacinamide PC Cosmetic Grade (Low Nicotinic Acid)",
+      "slug": "niacinamide-pc-cosmetic-grade-low-nicotinic-acid",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "فيتامينات مجموعة ب وتضييق المسام",
+      "status": "imported"
+    },
+    {
+      "index": 251,
+      "original_text": "بانثينول",
+      "name_ar": "دي-بانثينول (برو فيتامين B5) سائل 98%",
+      "name_en": "D-Panthenol Pro-Vitamin B5 98% USP",
+      "slug": "d-panthenol-pro-vitamin-b5-98-usp",
+      "category": "vitamins-and-nutrients",
+      "subcategory": "ترطيب عميق ودعم حاجز البشرة والشعر",
+      "status": "imported"
+    },
+    {
+      "index": 252,
+      "original_text": "EWAX شمع",
+      "name_ar": "شمع استحلاب ذاتي EWAX NF",
+      "name_en": "Emulsifying Wax NF (E-Wax)",
+      "slug": "emulsifying-wax-nf-e-wax",
+      "category": "waxes-and-polymers",
+      "subcategory": "شموع استحلاب",
+      "status": "imported"
+    },
+    {
+      "index": 253,
+      "original_text": "شمع برافين (عامرية)",
+      "name_ar": "شمع برافين نقي (إنتاج العامرية)",
+      "name_en": "Paraffin Wax Fully Refined (Amereya)",
+      "slug": "paraffin-wax-fully-refined-amereya",
+      "category": "waxes-and-polymers",
+      "subcategory": "شموع بترولية وصلبة",
+      "status": "imported"
+    },
+    {
+      "index": 254,
+      "original_text": "شمع عسل",
+      "name_ar": "شمع عسل النحل الطبيعي النقي 100%",
+      "name_en": "Pure Natural Beeswax Yellow/White Cera Alba",
+      "slug": "pure-natural-beeswax-yellowwhite-cera-alba",
+      "category": "waxes-and-polymers",
+      "subcategory": "شموع طبيعية ومغذية",
+      "status": "imported"
+    },
+    {
+      "index": 255,
+      "original_text": "شمع كرنوبا",
+      "name_ar": "شمع الكارنوبا البرازيلي الفاخر T1",
+      "name_en": "Pure Carnauba Wax Prime Yellow T-1",
+      "slug": "pure-carnauba-wax-prime-yellow-t-1",
+      "category": "waxes-and-polymers",
+      "subcategory": "شموع نباتية صلبة ولمعان فائق",
+      "status": "imported"
+    },
+    {
+      "index": 256,
+      "original_text": "شمع ميكروكريستالين",
+      "name_ar": "شمع مايكروكريستالين مرن درجة صيدلانية",
+      "name_en": "Microcrystalline Wax Cosmetic Grade",
+      "slug": "microcrystalline-wax-cosmetic-grade",
+      "category": "waxes-and-polymers",
+      "subcategory": "شموع ضبط القوام والمرونة",
+      "status": "imported"
+    },
+    {
+      "index": 257,
+      "original_text": "عكر فاسي أصلي",
+      "name_ar": "عكر فاسي مغربي أصلي (دم الغزال الطبيعي)",
+      "name_en": "Authentic Moroccan Aker Fassi Poppy Powder",
+      "slug": "authentic-moroccan-aker-fassi-poppy-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "ملونات طبيعية وتوريد",
+      "status": "imported"
+    },
+    {
+      "index": 258,
+      "original_text": "أصفر زيتي",
+      "name_ar": "لون أصفر زيتي مركز",
+      "name_en": "Oil Soluble Yellow Color Concentrated",
+      "slug": "oil-soluble-yellow-color-concentrated",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان زيتية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 259,
+      "original_text": "موف زيتي",
+      "name_ar": "لون موف زيتي مركز",
+      "name_en": "Oil Soluble Mauve Color",
+      "slug": "oil-soluble-mauve-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان زيتية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 260,
+      "original_text": "سيلفر",
+      "name_ar": "لون فضي سيلفر براق",
+      "name_en": "Silver Metallic Lustre Pigment",
+      "slug": "silver-metallic-lustre-pigment",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان وبودرات معدنية",
+      "status": "imported"
+    },
+    {
+      "index": 261,
+      "original_text": "لبني",
+      "name_ar": "لون لبني سماوي مائي",
+      "name_en": "Baby Sky Blue Cosmetic Color",
+      "slug": "baby-sky-blue-cosmetic-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 262,
+      "original_text": "أحمر",
+      "name_ar": "لون أحمر ناصع",
+      "name_en": "Vibrant Red Cosmetic Color",
+      "slug": "vibrant-red-cosmetic-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 263,
+      "original_text": "موف غامق",
+      "name_ar": "لون موف غامق",
+      "name_en": "Dark Mauve Cosmetic Color",
+      "slug": "dark-mauve-cosmetic-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 264,
+      "original_text": "موف فاتح",
+      "name_ar": "لون موف فاتح",
+      "name_en": "Light Mauve Cosmetic Color",
+      "slug": "light-mauve-cosmetic-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 265,
+      "original_text": "بينك فاتح",
+      "name_ar": "لون بينك فاتح وردي",
+      "name_en": "Light Pink Blossom Color",
+      "slug": "light-pink-blossom-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 266,
+      "original_text": "بيج",
+      "name_ar": "لون بيج طبيعي",
+      "name_en": "Natural Beige Cosmetic Color",
+      "slug": "natural-beige-cosmetic-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان كريمات وأساس",
+      "status": "imported"
+    },
+    {
+      "index": 267,
+      "original_text": "أزرق",
+      "name_ar": "لون أزرق ملكي",
+      "name_en": "Royal Blue Cosmetic Color",
+      "slug": "royal-blue-cosmetic-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 268,
+      "original_text": "فوشيا",
+      "name_ar": "لون فوشيا ساطع",
+      "name_en": "Bright Fuchsia Cosmetic Color",
+      "slug": "bright-fuchsia-cosmetic-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 269,
+      "original_text": "طوبي",
+      "name_ar": "لون طوبي دافئ",
+      "name_en": "Terracotta Brick Red Color",
+      "slug": "terracotta-brick-red-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية وتجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 270,
+      "original_text": "أخضر زرعي",
+      "name_ar": "لون أخضر زرعي منعش",
+      "name_en": "Grass Green Cosmetic Color",
+      "slug": "grass-green-cosmetic-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 271,
+      "original_text": "برتقالي",
+      "name_ar": "لون برتقالي مشرق",
+      "name_en": "Vibrant Orange Cosmetic Color",
+      "slug": "vibrant-orange-cosmetic-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 272,
+      "original_text": "تركواز",
+      "name_ar": "لون تركواز بحري",
+      "name_en": "Turquoise Aqua Marine Color",
+      "slug": "turquoise-aqua-marine-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 273,
+      "original_text": "أصفر فاتح",
+      "name_ar": "لون أصفر فاتح ليموني",
+      "name_en": "Light Lemon Yellow Color",
+      "slug": "light-lemon-yellow-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية تجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 274,
+      "original_text": "أسود",
+      "name_ar": "لون أسود كربوني تجميلي",
+      "name_en": "Cosmetic Carbon Black Color",
+      "slug": "cosmetic-carbon-black-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية وتجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 275,
+      "original_text": "نبيتي",
+      "name_ar": "لون نبيتي بورغندي",
+      "name_en": "Burgundy Wine Cosmetic Color",
+      "slug": "burgundy-wine-cosmetic-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية وتجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 276,
+      "original_text": "بني غامق",
+      "name_ar": "لون بني شوكولاته غامق",
+      "name_en": "Dark Chocolate Brown Color",
+      "slug": "dark-chocolate-brown-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان مائية وتجميلية",
+      "status": "imported"
+    },
+    {
+      "index": 277,
+      "original_text": "دلتا أزرق",
+      "name_ar": "لون دلتا مائي أزرق نقي",
+      "name_en": "Delta Water-Based Blue Dye",
+      "slug": "delta-water-based-blue-dye",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان دلتا المائية المتخصصة",
+      "status": "imported"
+    },
+    {
+      "index": 278,
+      "original_text": "دلتا أصفر",
+      "name_ar": "لون دلتا مائي أصفر نقي",
+      "name_en": "Delta Water-Based Yellow Dye",
+      "slug": "delta-water-based-yellow-dye",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان دلتا المائية المتخصصة",
+      "status": "imported"
+    },
+    {
+      "index": 279,
+      "original_text": "دلتا أحمر",
+      "name_ar": "لون دلتا مائي أحمر نقي",
+      "name_en": "Delta Water-Based Red Dye",
+      "slug": "delta-water-based-red-dye",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان دلتا المائية المتخصصة",
+      "status": "imported"
+    },
+    {
+      "index": 280,
+      "original_text": "روك زيتي",
+      "name_ar": "لون روك مائي زيتي مميز",
+      "name_en": "Rock Water Olive Green Shade",
+      "slug": "rock-water-olive-green-shade",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان روك المائية الاحترافية",
+      "status": "imported"
+    },
+    {
+      "index": 281,
+      "original_text": "روك هفان",
+      "name_ar": "لون روك مائي هافان هادئ",
+      "name_en": "Rock Water Havana Tan Shade",
+      "slug": "rock-water-havana-tan-shade",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان روك المائية الاحترافية",
+      "status": "imported"
+    },
+    {
+      "index": 282,
+      "original_text": "روك روز",
+      "name_ar": "لون روك مائي روز ناعم",
+      "name_en": "Rock Water Soft Rose Shade",
+      "slug": "rock-water-soft-rose-shade",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان روك المائية الاحترافية",
+      "status": "imported"
+    },
+    {
+      "index": 283,
+      "original_text": "روك فوشيا",
+      "name_ar": "لون روك مائي فوشيا مركز",
+      "name_en": "Rock Water Fuchsia Intense Shade",
+      "slug": "rock-water-fuchsia-intense-shade",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان روك المائية الاحترافية",
+      "status": "imported"
+    },
+    {
+      "index": 284,
+      "original_text": "أصفر غروب الشمس كامينا",
+      "name_ar": "لون أصفر غروب الشمس كامينا غذائي",
+      "name_en": "Kamena Sunset Yellow FCF Food Color",
+      "slug": "kamena-sunset-yellow-fcf-food-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان كامينا الغذائية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 285,
+      "original_text": "أزرق لامع 15% كامينا",
+      "name_ar": "لون أزرق لامع كامينا 15% معتمد",
+      "name_en": "Kamena Brilliant Blue FCF 15% Food Grade",
+      "slug": "kamena-brilliant-blue-fcf-15-food-grade",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان كامينا الغذائية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 286,
+      "original_text": "أحمر تارترازين 20% كامينا",
+      "name_ar": "لون أحمر تارترازين كامينا 20%",
+      "name_en": "Kamena Tartrazine Red Shade 20% Food Color",
+      "slug": "kamena-tartrazine-red-shade-20-food-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان كامينا الغذائية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 287,
+      "original_text": "أحمر تارترازين 25% كامينا",
+      "name_ar": "لون أحمر تارترازين كامينا 25%",
+      "name_en": "Kamena Tartrazine Red Shade 25% High Concentrate",
+      "slug": "kamena-tartrazine-red-shade-25-high-concentrate",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان كامينا الغذائية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 288,
+      "original_text": "بني شوكولاته تارترازين 725% كامينا",
+      "name_ar": "لون بني شوكولاته تارترازين 725% كامينا",
+      "name_en": "Kamena Chocolate Brown Tartrazine 725% Concentrated",
+      "slug": "kamena-chocolate-brown-tartrazine-725-concentrated",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان كامينا الغذائية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 289,
+      "original_text": "مايكا أبيض",
+      "name_ar": "بودرة مايكا بيضاء لؤلؤية براقة",
+      "name_en": "Pearl White Shimmer Mica Powder",
+      "slug": "pearl-white-shimmer-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 290,
+      "original_text": "مايكا فوشيا",
+      "name_ar": "بودرة مايكا فوشيا ساطعة",
+      "name_en": "Fuchsia Luster Mica Powder",
+      "slug": "fuchsia-luster-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 291,
+      "original_text": "مايكا أحمر",
+      "name_ar": "بودرة مايكا حمراء قانية",
+      "name_en": "Ruby Red Luster Mica Powder",
+      "slug": "ruby-red-luster-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 292,
+      "original_text": "مايكا نحاسي فاتح",
+      "name_ar": "بودرة مايكا نحاسي فاتح معدنية",
+      "name_en": "Light Metallic Copper Mica Powder",
+      "slug": "light-metallic-copper-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 293,
+      "original_text": "مايكا ذهبي",
+      "name_ar": "بودرة مايكا ذهبي عيار 24 براقة",
+      "name_en": "Royal Gold 24K Shimmer Mica Powder",
+      "slug": "royal-gold-24k-shimmer-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 294,
+      "original_text": "مايكا ذهبي فاتح",
+      "name_ar": "بودرة مايكا ذهبي فاتح شامبين",
+      "name_en": "Light Champagne Gold Mica Powder",
+      "slug": "light-champagne-gold-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 295,
+      "original_text": "مايكا أزرق فاتح",
+      "name_ar": "بودرة مايكا أزرق سماوي براق",
+      "name_en": "Sky Blue Shimmer Mica Powder",
+      "slug": "sky-blue-shimmer-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 296,
+      "original_text": "مايكا أزرق غامق",
+      "name_ar": "بودرة مايكا أزرق كحلي ليلي",
+      "name_en": "Midnight Navy Blue Mica Powder",
+      "slug": "midnight-navy-blue-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 297,
+      "original_text": "مايكا أصفر",
+      "name_ar": "بودرة مايكا صفراء ذهبية",
+      "name_en": "Sun Gold Yellow Mica Powder",
+      "slug": "sun-gold-yellow-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 298,
+      "original_text": "مايكا أصفر لامع",
+      "name_ar": "بودرة مايكا أصفر براق هايلايتر",
+      "name_en": "Glittering Sparkle Yellow Mica Powder",
+      "slug": "glittering-sparkle-yellow-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 299,
+      "original_text": "مايكا سيمون",
+      "name_ar": "بودرة مايكا سيمون دراقي",
+      "name_en": "Salmon Peach Shimmer Mica Powder",
+      "slug": "salmon-peach-shimmer-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 300,
+      "original_text": "مايكا سيمون غامق",
+      "name_ar": "بودرة مايكا سيمون غامق برونزي",
+      "name_en": "Deep Salmon Bronze Mica Powder",
+      "slug": "deep-salmon-bronze-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 301,
+      "original_text": "مايكا أسود",
+      "name_ar": "بودرة مايكا سوداء كربونية براقة",
+      "name_en": "Diamond Black Sparkle Mica Powder",
+      "slug": "diamond-black-sparkle-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 302,
+      "original_text": "مايكا أسود فاتح",
+      "name_ar": "بودرة مايكا أسود فاتح رمادي فحمي",
+      "name_en": "Charcoal Light Black Mica Powder",
+      "slug": "charcoal-light-black-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 303,
+      "original_text": "مايكا أخضر فاتح",
+      "name_ar": "بودرة مايكا أخضر فاتح زمردي",
+      "name_en": "Emerald Light Green Mica Powder",
+      "slug": "emerald-light-green-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 304,
+      "original_text": "مايكا أخضر وسط لامع",
+      "name_ar": "بودرة مايكا أخضر متوسط فائق اللمعان",
+      "name_en": "Medium Lustre Green Mica Powder",
+      "slug": "medium-lustre-green-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 305,
+      "original_text": "مايكا برتقالي فاتح",
+      "name_ar": "بودرة مايكا برتقالي مشمشي براق",
+      "name_en": "Sunset Light Orange Mica Powder",
+      "slug": "sunset-light-orange-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 306,
+      "original_text": "مايكا موف غامق",
+      "name_ar": "بودرة مايكا موف بنفسجي غامق",
+      "name_en": "Deep Amethyst Mauve Mica Powder",
+      "slug": "deep-amethyst-mauve-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 307,
+      "original_text": "مايكا موف وسط",
+      "name_ar": "بودرة مايكا موف وسطي متلألئ",
+      "name_en": "Medium Lavender Mauve Mica Powder",
+      "slug": "medium-lavender-mauve-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 308,
+      "original_text": "مايكا فضي غامق",
+      "name_ar": "بودرة مايكا فضي غامق غان ميتال",
+      "name_en": "Gunmetal Dark Silver Mica Powder",
+      "slug": "gunmetal-dark-silver-mica-powder",
+      "category": "colors-and-pigments",
+      "subcategory": "بودرات مايكا لؤلؤية لامعة",
+      "status": "imported"
+    },
+    {
+      "index": 309,
+      "original_text": "بيجمنت برتقالي غامق",
+      "name_ar": "صبغة بيجمنت برتقالي غامق",
+      "name_en": "Pure Pigment Dark Orange",
+      "slug": "pure-pigment-dark-orange",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 310,
+      "original_text": "بيجمنت برتقالي فاتح",
+      "name_ar": "صبغة بيجمنت برتقالي فاتح",
+      "name_en": "Pure Pigment Light Orange",
+      "slug": "pure-pigment-light-orange",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 311,
+      "original_text": "بيجمنت برتقالي وسط",
+      "name_ar": "صبغة بيجمنت برتقالي وسطي",
+      "name_en": "Pure Pigment Medium Orange",
+      "slug": "pure-pigment-medium-orange",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 312,
+      "original_text": "بيجمنت فوشيا فاتح",
+      "name_ar": "صبغة بيجمنت فوشيا فاتح وردي",
+      "name_en": "Pure Pigment Light Fuchsia Pink",
+      "slug": "pure-pigment-light-fuchsia-pink",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 313,
+      "original_text": "بيجمنت فوشيا عادي",
+      "name_ar": "صبغة بيجمنت فوشيا قياسي",
+      "name_en": "Pure Pigment Standard Fuchsia",
+      "slug": "pure-pigment-standard-fuchsia",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 314,
+      "original_text": "بيجمنت موف فاتح",
+      "name_ar": "صبغة بيجمنت موف فاتح لافندري",
+      "name_en": "Pure Pigment Light Mauve",
+      "slug": "pure-pigment-light-mauve",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 315,
+      "original_text": "بيجمنت موف متوسط",
+      "name_ar": "صبغة بيجمنت موف متوسط التدرج",
+      "name_en": "Pure Pigment Medium Mauve",
+      "slug": "pure-pigment-medium-mauve",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 316,
+      "original_text": "بيجمنت بنفسجي فاتح",
+      "name_ar": "صبغة بيجمنت بنفسجي فاتح فيوليت",
+      "name_en": "Pure Pigment Light Violet",
+      "slug": "pure-pigment-light-violet",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 317,
+      "original_text": "بيجمنت بني فاتح",
+      "name_ar": "صبغة بيجمنت بني فاتح كراميلي",
+      "name_en": "Pure Pigment Light Caramel Brown",
+      "slug": "pure-pigment-light-caramel-brown",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 318,
+      "original_text": "بيجمنت بني وسط",
+      "name_ar": "صبغة بيجمنت بني وسطي كلاسيك",
+      "name_en": "Pure Pigment Medium Earth Brown",
+      "slug": "pure-pigment-medium-earth-brown",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 319,
+      "original_text": "بيجمنت بني غامق جداً",
+      "name_ar": "صبغة بيجمنت بني إكسترا غامق",
+      "name_en": "Pure Pigment Extra Deep Dark Brown",
+      "slug": "pure-pigment-extra-deep-dark-brown",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 320,
+      "original_text": "بيجمنت طوبي",
+      "name_ar": "صبغة بيجمنت طوبي تيروكوتا",
+      "name_en": "Pure Pigment Terracotta Brick Red",
+      "slug": "pure-pigment-terracotta-brick-red",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 321,
+      "original_text": "بيجمنت أخضر غامق",
+      "name_ar": "صبغة بيجمنت أخضر زيتي غامق",
+      "name_en": "Pure Pigment Deep Forest Green",
+      "slug": "pure-pigment-deep-forest-green",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 322,
+      "original_text": "بيجمنت أحمر وردي / دم غزال",
+      "name_ar": "صبغة بيجمنت أحمر وردي (دم الغزال)",
+      "name_en": "Pure Pigment Rose Red (Deer Blood Shade)",
+      "slug": "pure-pigment-rose-red-deer-blood-shade",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 323,
+      "original_text": "بيجمنت نبيتي محروق",
+      "name_ar": "صبغة بيجمنت نبيتي محروق ملكي",
+      "name_en": "Pure Pigment Deep Burnt Maroon",
+      "slug": "pure-pigment-deep-burnt-maroon",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 324,
+      "original_text": "بيجمنت أسود",
+      "name_ar": "صبغة بيجمنت أسود معتم",
+      "name_en": "Pure Cosmetic Black Pigment",
+      "slug": "pure-cosmetic-black-pigment",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 325,
+      "original_text": "بيجمنت أسود غامق",
+      "name_ar": "صبغة بيجمنت أسود فاحم نفاث",
+      "name_en": "Pure Deep Jet Black Pigment",
+      "slug": "pure-deep-jet-black-pigment",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 326,
+      "original_text": "بيجمنت أزرق وسط",
+      "name_ar": "صبغة بيجمنت أزرق متوسط",
+      "name_en": "Pure Pigment Medium Ultramarine Blue",
+      "slug": "pure-pigment-medium-ultramarine-blue",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 327,
+      "original_text": "بيجمنت أزرق زهري",
+      "name_ar": "صبغة بيجمنت أزرق زهري مشع",
+      "name_en": "Pure Pigment Bright Azure Cobalt Blue",
+      "slug": "pure-pigment-bright-azure-cobalt-blue",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 328,
+      "original_text": "بيجمنت أبيض",
+      "name_ar": "صبغة بيجمنت أبيض فائق التغطية",
+      "name_en": "Pure Opaque White Mineral Pigment",
+      "slug": "pure-opaque-white-mineral-pigment",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 329,
+      "original_text": "بيجمنت أصفر",
+      "name_ar": "صبغة بيجمنت أصفر خردلي نقي",
+      "name_en": "Pure Primary Yellow Cosmetic Pigment",
+      "slug": "pure-primary-yellow-cosmetic-pigment",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 330,
+      "original_text": "بيجمنت روز",
+      "name_ar": "صبغة بيجمنت روز ناعم",
+      "name_en": "Pure Delicate Rose Cosmetic Pigment",
+      "slug": "pure-delicate-rose-cosmetic-pigment",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 331,
+      "original_text": "بيجمنت كرموزي",
+      "name_ar": "صبغة بيجمنت قرمزي كرمز",
+      "name_en": "Pure Crimson Carmine Pigment",
+      "slug": "pure-crimson-carmine-pigment",
+      "category": "colors-and-pigments",
+      "subcategory": "أصباغ وبيجمنت نقي عالي التغطية",
+      "status": "imported"
+    },
+    {
+      "index": 332,
+      "original_text": "أكسيد طوبي",
+      "name_ar": "أكسيد حديد طوبي نقي",
+      "name_en": "Pure Cosmetic Brick Iron Oxide",
+      "slug": "pure-cosmetic-brick-iron-oxide",
+      "category": "colors-and-pigments",
+      "subcategory": "أكاسيد الحديد المعدنية النقية",
+      "status": "imported"
+    },
+    {
+      "index": 333,
+      "original_text": "أكسيد بني",
+      "name_ar": "أكسيد حديد بني شيكولاتة",
+      "name_en": "Pure Cosmetic Brown Iron Oxide",
+      "slug": "pure-cosmetic-brown-iron-oxide",
+      "category": "colors-and-pigments",
+      "subcategory": "أكاسيد الحديد المعدنية النقية",
+      "status": "imported"
+    },
+    {
+      "index": 334,
+      "original_text": "أكسيد أحمر",
+      "name_ar": "أكسيد حديد أحمر كوزمتيك",
+      "name_en": "Pure Cosmetic Red Iron Oxide",
+      "slug": "pure-cosmetic-red-iron-oxide",
+      "category": "colors-and-pigments",
+      "subcategory": "أكاسيد الحديد المعدنية النقية",
+      "status": "imported"
+    },
+    {
+      "index": 335,
+      "original_text": "أكسيد نحاسي",
+      "name_ar": "أكسيد نحاسي معدني",
+      "name_en": "Pure Cosmetic Copper Metallic Oxide",
+      "slug": "pure-cosmetic-copper-metallic-oxide",
+      "category": "colors-and-pigments",
+      "subcategory": "أكاسيد الحديد المعدنية النقية",
+      "status": "imported"
+    },
+    {
+      "index": 336,
+      "original_text": "أخضر ضوئي لامع",
+      "name_ar": "لون أخضر نيون فسفوري ضوئي لامع",
+      "name_en": "Fluorescent Neon Glow Green Color",
+      "slug": "fluorescent-neon-glow-green-color",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان خاصة وتأثيرات بصرية",
+      "status": "imported"
+    },
+    {
+      "index": 337,
+      "original_text": "سحري فاتح",
+      "name_ar": "لون سحري متغير الأطياف فاتح",
+      "name_en": "Color-Shifting Magic Opal Pigment",
+      "slug": "color-shifting-magic-opal-pigment",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان خاصة وتأثيرات بصرية",
+      "status": "imported"
+    },
+    {
+      "index": 338,
+      "original_text": "فضي جليتر",
+      "name_ar": "جليتر فضي تجميلي ميكروني آمن",
+      "name_en": "Cosmetic Grade Biodegradable Silver Glitter",
+      "slug": "cosmetic-grade-biodegradable-silver-glitter",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان خاصة وتأثيرات بصرية",
+      "status": "imported"
+    },
+    {
+      "index": 339,
+      "original_text": "أسود صبغة",
+      "name_ar": "صبغة سوداء عالية التركيز والذوبان",
+      "name_en": "Ultra Intense Soluble Black Dye",
+      "slug": "ultra-intense-soluble-black-dye",
+      "category": "colors-and-pigments",
+      "subcategory": "ألوان خاصة وتأثيرات بصرية",
+      "status": "imported"
+    },
+    {
+      "index": 340,
+      "original_text": "زيت عطري مسك",
+      "name_ar": "زيت عطري مسك أبيض نقي",
+      "name_en": "White Musk Concentrated Fragrance Oil",
+      "slug": "white-musk-concentrated-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح شرقية ومسك",
+      "status": "imported"
+    },
+    {
+      "index": 341,
+      "original_text": "زيت عطري كريزي لاف",
+      "name_ar": "زيت عطري كريزي لاف",
+      "name_en": "Crazy Love Fragrance Oil",
+      "slug": "crazy-love-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 342,
+      "original_text": "زيت عطري كاريزما",
+      "name_ar": "زيت عطري كاريزما رجالي",
+      "name_en": "Charisma Signature Fragrance Oil",
+      "slug": "charisma-signature-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور رجالية فواحة",
+      "status": "imported"
+    },
+    {
+      "index": 343,
+      "original_text": "زيت عطري سوفاج",
+      "name_ar": "زيت عطري سوفاج ديور تايب",
+      "name_en": "Sauvage Type Premium Fragrance Oil",
+      "slug": "sauvage-type-premium-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 344,
+      "original_text": "زيت عطري جوز هند",
+      "name_ar": "زيت عطري جوز هند تروبيكال",
+      "name_en": "Tropical Coconut Scent Oil",
+      "slug": "tropical-coconut-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 345,
+      "original_text": "زيت عطري بيبي جونسون",
+      "name_ar": "زيت عطري بيبي باودر (جونسون تايب)",
+      "name_en": "Baby Powder Johnson Type Fragrance Oil",
+      "slug": "baby-powder-johnson-type-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح بودرية ونظافة",
+      "status": "imported"
+    },
+    {
+      "index": 346,
+      "original_text": "زيت عطري فانتازيا",
+      "name_ar": "زيت عطري فانتازيا سويت",
+      "name_en": "Fantasy Sweet Fragrance Oil",
+      "slug": "fantasy-sweet-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 347,
+      "original_text": "زيت عطري مضاوي",
+      "name_ar": "زيت عطري مضاوي العربية للعود تايب",
+      "name_en": "Madawi Oriental Luxury Scent Oil",
+      "slug": "madawi-oriental-luxury-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح شرقية ومسك",
+      "status": "imported"
+    },
+    {
+      "index": 348,
+      "original_text": "زيت عطري أولمبيا",
+      "name_ar": "زيت عطري أولمبيا باكو رابان تايب",
+      "name_en": "Olympea Type Fragrance Oil",
+      "slug": "olympea-type-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 349,
+      "original_text": "زيت عطري كاندي فروت",
+      "name_ar": "زيت عطري كاندي فروت سكاكر فواكه",
+      "name_en": "Candy Fruit Sweet Scent Oil",
+      "slug": "candy-fruit-sweet-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 350,
+      "original_text": "زيت عطري مسك رومان حليبي",
+      "name_ar": "زيت عطري مسك رمان حليبي ناعم",
+      "name_en": "Milky Pomegranate Musk Fragrance Oil",
+      "slug": "milky-pomegranate-musk-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح شرقية ومسك",
+      "status": "imported"
+    },
+    {
+      "index": 351,
+      "original_text": "زيت عطري بربري هير",
+      "name_ar": "زيت عطري بربري هير تايب",
+      "name_en": "Burberry Her Type Fragrance Oil",
+      "slug": "burberry-her-type-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 352,
+      "original_text": "زيت عطري كوبرا",
+      "name_ar": "زيت عطري كوبرا كلاسيك",
+      "name_en": "Cobra Classic Fragrance Oil",
+      "slug": "cobra-classic-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور كلاسيكية وثابتة",
+      "status": "imported"
+    },
+    {
+      "index": 353,
+      "original_text": "زيت عطري جود جيرل",
+      "name_ar": "زيت عطري جود جيرل كارولينا هيريرا تايب",
+      "name_en": "Good Girl Type Fragrance Oil",
+      "slug": "good-girl-type-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 354,
+      "original_text": "زيت عطري خمرة",
+      "name_ar": "زيت عطري خمرة لطافة تايب فاخر",
+      "name_en": "Khamrah Lattafa Type Fragrance Oil",
+      "slug": "khamrah-lattafa-type-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح شرقية ومسك",
+      "status": "imported"
+    },
+    {
+      "index": 355,
+      "original_text": "زيت عطري رومان زيتي",
+      "name_ar": "زيت عطري رمان زيتي فواح",
+      "name_en": "Fresh Pomegranate Oil Fragrance",
+      "slug": "fresh-pomegranate-oil-fragrance",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 356,
+      "original_text": "زيت عطري فانيليا أيس كريم",
+      "name_ar": "زيت عطري فانيليا آيس كريم كريمي",
+      "name_en": "Vanilla Ice Cream Creamy Scent Oil",
+      "slug": "vanilla-ice-cream-creamy-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 357,
+      "original_text": "زيت عطري كيوي",
+      "name_ar": "زيت عطري كيوي استوائي",
+      "name_en": "Tropical Kiwi Scent Oil",
+      "slug": "tropical-kiwi-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 358,
+      "original_text": "زيت عطري برتقال",
+      "name_ar": "زيت عطري برتقال منعش",
+      "name_en": "Juicy Orange Fragrance Oil",
+      "slug": "juicy-orange-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 359,
+      "original_text": "زيت عطري توت",
+      "name_ar": "زيت عطري توت بيري فواح",
+      "name_en": "Wild Berries Fragrance Oil",
+      "slug": "wild-berries-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 360,
+      "original_text": "زيت عطري ليمون",
+      "name_ar": "زيت عطري ليمون حمضي مشرق",
+      "name_en": "Sparkling Lemon Fragrance Oil",
+      "slug": "sparkling-lemon-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 361,
+      "original_text": "زيت عطري روبرتو كافالي",
+      "name_ar": "زيت عطري روبرتو كافالي تايب",
+      "name_en": "Roberto Cavalli Signature Type Scent Oil",
+      "slug": "roberto-cavalli-signature-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 362,
+      "original_text": "زيت عطري إيلي صعب",
+      "name_ar": "زيت عطري إيلي صعب تايب زهر البرتقال",
+      "name_en": "Elie Saab Le Parfum Type Scent Oil",
+      "slug": "elie-saab-le-parfum-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 363,
+      "original_text": "زيت عطري كوكو مودمازيل",
+      "name_ar": "زيت عطري كوكو ماديموزيل شانيل تايب",
+      "name_en": "Coco Mademoiselle Chanel Type Scent Oil",
+      "slug": "coco-mademoiselle-chanel-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 364,
+      "original_text": "زيت عطري روز فانيليا",
+      "name_ar": "زيت عطري روز فانيليا مانسيرا تايب",
+      "name_en": "Roses Vanille Mancera Type Scent Oil",
+      "slug": "roses-vanille-mancera-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 365,
+      "original_text": "زيت عطري تشيز كيك",
+      "name_ar": "زيت عطري تشيز كيك فواح",
+      "name_en": "Cheesecake Gourmand Fragrance Oil",
+      "slug": "cheesecake-gourmand-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 366,
+      "original_text": "زيت عطري كنتالوب",
+      "name_ar": "زيت عطري كامتالوب صيفي",
+      "name_en": "Fresh Cantaloupe Melon Scent Oil",
+      "slug": "fresh-cantaloupe-melon-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 367,
+      "original_text": "زيت عطري ميس ديور",
+      "name_ar": "زيت عطري ميس ديور بلومينج بوكيه تايب",
+      "name_en": "Miss Dior Blooming Bouquet Type Scent Oil",
+      "slug": "miss-dior-blooming-bouquet-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 368,
+      "original_text": "زيت عطري مونت بلانك",
+      "name_ar": "زيت عطري مونت بلانك ليجند تايب",
+      "name_en": "Mont Blanc Legend Type Scent Oil",
+      "slug": "mont-blanc-legend-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور رجالية فواحة",
+      "status": "imported"
+    },
+    {
+      "index": 369,
+      "original_text": "زيت عطري شيري بلوسوم",
+      "name_ar": "زيت عطري زهر الكرز (شيري بلوسوم)",
+      "name_en": "Japanese Cherry Blossom Scent Oil",
+      "slug": "japanese-cherry-blossom-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح زهرية فاخرة",
+      "status": "imported"
+    },
+    {
+      "index": 370,
+      "original_text": "زيت عطري فري سكسي ناو",
+      "name_ar": "زيت عطري فيري سيكسي ناو تايب",
+      "name_en": "Very Sexy Now Victoria Type Scent Oil",
+      "slug": "very-sexy-now-victoria-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 371,
+      "original_text": "زيت عطري وصال خليجي",
+      "name_ar": "زيت عطري وصال أجمل خليجي تايب",
+      "name_en": "Wisal Ajmal Type Arabian Fragrance Oil",
+      "slug": "wisal-ajmal-type-arabian-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح شرقية ومسك",
+      "status": "imported"
+    },
+    {
+      "index": 372,
+      "original_text": "زيت عطري نساء العالم",
+      "name_ar": "زيت عطري نساء العالم الساحر",
+      "name_en": "Women of the World Fragrance Oil",
+      "slug": "women-of-the-world-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور نسائية جذابة",
+      "status": "imported"
+    },
+    {
+      "index": 373,
+      "original_text": "زيت عطري لاف إز هفن",
+      "name_ar": "زيت عطري لاف إز هيفن ناعم",
+      "name_en": "Love is Heaven Delicate Scent Oil",
+      "slug": "love-is-heaven-delicate-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور نسائية جذابة",
+      "status": "imported"
+    },
+    {
+      "index": 374,
+      "original_text": "زيت عطري بكارات روج",
+      "name_ar": "زيت عطري باكارات روج 540 تايب",
+      "name_en": "Baccarat Rouge 540 Type Luxury Scent Oil",
+      "slug": "baccarat-rouge-540-type-luxury-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 375,
+      "original_text": "زيت عطري جي كي بيز",
+      "name_ar": "زيت عطري جي كي بيز لقواعد العناية بالشعر",
+      "name_en": "GK Base Salon Grade Fragrance Oil",
+      "slug": "gk-base-salon-grade-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح احترافية لصالونات التجميل",
+      "status": "imported"
+    },
+    {
+      "index": 376,
+      "original_text": "زيت عطري بينك باشون",
+      "name_ar": "زيت عطري بينك باشن مفعم بالحيوية",
+      "name_en": "Pink Passion Fruity Floral Scent Oil",
+      "slug": "pink-passion-fruity-floral-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور نسائية جذابة",
+      "status": "imported"
+    },
+    {
+      "index": 377,
+      "original_text": "زيت عطري كنتالوب بيز",
+      "name_ar": "زيت عطري كامتالوب بيز مركز للشامبو",
+      "name_en": "Cantaloupe Base Fragrance Compound",
+      "slug": "cantaloupe-base-fragrance-compound",
+      "category": "fragrances-and-scents",
+      "subcategory": "قواعد عطرية للمنظفات والشامبو",
+      "status": "imported"
+    },
+    {
+      "index": 378,
+      "original_text": "زيت عطري برتقال بيز",
+      "name_ar": "زيت عطري برتقال بيز مركز للصابون",
+      "name_en": "Orange Base Fragrance Compound",
+      "slug": "orange-base-fragrance-compound",
+      "category": "fragrances-and-scents",
+      "subcategory": "قواعد عطرية للمنظفات والشامبو",
+      "status": "imported"
+    },
+    {
+      "index": 379,
+      "original_text": "زيت عطري تندر ماي واي",
+      "name_ar": "زيت عطري تندر ماي واي جورجيو أرماني تايب",
+      "name_en": "Tendre My Way Armani Type Scent Oil",
+      "slug": "tendre-my-way-armani-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 380,
+      "original_text": "زيت عطري رمان",
+      "name_ar": "زيت عطري رمان فاخر",
+      "name_en": "Ruby Pomegranate Fragrance Oil",
+      "slug": "ruby-pomegranate-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 381,
+      "original_text": "زيت عطري أمير العود",
+      "name_ar": "زيت عطري أمير العود الملكي الأصيل",
+      "name_en": "Ameer Al Oudh Royal Arabian Scent Oil",
+      "slug": "ameer-al-oudh-royal-arabian-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح شرقية ومسك",
+      "status": "imported"
+    },
+    {
+      "index": 382,
+      "original_text": "زيت عطري فانيليا",
+      "name_ar": "زيت عطري فانيليا مدغشقر دافئة",
+      "name_en": "Madagascar Warm Vanilla Scent Oil",
+      "slug": "madagascar-warm-vanilla-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 383,
+      "original_text": "زيت عطري ليمون دورو",
+      "name_ar": "زيت عطري ليمون دورو الإيطالي الفاخر",
+      "name_en": "Limone Doro Italian Luxury Citrus Scent",
+      "slug": "limone-doro-italian-luxury-citrus-scent",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 384,
+      "original_text": "زيت عطري فراولة",
+      "name_ar": "زيت عطري فراولة حمراء طازجة",
+      "name_en": "Ripe Red Strawberry Fragrance Oil",
+      "slug": "ripe-red-strawberry-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 385,
+      "original_text": "زيت عطري دوف",
+      "name_ar": "زيت عطري دوف برائحة النظافة الأصلية",
+      "name_en": "Dove Clean Soap Type Scent Oil",
+      "slug": "dove-clean-soap-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح بودرية ونظافة",
+      "status": "imported"
+    },
+    {
+      "index": 386,
+      "original_text": "زيت عطري فيكتوريا سيكريت",
+      "name_ar": "زيت عطري فيكتوريا سيكريت بومبشيل تايب",
+      "name_en": "Bombshell Victoria Secret Type Scent Oil",
+      "slug": "bombshell-victoria-secret-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 387,
+      "original_text": "زيت عطري ورد أبيض",
+      "name_ar": "زيت عطري الورد الأبيض النقي",
+      "name_en": "Pure White Rose Petals Scent Oil",
+      "slug": "pure-white-rose-petals-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح زهرية فاخرة",
+      "status": "imported"
+    },
+    {
+      "index": 388,
+      "original_text": "زيت عطري لافندر بيور",
+      "name_ar": "زيت عطري لافندر نقي مهدئ",
+      "name_en": "Pure Calming Lavender Scent Oil",
+      "slug": "pure-calming-lavender-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح زهرية فاخرة",
+      "status": "imported"
+    },
+    {
+      "index": 389,
+      "original_text": "زيت عطري سينابون أمريكي",
+      "name_ar": "زيت عطري سينابون بالقرفة والفانيليا",
+      "name_en": "American Cinnabon Bakery Scent Oil",
+      "slug": "american-cinnabon-bakery-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 390,
+      "original_text": "زيت عطري تويليب",
+      "name_ar": "زيت عطري زهرة التوليب الربيعية",
+      "name_en": "Spring Tulip Blossom Fragrance Oil",
+      "slug": "spring-tulip-blossom-fragrance-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح زهرية فاخرة",
+      "status": "imported"
+    },
+    {
+      "index": 391,
+      "original_text": "زيت عطري بلاك هورس بيز",
+      "name_ar": "زيت عطري بلاك هورس بيز رجالي غامض",
+      "name_en": "Black Horse Base Masculine Scent Compound",
+      "slug": "black-horse-base-masculine-scent-compound",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور رجالية فواحة",
+      "status": "imported"
+    },
+    {
+      "index": 392,
+      "original_text": "زيت عطري إسكبشر بيز",
+      "name_ar": "زيت عطري إسكالبشر نيكوس تايب بيز",
+      "name_en": "Sculpture Nikos Type Base Scent Oil",
+      "slug": "sculpture-nikos-type-base-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور رجالية فواحة",
+      "status": "imported"
+    },
+    {
+      "index": 393,
+      "original_text": "زيت عطري ياسمين بيز",
+      "name_ar": "زيت عطري ياسمين بيز لقواعد الشامبو",
+      "name_en": "Jasmine Base Floral Scent Compound",
+      "slug": "jasmine-base-floral-scent-compound",
+      "category": "fragrances-and-scents",
+      "subcategory": "قواعد عطرية للمنظفات والشامبو",
+      "status": "imported"
+    },
+    {
+      "index": 394,
+      "original_text": "زيت عطري نعناع بيز",
+      "name_ar": "زيت عطري نعناع بيز منعش ومبرد",
+      "name_en": "Cooling Mint Base Fragrance Compound",
+      "slug": "cooling-mint-base-fragrance-compound",
+      "category": "fragrances-and-scents",
+      "subcategory": "قواعد عطرية للمنظفات والشامبو",
+      "status": "imported"
+    },
+    {
+      "index": 395,
+      "original_text": "زيت عطري يارا كاندي",
+      "name_ar": "زيت عطري يارا كاندي لطافة تايب الوردي",
+      "name_en": "Yara Candy Pink Lattafa Type Scent Oil",
+      "slug": "yara-candy-pink-lattafa-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 396,
+      "original_text": "زيت عطري بابل جم",
+      "name_ar": "زيت عطري علكة بابل جم لذيذ",
+      "name_en": "Bubble Gum Sweet Candy Scent Oil",
+      "slug": "bubble-gum-sweet-candy-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 397,
+      "original_text": "زيت عطري دارك كيس",
+      "name_ar": "زيت عطري دارك كيس باث آند بودي تايب",
+      "name_en": "Dark Kiss Bath & Body Type Scent Oil",
+      "slug": "dark-kiss-bath-body-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 398,
+      "original_text": "زيت عطري ميلك روز",
+      "name_ar": "زيت عطري حليب الورد (ميلك روز) ناعم",
+      "name_en": "Milk & Roses Delicate Scent Oil",
+      "slug": "milk-roses-delicate-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح زهرية فاخرة",
+      "status": "imported"
+    },
+    {
+      "index": 399,
+      "original_text": "زيت عطري قهوة أمريكي",
+      "name_ar": "زيت عطري قهوة أمريكية محمصة غنية",
+      "name_en": "Roasted American Coffee Scent Oil",
+      "slug": "roasted-american-coffee-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 400,
+      "original_text": "زيت عطري جوز هند بيور",
+      "name_ar": "زيت عطري جوز هند بيور بدون إضافات",
+      "name_en": "Pure Sweet Coconut Essence Oil",
+      "slug": "pure-sweet-coconut-essence-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 401,
+      "original_text": "زيت عطري سهر الليالي",
+      "name_ar": "زيت عطري سهر الليالي رومانسي جذاب",
+      "name_en": "Sahar El Layali Oriental Scent Oil",
+      "slug": "sahar-el-layali-oriental-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح شرقية ومسك",
+      "status": "imported"
+    },
+    {
+      "index": 402,
+      "original_text": "زيت عطري جادور",
+      "name_ar": "زيت عطري جادور كريستيان ديور تايب",
+      "name_en": "J'adore Dior Type Floral Luxury Scent Oil",
+      "slug": "jadore-dior-type-floral-luxury-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور فرنسية وبدائل براندات",
+      "status": "imported"
+    },
+    {
+      "index": 403,
+      "original_text": "زيت عطري تروبيكال",
+      "name_ar": "زيت عطري فواكه استوائية تروبيكال",
+      "name_en": "Tropical Island Fruits Scent Oil",
+      "slug": "tropical-island-fruits-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 404,
+      "original_text": "زيت عطري بينك سويت",
+      "name_ar": "زيت عطري بينك سويت حلاوة وردية",
+      "name_en": "Pink Sweet Sugar Berry Scent Oil",
+      "slug": "pink-sweet-sugar-berry-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 405,
+      "original_text": "زيت عطري أورنج فاير",
+      "name_ar": "زيت عطري أورنج فاير حمضيات نفاذة",
+      "name_en": "Orange Fire Zesty Intense Scent Oil",
+      "slug": "orange-fire-zesty-intense-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح فواكه وسويت",
+      "status": "imported"
+    },
+    {
+      "index": 406,
+      "original_text": "زيت عطري لي لي سيكريت",
+      "name_ar": "زيت عطري ليلي سيكريت زنبق ناعم",
+      "name_en": "Lily Secret Floral Scent Oil",
+      "slug": "lily-secret-floral-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "روائح زهرية فاخرة",
+      "status": "imported"
+    },
+    {
+      "index": 407,
+      "original_text": "زيت عطري وان مليون",
+      "name_ar": "زيت عطري وان مليون باكو رابان تايب",
+      "name_en": "1 Million Paco Rabanne Type Scent Oil",
+      "slug": "1-million-paco-rabanne-type-scent-oil",
+      "category": "fragrances-and-scents",
+      "subcategory": "عطور رجالية فواحة",
+      "status": "imported"
+    },
+    {
+      "index": 408,
+      "original_text": "نكهة توت",
+      "name_ar": "نكهة توت مركزة لمرطبات الشفاه",
+      "name_en": "Wild Berry Flavor Oil-Soluble",
+      "slug": "wild-berry-flavor-oil-soluble",
+      "category": "flavors",
+      "subcategory": "نكهات غذائية وتجميلية قياسية",
+      "status": "imported"
+    },
+    {
+      "index": 409,
+      "original_text": "نكهة بندق",
+      "name_ar": "نكهة بندق محمصة مركزة",
+      "name_en": "Roasted Hazelnut Flavor",
+      "slug": "roasted-hazelnut-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات غذائية وتجميلية قياسية",
+      "status": "imported"
+    },
+    {
+      "index": 410,
+      "original_text": "نكهة كراميل",
+      "name_ar": "نكهة كراميل زبدية دافئة",
+      "name_en": "Butter Caramel Flavor",
+      "slug": "butter-caramel-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات غذائية وتجميلية قياسية",
+      "status": "imported"
+    },
+    {
+      "index": 411,
+      "original_text": "نكهة شيكولاتة",
+      "name_ar": "نكهة شوكولاته غنية مركزة",
+      "name_en": "Rich Dark Chocolate Flavor",
+      "slug": "rich-dark-chocolate-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات غذائية وتجميلية قياسية",
+      "status": "imported"
+    },
+    {
+      "index": 412,
+      "original_text": "نكهة بطيخ كامينا زيتي",
+      "name_ar": "نكهة بطيخ كامينا زيتي غذائي معتمد",
+      "name_en": "Kamena Oil-Based Watermelon Flavor",
+      "slug": "kamena-oil-based-watermelon-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 413,
+      "original_text": "نكهة كراميل كامينا زيتي",
+      "name_ar": "نكهة كراميل كامينا زيتي غذائي معتمد",
+      "name_en": "Kamena Oil-Based Caramel Toffee Flavor",
+      "slug": "kamena-oil-based-caramel-toffee-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 414,
+      "original_text": "نكهة أناناس كامينا زيتي",
+      "name_ar": "نكهة أناناس كامينا زيتي استوائي",
+      "name_en": "Kamena Oil-Based Pineapple Flavor",
+      "slug": "kamena-oil-based-pineapple-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 415,
+      "original_text": "نكهة نعناع كامينا زيتي",
+      "name_ar": "نكهة نعناع كامينا زيتي منعش",
+      "name_en": "Kamena Oil-Based Fresh Mint Flavor",
+      "slug": "kamena-oil-based-fresh-mint-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 416,
+      "original_text": "نكهة مانجو كامينا زيتي",
+      "name_ar": "نكهة مانجو كامينا زيتي حلو",
+      "name_en": "Kamena Oil-Based Sweet Mango Flavor",
+      "slug": "kamena-oil-based-sweet-mango-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 417,
+      "original_text": "نكهة قهوة كامينا زيتي",
+      "name_ar": "نكهة قهوة كامينا زيتي بن أرابيكا",
+      "name_en": "Kamena Oil-Based Espresso Coffee Flavor",
+      "slug": "kamena-oil-based-espresso-coffee-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 418,
+      "original_text": "نكهة موز كامينا زيتي",
+      "name_ar": "نكهة موز كامينا زيتي فواح",
+      "name_en": "Kamena Oil-Based Ripe Banana Flavor",
+      "slug": "kamena-oil-based-ripe-banana-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 419,
+      "original_text": "نكهة بندق كامينا زيتي",
+      "name_ar": "نكهة بندق كامينا زيتي مكسرات",
+      "name_en": "Kamena Oil-Based Hazelnut Flavor",
+      "slug": "kamena-oil-based-hazelnut-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 420,
+      "original_text": "نكهة شوكولاته كامينا زيتي",
+      "name_ar": "نكهة شوكولاته كامينا زيتي كاكاو غني",
+      "name_en": "Kamena Oil-Based Rich Chocolate Flavor",
+      "slug": "kamena-oil-based-rich-chocolate-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 421,
+      "original_text": "نكهة فانيليا كامينا زيتي",
+      "name_ar": "نكهة فانيليا كامينا زيتي أصلي",
+      "name_en": "Kamena Oil-Based French Vanilla Flavor",
+      "slug": "kamena-oil-based-french-vanilla-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 422,
+      "original_text": "نكهة فراولة كامينا زيتي",
+      "name_ar": "نكهة فراولة كامينا زيتي طازجة",
+      "name_en": "Kamena Oil-Based Red Strawberry Flavor",
+      "slug": "kamena-oil-based-red-strawberry-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 423,
+      "original_text": "نكهة جوز هند كامينا زيتي",
+      "name_ar": "نكهة جوز هند كامينا زيتي كريمي",
+      "name_en": "Kamena Oil-Based Creamy Coconut Flavor",
+      "slug": "kamena-oil-based-creamy-coconut-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    },
+    {
+      "index": 424,
+      "original_text": "نكهة توت كامينا زيتي",
+      "name_ar": "نكهة توت كامينا زيتي بيري نكهة قوية",
+      "name_en": "Kamena Oil-Based Wild Berry Flavor",
+      "slug": "kamena-oil-based-wild-berry-flavor",
+      "category": "flavors",
+      "subcategory": "نكهات كامينا الزيتية المعتمدة",
+      "status": "imported"
+    }
+  ]
+}

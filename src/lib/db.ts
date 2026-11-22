@@ -21,29 +21,64 @@ export function getSupabase() {
 // ============================================
 // PRODUCTS
 // ============================================
-const mapProductFromDB = (p: any) => ({
-  ...p,
-  name: p.name_ar || p.name,
-  name_ar: p.name_ar || p.name,
-  name_en: p.name_en || p.nameEn || "",
-  scientific_name: p.scientific_name || p.scientificName || p.name_en || "",
-  inci_name: p.inci_name || p.inciName || "",
-  cas_number: p.cas_number || p.casNumber || "",
-  purity_grade: p.purity_grade || p.purityGrade || "درجة تجميلية (Cosmetic Grade)",
-  origin_country: p.origin_country || p.originCountry || "",
-  manufacturer: p.manufacturer || "",
-  package_size: p.package_size || p.packageSize || p.packaging || "عبوة 1 كجم / براميل صناعية",
-  pricing_unit: p.pricing_unit || p.pricingUnit || "لكل 1 كجم",
-  industrial_applications: Array.isArray(p.industrial_applications)
-    ? p.industrial_applications
-    : (typeof p.industrial_applications === "string" ? JSON.parse(p.industrial_applications) : []),
-  cosmetic_applications: Array.isArray(p.cosmetic_applications) ? p.cosmetic_applications : [],
-  description: p.description_ar || p.description,
-  stock: p.stock_quantity ?? p.stock ?? 0,
-  emoji: p.sku ? p.sku.split('-')[0] : p.emoji || "🧪",
-  image: p.og_image_url || p.image || null,
-  specs: typeof p.technical_specs === "object" && p.technical_specs ? p.technical_specs : (p.specs || {}),
-});
+const SLUG_TO_CAT_NAME: Record<string, string> = {
+  "oils-and-extracts": "الزيوت والمستخلصات النباتية",
+  "raw-powders-and-actives": "البودرات والمواد الفعالة",
+  "chemical-liquids-and-solvents": "السوائل الكيميائية والمذيبات والسيليكون",
+  "vitamins-and-nutrients": "الفيتامينات والأحماض الأمينية والمغذيات",
+  "waxes-and-polymers": "الشموع والبوليمرات",
+  "colors-and-pigments": "الألوان والأصباغ والمايكا",
+  "fragrances-and-scents": "العطور والزيوت العطرية المركزة",
+  "flavors": "النكهات الغذائية والصناعية",
+};
+
+function getEmojiForProduct(categorySlug?: string, form?: string): string {
+  if (categorySlug === "oils-and-extracts" || form === "oil") return "🌿";
+  if (categorySlug === "fragrances-and-scents") return "🌸";
+  if (categorySlug === "colors-and-pigments") return "🎨";
+  if (categorySlug === "flavors") return "🍓";
+  if (categorySlug === "vitamins-and-nutrients") return "💊";
+  if (categorySlug === "waxes-and-polymers" || form === "wax") return "🕯️";
+  if (categorySlug === "chemical-liquids-and-solvents" || form === "liquid") return "💧";
+  return "🧪";
+}
+
+const mapProductFromDB = (p: any) => {
+  const specs = typeof p.technical_specs === "object" && p.technical_specs ? p.technical_specs : (p.specs || {});
+  const catSlug = specs.category_slug || (typeof p.category === "object" ? p.category?.slug : "");
+  const categoryName = typeof p.category === "object" && p.category?.name_ar 
+    ? p.category.name_ar 
+    : (catSlug && SLUG_TO_CAT_NAME[catSlug] ? SLUG_TO_CAT_NAME[catSlug] : (p.category || "خامات كيميائية"));
+
+  return {
+    ...p,
+    name: p.name_ar || p.name,
+    name_ar: p.name_ar || p.name,
+    name_en: p.name_en || p.nameEn || "",
+    scientific_name: p.scientific_name || specs.scientific_name || p.name_en || "",
+    inci_name: p.inci_name || specs.inci_name || p.name_en || "",
+    cas_number: p.cas_number || specs.cas_number || "",
+    purity_grade: p.purity_grade || specs.purity_grade || "درجة تجميلية (Cosmetic Grade)",
+    origin_country: p.origin_country || specs.origin_country || "",
+    manufacturer: p.manufacturer || specs.manufacturer || "",
+    package_size: p.package_size || specs.package_size || "تعبئة صناعية معتمدة / حسب الطلب",
+    pricing_unit: p.pricing_unit || "",
+    category: categoryName,
+    category_slug: catSlug,
+    subcategory: specs.subcategory || "",
+    product_form: specs.product_form || "",
+    original_source_text: specs.original_source_text || "",
+    industrial_applications: Array.isArray(p.industrial_applications)
+      ? p.industrial_applications
+      : (typeof p.industrial_applications === "string" ? JSON.parse(p.industrial_applications) : []),
+    cosmetic_applications: Array.isArray(p.cosmetic_applications) ? p.cosmetic_applications : [],
+    description: p.description_ar || p.description,
+    stock: p.stock_quantity ?? p.stock ?? 0,
+    emoji: p.emoji || getEmojiForProduct(catSlug, specs.product_form),
+    image: p.og_image_url || p.image || null,
+    specs: specs,
+  };
+};
 
 const INITIAL_PRODUCTS = [
   {
@@ -703,7 +738,8 @@ export async function getProducts() {
       .from("products")
       .select("*, category:categories(id, name_ar, slug), images:product_images(*)")
       .eq("is_active", true)
-      .order("sort_order");
+      .order("sort_order")
+      .limit(1000);
     if (!error && data && data.length > 0) {
       // Merge with INITIAL_PRODUCTS if not present in DB to guarantee complete catalog
       const existingNames = new Set(data.map((p: any) => (p.name_ar || p.name || "").toLowerCase()));
@@ -769,13 +805,22 @@ export async function getProductBySlug(slug: string) {
 
 export async function getProductById(id: string) {
   const supabase = getSupabase();
+  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
+
   if (supabase) {
-    const { data, error } = await supabase
-      .from("products")
-      .select("*, category:categories(id, name_ar, slug), images:product_images(*)")
-      .eq("id", id)
-      .single();
-    if (!error && data) return mapProductFromDB(data);
+    try {
+      const query = supabase
+        .from("products")
+        .select("*, category:categories(id, name_ar, slug), images:product_images(*)");
+      
+      const { data, error } = isUuid 
+        ? await query.eq("id", id).maybeSingle()
+        : await query.eq("slug", id).maybeSingle();
+
+      if (!error && data) return mapProductFromDB(data);
+    } catch (e) {
+      console.warn("Could not fetch product directly:", e);
+    }
   }
   const all = await getProducts();
   const found = all.find((p: any) => String(p.id) === String(id) || p.slug === id);
