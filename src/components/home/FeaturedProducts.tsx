@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-  ShoppingBag,
   Search,
   Sparkles,
   FlaskConical,
@@ -25,7 +24,6 @@ import {
   Package,
   CheckCircle,
   X,
-  PhoneCall,
   Info,
 } from "lucide-react";
 import { getProducts } from "@/lib/db";
@@ -71,7 +69,7 @@ export default function FeaturedProducts() {
           setProducts(fetched);
         }
       } catch (e) {
-        console.error("Error loading products on homepage:", e);
+        console.error("Error loading products:", e);
       } finally {
         setLoading(false);
       }
@@ -111,7 +109,7 @@ export default function FeaturedProducts() {
     setVisibleCount(PAGE_SIZE);
   }, [selectedCategory, searchQuery]);
 
-  // Real database counts per category for the tabs
+  // Real database counts per category for tabs
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = { all: products.length };
     products.forEach((p) => {
@@ -131,7 +129,7 @@ export default function FeaturedProducts() {
     if (!rfqProduct) return;
     setRfqSubmitted(true);
     const msg = encodeURIComponent(
-      `طلب عرض سعر رسمي (RFQ):\nالمادة: ${rfqProduct.name_ar} (${rfqProduct.name_en || ""})\nالكمية المطلوبة: ${rfqForm.quantity}\nالاسم: ${rfqForm.name}\nالشركة: ${rfqForm.company || "غير محدد"}\nالهاتف: ${rfqForm.phone}\nملاحظات: ${rfqForm.notes || "لا يوجد"}`
+      `طلب عرض سعر (RFQ):\nالمادة: ${rfqProduct.name_ar} (${rfqProduct.name_en || ""})\nالكمية: ${rfqForm.quantity}\nالاسم: ${rfqForm.name}\nالشركة: ${rfqForm.company || "غير محدد"}\nالهاتف: ${rfqForm.phone}\nملاحظات: ${rfqForm.notes || "لا يوجد"}`
     );
     window.open(`https://wa.me/201119446474?text=${msg}`, "_blank");
     setTimeout(() => {
@@ -141,45 +139,51 @@ export default function FeaturedProducts() {
   };
 
   return (
-    <section className="py-24 bg-slate-50/70 border-y border-slate-200/80 relative overflow-hidden" id="products">
+    <section className="py-20 bg-slate-50 border-y border-slate-200/80 relative overflow-hidden" id="products">
       <div className="container mx-auto px-4">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 text-sky-800 border border-sky-200 text-xs font-bold mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-sky-600" />
-            <span>مستكشف الكتالوج الصناعي المباشر</span>
+        {/* Crisp Header - Minimal Words */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-sky-800 border border-sky-200 text-xs font-bold mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-sky-600" />
+              <span>كتالوج المواد الخام المباشر</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black text-navy-950 tracking-tight">
+              استكشاف المواد الخام
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy-950 tracking-tight mb-4">
-            استكشف خاماتك الكيميائية
-          </h2>
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            تصفح الكتالوج المعتمد بالكامل (+430 مادة خام)، مع إمكانية البحث برقم CAS أو الاسم وطلب عروض أسعار فورية للمصانع.
-          </p>
+
+          <Link href="/shop" className="shrink-0">
+            <span className="text-xs sm:text-sm font-bold text-sky-600 hover:text-navy-950 transition-colors inline-flex items-center gap-1.5">
+              <span>الانتقال للمتجر الكامل</span>
+              <ArrowLeft className="w-4 h-4" />
+            </span>
+          </Link>
         </div>
 
-        {/* Search & Category Tabs */}
-        <div className="max-w-5xl mx-auto mb-10 space-y-4">
+        {/* Search & Category Filter Tabs */}
+        <div className="mb-8 space-y-4">
           {/* Instant Search Bar */}
-          <div className="relative">
-            <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
+          <div className="relative max-w-xl">
+            <Search className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
             <Input
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="ابحث بالاسم العربي، الإنجليزي، الفئة الفرعية، أو رقم CAS (مثال: سالسيلك، أرجان، كربابول، 57-55-6)..."
-              className="pr-12 pl-4 py-3 h-12 rounded-2xl bg-white border-slate-200 shadow-sm text-sm focus-visible:ring-sky-500"
+              placeholder="ابحث باسم المادة الخام أو رقم CAS (مثال: أرجان، 57-55-6)..."
+              className="pr-10 pl-4 h-11 rounded-xl bg-white border-slate-200 shadow-sm text-xs sm:text-sm focus-visible:ring-sky-500"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
               >
                 <X className="w-4 h-4" />
               </button>
             )}
           </div>
 
-          {/* Category Tabs with live counts */}
+          {/* Category Tabs */}
           <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
             {B2B_CATEGORIES.map((cat) => {
               const Icon = CATEGORY_ICONS[cat.slug] || Package;
@@ -189,9 +193,9 @@ export default function FeaturedProducts() {
                 <button
                   key={cat.slug}
                   onClick={() => setSelectedCategory(cat.slug)}
-                  className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all shrink-0 flex items-center gap-2 border ${
+                  className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all shrink-0 flex items-center gap-2 border ${
                     isSelected
-                      ? "bg-navy-950 text-white border-navy-950 shadow-md"
+                      ? "bg-navy-950 text-white border-navy-950 shadow-sm"
                       : "bg-white text-slate-700 hover:bg-slate-100 border-slate-200"
                   }`}
                 >
@@ -212,17 +216,17 @@ export default function FeaturedProducts() {
           </div>
         </div>
 
-        {/* Products Grid */}
+        {/* Clean, Spacious Products Grid */}
         {loading ? (
           <div className="text-center py-20">
-            <Loader2 className="w-10 h-10 animate-spin text-sky-500 mx-auto mb-4" />
-            <p className="text-sm text-slate-500 font-medium">جاري تحميل كتالوج الخامات الكيميائية...</p>
+            <Loader2 className="w-8 h-8 animate-spin text-sky-500 mx-auto mb-3" />
+            <p className="text-xs text-slate-500 font-medium">جاري تحميل المواد الخام...</p>
           </div>
         ) : displayedProducts.length === 0 ? (
-          <div className="text-center py-20 bg-white rounded-3xl border border-slate-200 p-8 max-w-lg mx-auto shadow-sm">
-            <Package className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-            <h3 className="text-base font-bold text-navy-950 mb-1">لم يتم العثور على نتائج مطابقة</h3>
-            <p className="text-xs text-slate-500 mb-4">جرب البحث بكلمة مختلفة أو استعرض كافة الأقسام.</p>
+          <div className="text-center py-16 bg-white rounded-2xl border border-slate-200 p-8 max-w-md mx-auto shadow-sm">
+            <Package className="w-10 h-10 text-slate-300 mx-auto mb-2" />
+            <h3 className="text-sm font-bold text-navy-950 mb-1">لا توجد نتائج مطابقة</h3>
+            <p className="text-xs text-slate-500 mb-4">جرب البحث بكلمة أخرى أو اختر قسماً آخر.</p>
             <Button
               variant="outline"
               size="sm"
@@ -237,19 +241,19 @@ export default function FeaturedProducts() {
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {displayedProducts.map((p, idx) => (
                 <motion.div
                   key={p.id || idx}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: (idx % 8) * 0.04 }}
-                  className="group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                  transition={{ duration: 0.25, delay: (idx % 8) * 0.03 }}
+                  className="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-sky-300 transition-all duration-200 flex flex-col justify-between p-5"
                 >
-                  <div className="p-5">
-                    {/* Top: Category Tag + CAS Badge */}
+                  <div>
+                    {/* Top Row: Category tag + CAS pill */}
                     <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-sky-50 text-sky-700 border border-sky-100 truncate max-w-[140px]">
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-sky-50 text-sky-700 border border-sky-100 truncate max-w-[130px]">
                         {p.category}
                       </span>
                       {p.cas_number && (
@@ -259,45 +263,23 @@ export default function FeaturedProducts() {
                       )}
                     </div>
 
-                    {/* Product Name */}
+                    {/* Product Arabic Name */}
                     <Link href={`/shop/${p.slug || p.id}`}>
-                      <h3 className="text-base font-bold text-navy-950 mb-1 group-hover:text-sky-600 transition-colors line-clamp-2 leading-snug">
+                      <h3 className="text-sm sm:text-base font-bold text-navy-950 mb-1 group-hover:text-sky-600 transition-colors line-clamp-2 leading-snug">
                         {p.name_ar || p.name}
                       </h3>
                     </Link>
 
-                    {/* English / INCI Name */}
+                    {/* Product English Name */}
                     {p.name_en && (
-                      <p className="text-[11px] font-mono text-slate-400 mb-3 truncate">
+                      <p className="text-[11px] font-mono text-slate-400 mb-4 truncate">
                         {p.name_en}
                       </p>
                     )}
-
-                    {/* Specs Pills */}
-                    <div className="space-y-1.5 pt-3 border-t border-slate-100 text-[11px] text-slate-600">
-                      {p.subcategory && (
-                        <div className="flex items-center justify-between">
-                          <span className="text-slate-400">الفئة الفرعية:</span>
-                          <span className="font-medium text-slate-700 truncate max-w-[130px]">{p.subcategory}</span>
-                        </div>
-                      )}
-                      {p.purity_grade && (
-                        <div className="flex items-center justify-between">
-                          <span className="text-slate-400">درجة النقاء:</span>
-                          <span className="font-medium text-emerald-700 truncate max-w-[130px]">{p.purity_grade}</span>
-                        </div>
-                      )}
-                      {p.package_size && (
-                        <div className="flex items-center justify-between">
-                          <span className="text-slate-400">التعبئة:</span>
-                          <span className="font-medium text-slate-700 truncate max-w-[130px]">{p.package_size}</span>
-                        </div>
-                      )}
-                    </div>
                   </div>
 
-                  {/* Card Actions Footer */}
-                  <div className="p-4 bg-slate-50/60 border-t border-slate-100 flex items-center gap-2">
+                  {/* Actions Footer: RFQ + Details */}
+                  <div className="pt-3 border-t border-slate-100 flex items-center gap-2 mt-2">
                     <Button
                       size="sm"
                       onClick={() => setRfqProduct(p)}
@@ -306,14 +288,14 @@ export default function FeaturedProducts() {
                       <FileText className="w-3.5 h-3.5 ml-1.5" />
                       طلب تسعير
                     </Button>
-                    <Link href={`/shop/${p.slug || p.id}`} className="shrink-0">
+                    <Link href={`/shop/${p.slug || p.id}`}>
                       <Button
                         size="sm"
                         variant="outline"
-                        className="h-9 px-3 rounded-xl border-slate-200 text-slate-600 hover:text-navy-950 hover:bg-white text-xs font-bold"
-                        title="تفاصيل المادة والمواصفات الفنية"
+                        className="h-9 px-3 rounded-xl border-slate-200 text-slate-600 hover:text-navy-950 hover:bg-slate-50 text-xs font-bold"
+                        title="تفاصيل المادة"
                       >
-                        <Info className="w-4 h-4" />
+                        <Info className="w-3.5 h-3.5" />
                       </Button>
                     </Link>
                   </div>
@@ -322,56 +304,48 @@ export default function FeaturedProducts() {
             </div>
 
             {/* Pagination / Load More */}
-            <div className="mt-14 text-center space-y-4">
-              <p className="text-xs text-slate-500 font-medium">
-                يتم عرض {displayedProducts.length} من أصل {filteredProducts.length} مادة خام
+            <div className="mt-12 text-center space-y-3">
+              <p className="text-xs text-slate-400">
+                عرض {displayedProducts.length} من {filteredProducts.length} مادة
               </p>
-              <div className="flex flex-wrap justify-center items-center gap-4">
-                {hasMore && (
-                  <Button
-                    onClick={() => setVisibleCount((prev) => prev + PAGE_SIZE)}
-                    variant="outline"
-                    className="border-slate-300 text-navy-950 hover:bg-white font-bold px-8 h-11 rounded-xl text-xs shadow-sm"
-                  >
-                    عرض المزيد من المواد ({filteredProducts.length - visibleCount} متبقية)
-                    <ChevronDown className="w-4 h-4 mr-2" />
-                  </Button>
-                )}
-                <Link href="/shop">
-                  <Button className="bg-sky-600 hover:bg-sky-500 text-white font-bold px-8 h-11 rounded-xl text-xs shadow-md">
-                    الانتقال لصفحة المتجر والكتالوج الكامل
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                  </Button>
-                </Link>
-              </div>
+              {hasMore && (
+                <Button
+                  onClick={() => setVisibleCount((prev) => prev + PAGE_SIZE)}
+                  variant="outline"
+                  className="border-slate-300 text-navy-950 hover:bg-white font-bold px-7 h-10 rounded-xl text-xs shadow-sm"
+                >
+                  عرض المزيد ({filteredProducts.length - visibleCount} متبقية)
+                  <ChevronDown className="w-4 h-4 mr-1.5" />
+                </Button>
+              )}
             </div>
           </>
         )}
 
       </div>
 
-      {/* Quick RFQ Drawer / Modal */}
+      {/* Quick RFQ Modal */}
       <AnimatePresence>
         {rfqProduct && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/70 backdrop-blur-sm">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl border border-slate-100 relative"
+              exit={{ opacity: 0, scale: 0.96 }}
+              className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100 relative text-right"
             >
               <button
                 onClick={() => setRfqProduct(null)}
-                className="absolute top-5 left-5 text-slate-400 hover:text-slate-600 p-1 rounded-full hover:bg-slate-100"
+                className="absolute top-4 left-4 text-slate-400 hover:text-slate-600 p-1 rounded-full hover:bg-slate-100"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
 
-              <div className="mb-6 text-right">
-                <span className="text-[11px] font-bold text-sky-600 px-2.5 py-1 rounded-full bg-sky-50 border border-sky-100 mb-2 inline-block">
-                  طلب عرض سعر رسمي (RFQ) للمصانع
+              <div className="mb-5">
+                <span className="text-[10px] font-bold text-sky-600 px-2 py-0.5 rounded-full bg-sky-50 border border-sky-100 mb-1.5 inline-block">
+                  طلب عرض سعر رسمي (RFQ)
                 </span>
-                <h3 className="text-xl font-black text-navy-950">
+                <h3 className="text-lg font-bold text-navy-950">
                   {rfqProduct.name_ar}
                 </h3>
                 {rfqProduct.name_en && (
@@ -380,14 +354,14 @@ export default function FeaturedProducts() {
               </div>
 
               {rfqSubmitted ? (
-                <div className="text-center py-8">
-                  <CheckCircle className="w-14 h-14 text-emerald-500 mx-auto mb-3" />
-                  <h4 className="text-base font-bold text-navy-950 mb-1">تم توجيه طلبكم إلى قسم المبيعات!</h4>
-                  <p className="text-xs text-slate-500">جاري الرد وتجهيز عرض السعر وشهادة التحليل COA فوراً.</p>
+                <div className="text-center py-6">
+                  <CheckCircle className="w-12 h-12 text-emerald-500 mx-auto mb-2" />
+                  <h4 className="text-sm font-bold text-navy-950 mb-1">تم توجيه طلبكم للمبيعات!</h4>
+                  <p className="text-xs text-slate-500">جاري التواصل وتجهيز عرض السعر فوراً.</p>
                 </div>
               ) : (
-                <form onSubmit={handleRfqSubmit} className="space-y-3.5 text-right">
-                  <div className="grid grid-cols-2 gap-3">
+                <form onSubmit={handleRfqSubmit} className="space-y-3">
+                  <div className="grid grid-cols-2 gap-2.5">
                     <div>
                       <Label className="text-xs font-bold text-slate-700">الاسم الكريم *</Label>
                       <Input
@@ -399,7 +373,7 @@ export default function FeaturedProducts() {
                       />
                     </div>
                     <div>
-                      <Label className="text-xs font-bold text-slate-700">اسم المصنع / المعمل</Label>
+                      <Label className="text-xs font-bold text-slate-700">المصنع / المعمل</Label>
                       <Input
                         placeholder="اسم الشركة"
                         className="mt-1 h-9 text-xs"
@@ -409,9 +383,9 @@ export default function FeaturedProducts() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-2.5">
                     <div>
-                      <Label className="text-xs font-bold text-slate-700">رقم الهاتف / واتساب *</Label>
+                      <Label className="text-xs font-bold text-slate-700">رقم الهاتف *</Label>
                       <Input
                         placeholder="01xxxxxxxxx"
                         className="mt-1 h-9 text-xs"
@@ -421,9 +395,9 @@ export default function FeaturedProducts() {
                       />
                     </div>
                     <div>
-                      <Label className="text-xs font-bold text-slate-700">الكمية المستهدفة *</Label>
+                      <Label className="text-xs font-bold text-slate-700">الكمية المطلوبة *</Label>
                       <Input
-                        placeholder="مثال: 25 كجم / برميل 200 كجم"
+                        placeholder="مثال: 25 كجم"
                         className="mt-1 h-9 text-xs"
                         value={rfqForm.quantity}
                         onChange={(e) => setRfqForm({ ...rfqForm, quantity: e.target.value })}
@@ -432,25 +406,13 @@ export default function FeaturedProducts() {
                     </div>
                   </div>
 
-                  <div>
-                    <Label className="text-xs font-bold text-slate-700">ملاحظات أو مواصفات خاصة</Label>
-                    <Input
-                      placeholder="أي اشتراطات في درجة النقاء أو التوريد..."
-                      className="mt-1 h-9 text-xs"
-                      value={rfqForm.notes}
-                      onChange={(e) => setRfqForm({ ...rfqForm, notes: e.target.value })}
-                    />
-                  </div>
-
-                  <div className="pt-2">
-                    <Button
-                      type="submit"
-                      className="w-full bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 text-white font-bold h-10 rounded-xl text-xs gap-2 shadow-md"
-                    >
-                      <Send className="w-4 h-4 ml-1" />
-                      إرسال طلب التسعير المباشر عبر واتساب
-                    </Button>
-                  </div>
+                  <Button
+                    type="submit"
+                    className="w-full bg-navy-950 hover:bg-sky-600 text-white font-bold h-10 rounded-xl text-xs gap-2 shadow-md mt-2"
+                  >
+                    <Send className="w-3.5 h-3.5 ml-1" />
+                    إرسال الطلب عبر واتساب
+                  </Button>
                 </form>
               )}
             </motion.div>

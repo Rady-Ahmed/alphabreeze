@@ -6,7 +6,6 @@ import IndustryApplicationsSection from "@/components/home/IndustryApplicationsS
 import TechnicalAssuranceSection from "@/components/home/TechnicalAssuranceSection";
 import PrivateLabelSection from "@/components/home/PrivateLabelSection";
 import ProcurementJourneySection from "@/components/home/ProcurementJourneySection";
-import WhyAlphaBreezeSection from "@/components/home/WhyAlphaBreezeSection";
 import ArticlesSection from "@/components/home/ArticlesSection";
 import FAQSection from "@/components/home/FAQSection";
 import FinalConversionSection from "@/components/home/FinalConversionSection";
@@ -14,46 +13,43 @@ import FinalConversionSection from "@/components/home/FinalConversionSection";
 export const metadata = {
   title: "ألفا بريز للكيماويات | توريد المواد الخام ومكونات مستحضرات التجميل الصناعية B2B",
   description:
-    "الشريك المعتمد لمصانع ومعامل مستحضرات التجميل في مصر. توريد أكثر من 430 مادة خام معتمدة (زيوت نقية، خلاصات، بودرات فعالة، مذيبات، وعطور مركزة) مع شهادات التحليل COA و MSDS وخدمات التصنيع للغير.",
+    "الشريك المعتمد لمصانع ومعامل مستحضرات التجميل في مصر. توريد أكثر من 430 مادة خام معتمدة (زيوت، مستخلصات، بودرات فعالة، مذيبات، وعطور مركزة) مع شهادات التحليل COA و MSDS وخدمات التصنيع للغير.",
 };
 
 export default function HomePage() {
   return (
     <>
-      {/* B. Cinematic Hero — The Signature Experience */}
+      {/* 1. Cinematic Hero with Visual Cards Under Text */}
       <HeroSection />
 
-      {/* C. Trust & Capability Strip */}
+      {/* 2. Minimalist Trust & Capability Strip */}
       <TrustCapabilityStrip />
 
-      {/* D. Product Categories — Premium Bento Layout */}
+      {/* 3. Art-Directed Bento Grid of the 8 Categories */}
       <CategoryBentoGrid />
 
-      {/* E. Product Catalog Preview & Request a Quote (RFQ) */}
+      {/* 4. Live Catalog Explorer & Quick Quote (RFQ) */}
       <FeaturedProducts />
 
-      {/* F. Industry Applications (Skin Care, Hair Care, Cosmetics, Soaps, Fragrances) */}
+      {/* 5. Industry Sectors & Applications with Photography */}
       <IndustryApplicationsSection />
 
-      {/* G. Quality & Technical Assurance (COA, MSDS, USP/BP, Lab Samples) */}
+      {/* 6. Quality, Standards & Laboratory Assurance (COA/MSDS) */}
       <TechnicalAssuranceSection />
 
-      {/* H. Private Label & Industrial Solutions (Split Layout) */}
+      {/* 7. Turnkey Private Label (Visual Split Layout) */}
       <PrivateLabelSection />
 
-      {/* I. How We Work (01 Discover to 05 Supply & Delivery) */}
+      {/* 8. Supply Journey Workflow (5 Clear Connected Stages) */}
       <ProcurementJourneySection />
 
-      {/* J. Why Alpha Breeze (Range, Support, Sourcing, Flexibility) */}
-      <WhyAlphaBreezeSection />
-
-      {/* K. Articles & Technical Insights (Editorial Cards) */}
+      {/* 9. Formulation & Technical Insights (Editorial Articles) */}
       <ArticlesSection />
 
-      {/* L. FAQ (Accessible Accordion) */}
+      {/* 10. Accessible FAQ Accordion */}
       <FAQSection />
 
-      {/* M. Final Conversion Section ("Let's Supply Your Next Production Line") */}
+      {/* 11. Final Closing Conversion CTA */}
       <FinalConversionSection />
     </>
   );

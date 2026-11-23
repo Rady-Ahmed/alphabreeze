@@ -35,9 +35,28 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  /* RTL Support */
+  /* RTL Support & Arabic Typography */
   [dir="rtl"] {
     text-align: right;
+  }
+
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3,
+  [dir="rtl"] h4,
+  [dir="rtl"] h5,
+  [dir="rtl"] h6 {
+    letter-spacing: 0 !important;
+    word-spacing: normal !important;
+    line-height: 1.35;
+  }
+
+  [dir="rtl"] p,
+  [dir="rtl"] span,
+  [dir="rtl"] button,
+  [dir="rtl"] input,
+  [dir="rtl"] a {
+    letter-spacing: 0 !important;
   }
 }
 
