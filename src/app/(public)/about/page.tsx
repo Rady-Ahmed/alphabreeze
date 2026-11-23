@@ -1,21 +1,11 @@
-import type { Metadata } from "next";
-import AboutHero from "@/components/about/AboutHero";
-import StorySection from "@/components/about/StorySection";
-import VisionMission from "@/components/about/VisionMission";
-import StatsSection from "@/components/about/StatsSection";
+import { Metadata } from "next";
+import AboutPageClient from "@/components/about/AboutPageClient";
 
 export const metadata: Metadata = {
-  title: "من نحن",
-  description: "تعرف على ألفا بريز - الشريك الرائد في صناعة مستحضرات التجميل والخامات في مصر",
+  title: "من نحن — ألفا بريز للمواد الخام الكيميائية",
+  description: "تعرف على قصة ألفا بريز، شريكك الموثوق في توريد المواد الخام الكيميائية ومستلزمات التصنيع منذ سنوات.",
 };
 
 export default function AboutPage() {
-  return (
-    <>
-      <AboutHero />
-      <StorySection />
-      <VisionMission />
-      <StatsSection />
-    </>
-  );
+  return <AboutPageClient />;
 }

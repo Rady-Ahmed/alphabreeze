@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Allow build to continue even if Google Fonts are unreachable in sandbox/CI
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
   },
@@ -49,6 +48,10 @@ const nextConfig: NextConfig = {
             key: "X-DNS-Prefetch-Control",
             value: "on",
           },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
         ],
       },
       {
@@ -67,7 +70,7 @@ const nextConfig: NextConfig = {
   // Compress output
   compress: true,
 
-  // Power off powered by header
+  // Disable x-powered-by header for security
   poweredByHeader: false,
 };
 

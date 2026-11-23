@@ -3,6 +3,7 @@ import { Inter, Cairo } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import Analytics from "@/components/Analytics";
+import JsonLd from "@/components/seo/JsonLd";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,12 +22,13 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://alphabreeze.vercel.app"),
   title: {
-    default: "AlphaBreeze | توريد المواد الخام الكيميائية لصناعة التجميل B2B",
-    template: "%s | AlphaBreeze Raw Materials",
+    default: "Alpha Breeze Chemicals | توريد وتوزيع المواد الخام الكيميائية B2B",
+    template: "%s | Alpha Breeze Chemicals",
   },
   description:
-    "شركة ألفا بريز (Alpha Breeze) - المورد المعتمد للمواد الخام الكيميائية والمكونات الفعالة لمصانع مستحضرات التجميل، معامل التركيبات ومطوري التركيبات (Formulators) في مصر والشرق الأوسط.",
+    "شركة ألفا بريز (Alpha Breeze) - المورد المعتمد للمواد الخام الكيميائية والمكونات الفعالة لمصانع مستحضرات التجميل، معامل التركيبات ومطوري التركيبات في مصر والشرق الأوسط مع شهادات التحليل المعتمدة.",
   keywords: [
     "توريد مواد خام تجميل",
     "مواد خام كيميائية",
@@ -42,11 +44,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ar_EG",
-    siteName: "AlphaBreeze",
+    url: "https://alphabreeze.vercel.app",
+    siteName: "Alpha Breeze Chemicals",
+    title: "Alpha Breeze Chemicals | توريد وتوزيع المواد الخام الكيميائية B2B",
+    description: "أكثر من 431 مادة خام كيميائية وتجميلية معتمدة مع شهادات التحليل COA و MSDS وخدمات التصنيع للغير.",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://alphabreeze.vercel.app",
   },
 };
 
@@ -57,6 +72,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" className={`${inter.variable} ${cairo.variable}`} suppressHydrationWarning>
+      <head>
+        <JsonLd />
+      </head>
       <body className="font-arabic antialiased" suppressHydrationWarning>
         <Analytics />
         <Toaster position="top-center" richColors />

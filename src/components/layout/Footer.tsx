@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Mail, MapPin, ArrowUp, Facebook, Instagram, Youtube, Clock, ShieldCheck, ArrowLeft } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ShieldCheck, ArrowLeft, Send } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 import { useEffect, useState } from "react";
 import { getSiteSettings, getSocialLinks } from "@/lib/db";
@@ -18,10 +18,10 @@ const footerCategories = [
 ];
 
 const footerServices = [
-  { href: "/services/raw-materials", label: "توريد المواد الخام الكيميائية بالجملة" },
-  { href: "/services/private-label", label: "التصنيع لحساب الغير (Private Label)" },
-  { href: "/services/formula-development", label: "تطوير وحل مشكلات التركيبات المعملية" },
-  { href: "/services/packaging", label: "حلول التعبئة والتغليف والخامات الأولية" },
+  { href: "/services", label: "توريد المواد الخام الكيميائية بالجملة" },
+  { href: "/services", label: "التصنيع لحساب الغير (Private Label)" },
+  { href: "/services", label: "تطوير وحل مشكلات التركيبات المعملية" },
+  { href: "/services", label: "حلول التعبئة والتغليف والخامات الأولية" },
 ];
 
 export default function Footer() {
@@ -68,28 +68,25 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-navy-950 text-white relative overflow-hidden border-t border-white/10">
+    <footer className="bg-[#070e22] text-white relative overflow-hidden border-t border-white/10" dir="rtl">
       {/* Decorative gradient top border */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-400 via-sky-500 to-navy-700" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
 
-      <div className="container mx-auto px-4 pt-16 pb-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-14">
+      <div className="container mx-auto px-4 pt-16 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12">
           
           {/* Brand Info (4 cols) */}
           <div className="lg:col-span-4 space-y-5">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 flex-shrink-0">
-                <Logo className="w-full h-full drop-shadow-md" />
-              </div>
+              <Logo className="w-10 h-10" />
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="font-black text-xl tracking-tight text-white">AlphaBreeze</h3>
-                  <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-400 border border-sky-400/30">
+                  <span className="font-black text-xl tracking-tight text-white">ALPHA BREEZE</span>
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-400/10 text-cyan-400 border border-cyan-400/30">
                     CHEMICALS
                   </span>
                 </div>
-                <p className="text-slate-400 text-xs">الشريك الصناعي المعتمد لمصانع التجميل</p>
+                <p className="text-slate-400 text-xs">الشريك الصناعي المعتمد لمصانع ومختبرات الكيماويات</p>
               </div>
             </div>
 
@@ -102,21 +99,22 @@ export default function Footer() {
                 href={`https://wa.me/20${settings.whatsapp.replace(/\D/g, '')}?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs px-3.5 py-1.5 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 border border-sky-400/30 transition-colors font-medium"
+                className="text-xs px-3.5 py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 transition-colors font-medium flex items-center gap-1.5"
               >
-                واتساب المبيعات: {settings.whatsapp}
+                <span>واتساب المبيعات:</span>
+                <span dir="ltr" className="font-mono">{settings.whatsapp}</span>
               </a>
             </div>
           </div>
 
           {/* Core Categories (3 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="font-bold text-sm mb-4 text-sky-300">أقسام الكتالوج (+430 مادة)</h4>
+            <h4 className="font-bold text-sm mb-4 text-cyan-300">أقسام الكتالوج (+431 مادة)</h4>
             <ul className="space-y-2.5">
               {footerCategories.map((cat) => (
                 <li key={cat.href}>
                   <Link href={cat.href} className="text-slate-400 hover:text-white text-xs transition-colors flex items-center gap-1.5">
-                    <span className="w-1 h-1 rounded-full bg-sky-400 shrink-0" />
+                    <span className="w-1 h-1 rounded-full bg-cyan-400 shrink-0" />
                     <span>{cat.label}</span>
                   </Link>
                 </li>
@@ -126,57 +124,87 @@ export default function Footer() {
 
           {/* Industrial Services (2 cols) */}
           <div className="lg:col-span-2">
-            <h4 className="font-bold text-sm mb-4 text-sky-300">خدماتنا الصناعية</h4>
+            <h4 className="font-bold text-sm mb-4 text-cyan-300">خدماتنا الصناعية</h4>
             <ul className="space-y-2.5">
-              {footerServices.map((srv) => (
-                <li key={srv.href}>
-                  <Link href={srv.href} className="text-slate-400 hover:text-white text-xs transition-colors leading-relaxed">
+              {footerServices.map((srv, idx) => (
+                <li key={idx}>
+                  <Link href={srv.href} className="text-slate-400 hover:text-white text-xs transition-colors leading-relaxed block">
                     {srv.label}
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/shop" className="text-cyan-400 hover:text-cyan-300 text-xs font-semibold flex items-center gap-1 pt-2">
+                  <span>تصفح المتجر بالكامل</span>
+                  <ArrowLeft className="w-3 h-3" />
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact Details (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-bold text-sm mb-4 text-sky-300">المقر والتواصل</h4>
+            <h4 className="font-bold text-sm mb-4 text-cyan-300">المقر والتواصل</h4>
             
             <div className="flex items-start gap-3 text-xs text-slate-400">
-              <MapPin className="w-4 h-4 text-sky-400 mt-0.5 shrink-0" />
+              <MapPin className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
               <span>{settings.address}</span>
             </div>
 
             <div className="flex items-start gap-3 text-xs text-slate-400">
-              <Phone className="w-4 h-4 text-sky-400 mt-0.5 shrink-0" />
+              <Phone className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
               <div className="space-y-1">
-                <p dir="ltr" className="text-right">{settings.phone1}</p>
-                <p dir="ltr" className="text-right">{settings.phone2}</p>
+                <p dir="ltr" className="text-right font-mono">{settings.phone1}</p>
+                <p dir="ltr" className="text-right font-mono">{settings.phone2}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3 text-xs text-slate-400">
-              <Mail className="w-4 h-4 text-sky-400 mt-0.5 shrink-0" />
-              <span>{settings.email}</span>
+              <Mail className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
+              <span className="font-mono">{settings.email}</span>
             </div>
 
             <div className="flex items-start gap-3 text-xs text-slate-400">
-              <Clock className="w-4 h-4 text-sky-400 mt-0.5 shrink-0" />
+              <Clock className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
               <span>السبت - الخميس: 9:00 ص - 6:00 م</span>
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} Alpha Breeze Chemicals. جميع الحقوق محفوظة لمصانع ومعامل مستحضرات التجميل في مصر.</p>
-          <div className="flex items-center gap-4">
-            <Link href="/about" className="hover:text-slate-300 transition-colors">عن الشركة</Link>
-            <span>•</span>
-            <Link href="/shop" className="hover:text-slate-300 transition-colors">الكتالوج</Link>
-            <span>•</span>
-            <Link href="/contact" className="hover:text-slate-300 transition-colors">طلب تسعير (RFQ)</Link>
+        {/* Bottom Bar: Exactly as requested with Admin login link & full navigation */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+          <p>
+            © 2026{" "}
+            <Link
+              href="/admin/login"
+              className="text-cyan-400 hover:text-cyan-300 font-semibold underline underline-offset-4"
+              title="لوحة الإدارة — تسجيل الدخول"
+            >
+              AlphaBreeze
+            </Link>
+            . جميع الحقوق محفوظة.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-slate-400">
+            <Link href="/services" className="hover:text-cyan-300 transition-colors">
+              خدماتنا الصناعية
+            </Link>
+            <span className="text-slate-600">•</span>
+            <Link href="/about" className="hover:text-cyan-300 transition-colors">
+              عن ألفا بريز
+            </Link>
+            <span className="text-slate-600">•</span>
+            <Link href="/articles" className="hover:text-cyan-300 transition-colors">
+              المقالات الفنية
+            </Link>
+            <span className="text-slate-600">•</span>
+            <Link href="/shop" className="hover:text-cyan-300 transition-colors font-medium text-slate-300">
+              المتجر
+            </Link>
+            <span className="text-slate-600">•</span>
+            <Link href="/contact" className="hover:text-cyan-300 transition-colors">
+              طلب تسعير (RFQ)
+            </Link>
           </div>
         </div>
 
