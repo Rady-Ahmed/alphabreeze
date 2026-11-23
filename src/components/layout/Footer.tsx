@@ -172,14 +172,13 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar: Exactly as requested with Admin login link & full navigation */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        {/* Bottom Bar: Discreet secret admin entry as plain text */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>
             © 2026{" "}
             <Link
               href="/admin/login"
-              className="text-cyan-400 hover:text-cyan-300 font-semibold underline underline-offset-4"
-              title="لوحة الإدارة — تسجيل الدخول"
+              className="text-slate-500 hover:text-slate-400 no-underline cursor-default"
             >
               AlphaBreeze
             </Link>

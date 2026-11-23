@@ -337,7 +337,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             © 2026{" "}
             <Link
               href="/admin/login"
-              className="text-cyan-600 hover:text-cyan-700 font-semibold underline underline-offset-2"
+              className="text-gray-400 hover:text-gray-500 no-underline cursor-default"
             >
               AlphaBreeze
             </Link>
