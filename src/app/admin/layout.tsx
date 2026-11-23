@@ -331,8 +331,18 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 p-4 lg:p-6 overflow-auto">
-          {children}
+        <main className="flex-1 p-4 lg:p-6 overflow-auto flex flex-col justify-between">
+          <div>{children}</div>
+          <footer className="mt-8 pt-6 pb-2 text-center text-xs text-gray-400 border-t border-gray-100">
+            © 2026{" "}
+            <Link
+              href="/admin/login"
+              className="text-cyan-600 hover:text-cyan-700 font-semibold underline underline-offset-2"
+            >
+              AlphaBreeze
+            </Link>
+            . جميع الحقوق محفوظة.
+          </footer>
         </main>
       </div>
     </div>
