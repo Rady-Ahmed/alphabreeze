@@ -11,25 +11,14 @@ import {
   Sparkles,
   FlaskConical,
   Atom,
-  Shield,
-  Award,
+  ShieldCheck,
   Search,
   CheckCircle2,
-  Droplets,
-  Layers,
-  FileCheck,
-  Building2,
+  FileText,
   PhoneCall,
+  Layers,
+  ChevronDown,
 } from "lucide-react";
-
-const quickCategories = [
-  { name: "الزيوت والمستخلصات", count: 82, slug: "oils-and-extracts" },
-  { name: "البودرات والفعالة", count: 81, slug: "raw-powders-and-actives" },
-  { name: "السوائل والسيليكون", count: 59, slug: "chemical-liquids-and-solvents" },
-  { name: "الفيتامينات والمغذيات", count: 29, slug: "vitamins-and-nutrients" },
-  { name: "الألوان والمايكا", count: 83, slug: "colors-and-pigments" },
-  { name: "العطور المركزة", count: 68, slug: "fragrances-and-scents" },
-];
 
 export default function HeroSection() {
   const router = useRouter();
@@ -45,218 +34,156 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-gradient-to-br from-navy-950 via-navy-900 to-sky-950 text-white">
-      {/* Background Tech Grid & Molecule Overlay */}
+    <section className="relative min-h-[96vh] flex items-center justify-center overflow-hidden bg-navy-950 text-white">
+      {/* 1. Underlying Cinematic Photography (Lab & Specialty Chemical Supply) */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2000&auto=format&fit=crop"
+          alt="مختبر كيميائي وصناعي لتوريد المواد الخام"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-90 contrast-110"
+        />
+      </div>
+
+      {/* 2. Atmospheric Translucent Cyan Mist & Deep Blue Layered Gradients */}
       <div
-        className="absolute inset-0 opacity-15 pointer-events-none"
+        className="absolute inset-0 z-[1] pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.4) 1px, transparent 0)`,
-          backgroundSize: "32px 32px",
+          background:
+            "linear-gradient(135deg, rgba(10, 14, 42, 0.94) 0%, rgba(15, 22, 66, 0.88) 45%, rgba(14, 165, 233, 0.35) 85%, rgba(12, 74, 110, 0.8) 100%)",
         }}
       />
 
-      {/* Ambient Gradient Glows */}
-      <div className="absolute top-1/4 -right-24 w-96 h-96 bg-sky-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-10 left-1/3 w-64 h-64 bg-cyan-400/10 rounded-full blur-2xl pointer-events-none" />
+      {/* 3. Subtle Molecular Tech Diffusion */}
+      <div
+        className="absolute inset-0 z-[2] opacity-15 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.6) 1px, transparent 0)",
+          backgroundSize: "40px 40px",
+        }}
+      />
 
-      <div className="container mx-auto px-4 relative z-10 pt-28 pb-20 lg:pt-32 lg:pb-28">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      {/* 4. Ambient Cyan Glows & Mist */}
+      <div className="absolute top-1/4 right-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl pointer-events-none z-[2]" />
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none z-[2]" />
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 relative z-10 pt-32 pb-24 lg:pt-36 lg:pb-32">
+        <div className="max-w-4xl mx-auto text-center">
           
-          {/* Main Content (Right in RTL) */}
-          <div className="lg:col-span-7">
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            {/* Capability Tag */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-sky-400/30 backdrop-blur-md mb-8 shadow-sm">
+              <span className="flex h-2.5 w-2.5 rounded-full bg-sky-400 animate-pulse" />
+              <span className="text-xs sm:text-sm font-bold text-sky-200">
+                توريد المواد الخام ومكونات مستحضرات التجميل الصناعية B2B
+              </span>
+            </div>
+
+            {/* Cinematic Editorial Headline */}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black leading-[1.18] mb-6 tracking-tight">
+              حلول متكاملة لتوريد{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-200 to-white drop-shadow-[0_0_35px_rgba(56,189,248,0.45)]">
+                المواد الخام الكيميائية
+              </span>
+            </h1>
+
+            {/* Editorial Subheadline */}
+            <p className="text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed mb-10 max-w-2xl mx-auto font-normal drop-shadow-sm">
+              شريككم الاستراتيجي لتوريد خامات ومستحضرات التجميل، الكيماويات المتخصصة، والمواد الأولية الصناعية مع شهادات التحليل المخبري (COA) وصحائف الأمان (MSDS).
+            </p>
+
+            {/* Compact Search Bar for Raw Materials */}
+            <form
+              onSubmit={handleSearch}
+              className="mb-10 p-1.5 sm:p-2 bg-white/10 backdrop-blur-2xl border border-sky-400/30 rounded-2xl shadow-2xl flex flex-col sm:flex-row gap-2 max-w-xl mx-auto"
             >
-              {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-sky-400/30 backdrop-blur-md mb-6 shadow-sm">
-                <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-xs sm:text-sm font-medium text-sky-200">
-                  التوريد الصناعي المعتمد B2B لمصانع ومعامل التجميل في مصر
-                </span>
+              <div className="relative flex-1 flex items-center pr-3">
+                <Search className="w-5 h-5 text-sky-300 ml-3 shrink-0" />
+                <Input
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="ابحث باسم المادة، رقم CAS، أو التصنيف (مثل: سالسيلك، أرجان)..."
+                  className="bg-transparent border-0 text-white placeholder:text-slate-300 focus-visible:ring-0 focus-visible:ring-offset-0 text-xs sm:text-sm h-11"
+                />
               </div>
-
-              {/* Main Headline */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black leading-[1.2] mb-6 tracking-tight">
-                شريككم الاستراتيجي في توريد{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-sky-200 to-white drop-shadow-[0_0_25px_rgba(56,189,248,0.35)]">
-                  المواد الخام الكيميائية
-                </span>{" "}
-                ومكونات مستحضرات التجميل
-              </h1>
-
-              {/* Sub-headline */}
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8 max-w-2xl font-normal">
-                نوفر للمصانع، معامل التركيبات الكيميائية، ومطوري المنتجات أكثر من <strong className="text-white font-bold">430 مادة خام معتمدة</strong> (زيوت نقية، خلاصات، بودرات فعالة، مذيبات، وعطور مركزة) مع شهادات التحليل (COA) وصحائف الأمان (MSDS) مع خدمات التصنيع للغير (Private Label).
-              </p>
-
-              {/* Integrated B2B Catalog Search */}
-              <form
-                onSubmit={handleSearch}
-                className="mb-8 p-1.5 sm:p-2 bg-white/10 backdrop-blur-xl border border-sky-400/25 rounded-2xl shadow-2xl flex flex-col sm:flex-row gap-2 max-w-2xl"
+              <Button
+                type="submit"
+                className="bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500 text-white font-bold h-11 px-6 rounded-xl shadow-lg shadow-sky-500/25 text-xs sm:text-sm shrink-0"
               >
-                <div className="relative flex-1 flex items-center">
-                  <Search className="w-5 h-5 text-sky-300 mr-3 shrink-0" />
-                  <Input
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="ابحث باسم المادة الخام، رقم CAS، أو الفئة (مثال: سالسيلك، أرجان، كربابول)..."
-                    className="bg-transparent border-0 text-white placeholder:text-slate-400 focus-visible:ring-0 focus-visible:ring-offset-0 text-sm sm:text-base h-11"
-                  />
-                </div>
+                بحث في الكتالوج
+                <ArrowLeft className="w-4 h-4 mr-2" />
+              </Button>
+            </form>
+
+            {/* Primary & Secondary Dual CTAs */}
+            <div className="flex flex-wrap justify-center items-center gap-4 mb-14">
+              <Link href="/shop">
                 <Button
-                  type="submit"
-                  className="bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500 text-white font-bold h-11 px-6 rounded-xl shadow-lg shadow-sky-500/25 shrink-0"
+                  size="lg"
+                  className="bg-white text-navy-950 hover:bg-sky-50 font-black h-13 px-8 rounded-xl shadow-2xl shadow-white/15 text-sm sm:text-base group"
                 >
-                  بحث في الكتالوج
-                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  <span>استكشف منتجاتنا</span>
+                  <ArrowLeft className="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" />
                 </Button>
-              </form>
+              </Link>
 
-              {/* Quick Category Launchers */}
-              <div className="flex flex-wrap items-center gap-2 mb-8">
-                <span className="text-xs text-slate-400 font-medium ml-1">الأقسام الأكثر طلباً:</span>
-                {quickCategories.map((cat) => (
-                  <Link
-                    key={cat.slug}
-                    href={`/shop?category=${cat.slug}`}
-                    className="text-xs px-3 py-1.5 rounded-lg bg-white/5 hover:bg-sky-500/20 border border-white/10 hover:border-sky-400/40 text-slate-300 hover:text-sky-200 transition-all duration-200 flex items-center gap-1.5"
-                  >
-                    <span>{cat.name}</span>
-                    <span className="text-[10px] text-sky-400 bg-sky-950/80 px-1.5 py-0.2 rounded-full border border-sky-800/50">
-                      {cat.count}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4">
-                <Link href="/shop">
-                  <Button
-                    size="lg"
-                    className="bg-white text-navy-950 hover:bg-sky-50 font-bold h-13 px-8 rounded-xl shadow-xl shadow-white/10 text-base"
-                  >
-                    استعراض الكتالوج (430+ مادة)
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                  </Button>
-                </Link>
-                <a
-                  href="https://wa.me/201119446474?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D8%AA%D9%88%D8%B1%D9%8A%D8%AF%20%D9%85%D9%88%D8%A7%D8%AF%20%D8%AE%D8%A7%D9%85%20(RFQ)%20%D9%84%D9%85%D8%B5%D9%86%D8%B9%D9%86%D8%A7"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <a
+                href="https://wa.me/201119446474?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D8%AA%D9%88%D8%B1%D9%8A%D8%AF%20%D9%85%D9%88%D8%A7%D8%AF%20%D8%AE%D8%A7%D9%85%20(RFQ)%20%D9%84%D9%85%D8%B5%D9%86%D8%B9%D9%86%D8%A7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-sky-400/40 text-sky-200 hover:bg-sky-500/15 hover:border-sky-400 font-bold h-13 px-7 rounded-xl text-sm sm:text-base backdrop-blur-sm"
                 >
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-sky-400/40 text-sky-200 hover:bg-sky-500/10 hover:border-sky-400 font-bold h-13 px-7 rounded-xl text-base"
-                  >
-                    <PhoneCall className="w-4 h-4 ml-2 text-sky-400" />
-                    طلب تسعير فوري للمصانع (RFQ)
-                  </Button>
-                </a>
+                  <PhoneCall className="w-4 h-4 ml-2 text-sky-400" />
+                  <span>طلب عرض سعر (RFQ)</span>
+                </Button>
+              </a>
+            </div>
+
+            {/* Quick Metrics Bar */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto pt-8 border-t border-white/10 text-center">
+              <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/5">
+                <p className="text-xl sm:text-2xl font-black text-white font-mono">+430</p>
+                <p className="text-[11px] text-slate-300 font-medium">مادة خام كيميائية</p>
               </div>
-            </motion.div>
-          </div>
-
-          {/* Interactive Industrial Feature Showcase (Left in RTL) */}
-          <div className="lg:col-span-5">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative"
-            >
-              {/* Outer Glowing Frame */}
-              <div className="relative rounded-3xl p-6 sm:p-8 bg-gradient-to-b from-white/10 to-white/5 border border-white/20 backdrop-blur-2xl shadow-2xl overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-sky-400/20 rounded-full blur-2xl pointer-events-none" />
-
-                {/* Card Header */}
-                <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center shadow-lg shadow-sky-500/30">
-                      <FlaskConical className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-white text-base">المواصفات القياسية للتوريد</h3>
-                      <p className="text-xs text-sky-300 font-mono">INDUSTRIAL GRADE COMPLIANCE</p>
-                    </div>
-                  </div>
-                  <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                    معتمد للمصانع
-                  </span>
-                </div>
-
-                {/* 4 B2B Technical Pillars */}
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-sky-400/30 transition-colors">
-                    <FileCheck className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="text-sm font-bold text-white">شهادات تحليل مخبرية (COA) مع كل شحنة</h4>
-                      <p className="text-xs text-slate-300 mt-0.5">توثيق نسب النقاء، اللزوجة، الكثافة، والرقم الهيدروجيني pH.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-sky-400/30 transition-colors">
-                    <Shield className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="text-sm font-bold text-white">صحائف بيانات أمان المواد (MSDS / SDS)</h4>
-                      <p className="text-xs text-slate-300 mt-0.5">مطابقة للمواصفات القياسية المصرية وتوجيهات GHS العالمية.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-sky-400/30 transition-colors">
-                    <Layers className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="text-sm font-bold text-white">مرونة أحجام التوريد الصناعي</h4>
-                      <p className="text-xs text-slate-300 mt-0.5">من عبوات معملية 1 كجم إلى براميل 200 كجم وكونتينرات وأطنان.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-sky-400/30 transition-colors">
-                    <Building2 className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="text-sm font-bold text-white">عقود توريد وتوفير مستمر للمصانع</h4>
-                      <p className="text-xs text-slate-300 mt-0.5">ضمان ثبات أسعار الخامات واستقرار سلاسل الإمداد لخطوط الإنتاج.</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Footer Metrics */}
-                <div className="grid grid-cols-3 gap-2 pt-4 border-t border-white/10 text-center">
-                  <div className="p-2 rounded-lg bg-white/5">
-                    <p className="text-lg font-black text-white font-mono">+430</p>
-                    <p className="text-[11px] text-slate-400">مادة بالكتالوج</p>
-                  </div>
-                  <div className="p-2 rounded-lg bg-white/5">
-                    <p className="text-lg font-black text-sky-400 font-mono">100%</p>
-                    <p className="text-[11px] text-slate-400">فحص مخبري</p>
-                  </div>
-                  <div className="p-2 rounded-lg bg-white/5">
-                    <p className="text-lg font-black text-emerald-400 font-mono">48H</p>
-                    <p className="text-[11px] text-slate-400">توريد للمحافظات</p>
-                  </div>
-                </div>
-
+              <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/5">
+                <p className="text-xl sm:text-2xl font-black text-sky-400 font-mono">100%</p>
+                <p className="text-[11px] text-slate-300 font-medium">شهادات COA معتمدة</p>
               </div>
-            </motion.div>
-          </div>
+              <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/5">
+                <p className="text-xl sm:text-2xl font-black text-emerald-400 font-mono">+350</p>
+                <p className="text-[11px] text-slate-300 font-medium">مصنع ومعمل نخدمه</p>
+              </div>
+              <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/5">
+                <p className="text-xl sm:text-2xl font-black text-cyan-300 font-mono">48H</p>
+                <p className="text-[11px] text-slate-300 font-medium">شحن صناعي للمحافظات</p>
+              </div>
+            </div>
+
+          </motion.div>
 
         </div>
       </div>
 
-      {/* Modern Wave Divider */}
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none z-10">
+      {/* 5. Custom Fluid Organic Section Transition (Subtle Water/Liquid Line) */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none z-[3]">
         <svg
           className="relative block w-full h-8 sm:h-12 text-slate-50"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
         >
           <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,121.31,201,114.65,241.6,110.8,282.16,92.87,321.39,56.44Z"
+            d="M0,0 C150,90 350,-40 500,40 C650,120 900,20 1200,50 L1200,120 L0,120 Z"
             fill="currentColor"
+            opacity="1"
           />
         </svg>
       </div>

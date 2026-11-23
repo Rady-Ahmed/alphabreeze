@@ -1,72 +1,60 @@
 import HeroSection from "@/components/home/HeroSection";
-import CatalogPillarsSection from "@/components/home/CatalogPillarsSection";
+import TrustCapabilityStrip from "@/components/home/TrustCapabilityStrip";
+import CategoryBentoGrid from "@/components/home/CategoryBentoGrid";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
-import IndustrySectorsSection from "@/components/home/IndustrySectorsSection";
-import QualityComplianceSection from "@/components/home/QualityComplianceSection";
+import IndustryApplicationsSection from "@/components/home/IndustryApplicationsSection";
+import TechnicalAssuranceSection from "@/components/home/TechnicalAssuranceSection";
 import PrivateLabelSection from "@/components/home/PrivateLabelSection";
-import ProcurementWorkflowSection from "@/components/home/ProcurementWorkflowSection";
-import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
-import AboutSection from "@/components/home/AboutSection";
-import PartnersSection from "@/components/home/PartnersSection";
+import ProcurementJourneySection from "@/components/home/ProcurementJourneySection";
+import WhyAlphaBreezeSection from "@/components/home/WhyAlphaBreezeSection";
 import ArticlesSection from "@/components/home/ArticlesSection";
 import FAQSection from "@/components/home/FAQSection";
-import CTASection from "@/components/home/CTASection";
-import ContactSection from "@/components/home/ContactSection";
-import MapSection from "@/components/home/MapSection";
+import FinalConversionSection from "@/components/home/FinalConversionSection";
 
 export const metadata = {
   title: "ألفا بريز للكيماويات | توريد المواد الخام ومكونات مستحضرات التجميل الصناعية B2B",
   description:
-    "الشريك المعتمد لمصانع ومعامل مستحضرات التجميل في مصر. توريد أكثر من 430 مادة خام معتمدة (زيوت، مستخلصات، بودرات فعالة، مذيبات، عطور مركزة) مع شهادات التحليل COA و MSDS وخدمات التصنيع للغير.",
+    "الشريك المعتمد لمصانع ومعامل مستحضرات التجميل في مصر. توريد أكثر من 430 مادة خام معتمدة (زيوت نقية، خلاصات، بودرات فعالة، مذيبات، وعطور مركزة) مع شهادات التحليل COA و MSDS وخدمات التصنيع للغير.",
 };
 
 export default function HomePage() {
   return (
     <>
-      {/* 1. Executive B2B Hero with Live Search & Fast Category Launchers */}
+      {/* B. Cinematic Hero — The Signature Experience */}
       <HeroSection />
 
-      {/* 2. The 8 Core Chemical Catalog Pillars (424 items categorized) */}
-      <CatalogPillarsSection />
+      {/* C. Trust & Capability Strip */}
+      <TrustCapabilityStrip />
 
-      {/* 3. Live Full B2B Catalog Explorer & Request for Quote (RFQ) */}
+      {/* D. Product Categories — Premium Bento Layout */}
+      <CategoryBentoGrid />
+
+      {/* E. Product Catalog Preview & Request a Quote (RFQ) */}
       <FeaturedProducts />
 
-      {/* 4. Industrial Application Sectors (Skin, Hair, Pharma, Soaps, Perfumes) */}
-      <IndustrySectorsSection />
+      {/* F. Industry Applications (Skin Care, Hair Care, Cosmetics, Soaps, Fragrances) */}
+      <IndustryApplicationsSection />
 
-      {/* 5. Quality, Compliance & Laboratory Testing Standards (COA, MSDS, USP) */}
-      <QualityComplianceSection />
+      {/* G. Quality & Technical Assurance (COA, MSDS, USP/BP, Lab Samples) */}
+      <TechnicalAssuranceSection />
 
-      {/* 6. Turnkey Contract Manufacturing & Private Label Suite */}
+      {/* H. Private Label & Industrial Solutions (Split Layout) */}
       <PrivateLabelSection />
 
-      {/* 7. Corporate Procurement Workflow for Factories (4 clear stages) */}
-      <ProcurementWorkflowSection />
+      {/* I. How We Work (01 Discover to 05 Supply & Delivery) */}
+      <ProcurementJourneySection />
 
-      {/* 8. Industrial Competitive Advantages (Stability, Pricing, Technical R&D) */}
-      <WhyChooseUsSection />
+      {/* J. Why Alpha Breeze (Range, Support, Sourcing, Flexibility) */}
+      <WhyAlphaBreezeSection />
 
-      {/* 9. Corporate About & Verified Supply Metrics */}
-      <AboutSection />
-
-      {/* 10. International Sourcing & Approved Global Chemical Origins */}
-      <PartnersSection />
-
-      {/* 11. Technical Formulation & Chemical Industry Insights */}
+      {/* K. Articles & Technical Insights (Editorial Cards) */}
       <ArticlesSection />
 
-      {/* 12. B2B Technical Procurement FAQ */}
+      {/* L. FAQ (Accessible Accordion) */}
       <FAQSection />
 
-      {/* 13. Executive Final Call to Action */}
-      <CTASection />
-
-      {/* 14. Contact Form & Regional Headquarters */}
-      <ContactSection />
-
-      {/* 15. Geographic Headquarters Location */}
-      <MapSection />
+      {/* M. Final Conversion Section ("Let's Supply Your Next Production Line") */}
+      <FinalConversionSection />
     </>
   );
 }

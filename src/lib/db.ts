@@ -32,6 +32,122 @@ const SLUG_TO_CAT_NAME: Record<string, string> = {
   "flavors": "النكهات الغذائية والصناعية",
 };
 
+export const INITIAL_CATEGORIES = [
+  {
+    id: "cat-oils-and-extracts",
+    slug: "oils-and-extracts",
+    name_ar: "الزيوت والمستخلصات النباتية",
+    name_en: "Oils & Botanical Extracts",
+    description_ar: "زيوت طبيعية وعطرية وناقلة وخلاصات نباتية تجميلية فائقة النقاء",
+    icon: "Droplets",
+    sort_order: 1,
+    is_active: true
+  },
+  {
+    id: "cat-raw-powders-and-actives",
+    slug: "raw-powders-and-actives",
+    name_ar: "البودرات والمواد الفعالة",
+    name_en: "Raw Powders & Active Ingredients",
+    description_ar: "مكونات فعالة وبودرات كيميائية نقية وأحماض تقشير ومستحلبات ومثبتات قوام",
+    icon: "Sparkles",
+    sort_order: 2,
+    is_active: true
+  },
+  {
+    id: "cat-chemical-liquids-and-solvents",
+    slug: "chemical-liquids-and-solvents",
+    name_ar: "السوائل الكيميائية والمذيبات والسيليكون",
+    name_en: "Chemical Liquids, Solvents & Silicones",
+    description_ar: "مذيبات تجميلية وصناعية، سلسلة سيليكونات متخصصة، وعوامل ترطيب وتجانس",
+    icon: "FlaskConical",
+    sort_order: 3,
+    is_active: true
+  },
+  {
+    id: "cat-vitamins-and-nutrients",
+    slug: "vitamins-and-nutrients",
+    name_ar: "الفيتامينات والأحماض الأمينية والمغذيات",
+    name_en: "Vitamins, Amino Acids & Nutrients",
+    description_ar: "فيتامينات نقية وأحماض أمينية ومغذيات علاجية لصحة البشرة والشعر",
+    icon: "Atom",
+    sort_order: 4,
+    is_active: true
+  },
+  {
+    id: "cat-waxes-and-polymers",
+    slug: "waxes-and-polymers",
+    name_ar: "الشموع والبوليمرات",
+    name_en: "Waxes & Polymers",
+    description_ar: "شموع استحلاب طبيعية ومعدنية وبوليمرات لتصنيع الكريمات والمراهم",
+    icon: "Flame",
+    sort_order: 5,
+    is_active: true
+  },
+  {
+    id: "cat-colors-and-pigments",
+    slug: "colors-and-pigments",
+    name_ar: "الألوان والأصباغ والمايكا",
+    name_en: "Colors, Pigments & Micas",
+    description_ar: "ألوان زيتية ومائية، بودرات مايكا لامعة، وأصباغ مصرح بها لمستحضرات التجميل",
+    icon: "Palette",
+    sort_order: 6,
+    is_active: true
+  },
+  {
+    id: "cat-fragrances-and-scents",
+    slug: "fragrances-and-scents",
+    name_ar: "العطور والزيوت العطرية المركزة",
+    name_en: "Fragrances & Essential Scents",
+    description_ar: "زيوت عطرية مركزة خالية من الكحول وبدائل براندات عالمية وعطور شرقية وزهرية",
+    icon: "Heart",
+    sort_order: 7,
+    is_active: true
+  },
+  {
+    id: "cat-flavors",
+    slug: "flavors",
+    name_ar: "النكهات الغذائية والصناعية",
+    name_en: "Flavors",
+    description_ar: "نكهات مركزة معتمدة قابلة للاستخدام في مرطبات الشفاه والتطبيقات الغذائية والدوائية",
+    icon: "Apple",
+    sort_order: 8,
+    is_active: true
+  }
+];
+
+function detectCategorySlug(p: any, specs: any): string {
+  if (specs?.category_slug && SLUG_TO_CAT_NAME[specs.category_slug]) return specs.category_slug;
+  if (p.category_slug && SLUG_TO_CAT_NAME[p.category_slug]) return p.category_slug;
+  if (typeof p.category === "object" && p.category?.slug && SLUG_TO_CAT_NAME[p.category.slug]) return p.category.slug;
+
+  const catStr = (typeof p.category === "string" ? p.category : "").toLowerCase();
+  const nameAr = (p.name_ar || p.name || "").toLowerCase();
+  const slug = (p.slug || "").toLowerCase();
+
+  if (slug.includes("mpg") || slug.includes("propylene") || slug.includes("ipm") || slug.includes("glycerin") || slug.includes("silicone") || catStr.includes("سوائل") || catStr.includes("مذيب")) {
+    return "chemical-liquids-and-solvents";
+  }
+  if (slug.includes("panthenol") || slug.includes("vitamin") || slug.includes("hyaluron") || slug.includes("ascorbic") || catStr.includes("فيتامين") || nameAr.includes("فيتامين") || nameAr.includes("بانثينول") || nameAr.includes("هيالورون")) {
+    return "vitamins-and-nutrients";
+  }
+  if (slug.includes("wax") || slug.includes("carnauba") || slug.includes("beeswax") || catStr.includes("شمع") || nameAr.includes("شمع")) {
+    return "waxes-and-polymers";
+  }
+  if (nameAr.startsWith("زيت") || nameAr.startsWith("خلاصة") || slug.includes("oil") || slug.includes("extract") || catStr.includes("زيت") || catStr.includes("مستخلص")) {
+    return "oils-and-extracts";
+  }
+  if (catStr.includes("عطر") || nameAr.includes("مسك") || slug.includes("fragrance") || slug.includes("perfume")) {
+    return "fragrances-and-scents";
+  }
+  if (catStr.includes("لون") || catStr.includes("مايكا") || slug.includes("color") || slug.includes("mica") || slug.includes("pigment")) {
+    return "colors-and-pigments";
+  }
+  if (catStr.includes("نكه") || slug.includes("flavor")) {
+    return "flavors";
+  }
+  return "raw-powders-and-actives";
+}
+
 function getEmojiForProduct(categorySlug?: string, form?: string): string {
   if (categorySlug === "oils-and-extracts" || form === "oil") return "🌿";
   if (categorySlug === "fragrances-and-scents") return "🌸";
@@ -45,10 +161,8 @@ function getEmojiForProduct(categorySlug?: string, form?: string): string {
 
 const mapProductFromDB = (p: any) => {
   const specs = typeof p.technical_specs === "object" && p.technical_specs ? p.technical_specs : (p.specs || {});
-  const catSlug = specs.category_slug || (typeof p.category === "object" ? p.category?.slug : "");
-  const categoryName = typeof p.category === "object" && p.category?.name_ar 
-    ? p.category.name_ar 
-    : (catSlug && SLUG_TO_CAT_NAME[catSlug] ? SLUG_TO_CAT_NAME[catSlug] : (p.category || "خامات كيميائية"));
+  const catSlug = detectCategorySlug(p, specs);
+  const categoryName = SLUG_TO_CAT_NAME[catSlug] || (typeof p.category === "object" && p.category?.name_ar ? p.category.name_ar : (p.category || "خامات كيميائية"));
 
   return {
     ...p,
@@ -1175,32 +1289,36 @@ export async function deleteArticle(id: string) {
 export async function getCategories() {
   const supabase = getSupabase();
   if (supabase) {
-    const { data, error } = await supabase
-      .from("categories")
-      .select("*")
-      .eq("is_active", true)
-      .order("sort_order");
-    if (!error && data) return data;
+    try {
+      const { data, error } = await supabase
+        .from("categories")
+        .select("*")
+        .eq("is_active", true)
+        .order("sort_order");
+      if (!error && data && data.length > 0) return data;
+    } catch (e) {
+      console.warn("Supabase categories query failed:", e);
+    }
   }
   if (typeof window !== "undefined") {
-    return JSON.parse(localStorage.getItem("alphabreeze_categories") || "[]");
+    const local = JSON.parse(localStorage.getItem("alphabreeze_categories") || "[]");
+    if (local && local.length > 0) return local;
   }
-  return [];
+  return INITIAL_CATEGORIES;
 }
 
 export async function getAllCategories() {
-  const supabase = getSupabase();
-  if (supabase) {
-    const { data, error } = await supabase
-      .from("categories")
-      .select("*, products:products(id)")
-      .order("sort_order");
-    if (!error && data) return data;
-  }
-  if (typeof window !== "undefined") {
-    return JSON.parse(localStorage.getItem("alphabreeze_categories") || "[]");
-  }
-  return [];
+  const categories = await getCategories();
+  const allProds = await getProducts();
+
+  return categories.map((cat: any) => {
+    const count = allProds.filter((p: any) => p.category_slug === cat.slug || p.category === cat.name_ar).length;
+    return {
+      ...cat,
+      products_count: count,
+      products: Array(count).fill({ id: "item" }),
+    };
+  });
 }
 
 export async function createCategory(category: any) {
