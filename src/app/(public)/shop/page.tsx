@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { getProducts } from "@/lib/db";
 import { B2B_CATEGORIES, SITE_CONFIG } from "@/lib/constants";
+import ChemicalVisual from "@/components/ui/ChemicalVisual";
 
 const PAGE_SIZE = 24;
 
@@ -45,23 +46,9 @@ function ProductCard({ product, onRfq }: { product: any; onRfq: (p: any) => void
       transition={{ duration: 0.25 }}
       className="group relative flex flex-col bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
     >
-      {/* Image */}
-      <Link href={`/shop/${product.id}`} className="block relative h-44 overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100">
-        <img
-          src={imgSrc}
-          alt={nameAr}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src = getCategoryImage("default");
-          }}
-        />
-        {/* Category badge */}
-        {product.subcategory && (
-          <span className="absolute top-3 right-3 bg-white/90 backdrop-blur text-[10px] font-semibold text-slate-600 px-2 py-0.5 rounded-full border border-slate-200">
-            {product.subcategory}
-          </span>
-        )}
+      {/* Image / 3D Icon */}
+      <Link href={`/shop/${product.id}`} className="block relative h-44 overflow-hidden bg-slate-900">
+        <ChemicalVisual product={product} />
       </Link>
 
       {/* Content */}
@@ -541,10 +528,8 @@ function ListProductRow({ product, onRfq }: { product: any; onRfq: (p: any) => v
       className="flex items-center gap-4 bg-white rounded-2xl border border-slate-100 shadow-sm p-3 hover:shadow-md hover:border-cyan-200 transition-all"
     >
       <Link href={`/shop/${product.id}`} className="flex-shrink-0">
-        <div className="h-16 w-16 rounded-xl overflow-hidden bg-slate-100">
-          <img src={imgSrc} alt={nameAr} className="h-full w-full object-cover" loading="lazy"
-            onError={(e) => { (e.currentTarget as HTMLImageElement).src = getCategoryImage("default"); }}
-          />
+        <div className="h-16 w-16 rounded-xl overflow-hidden bg-slate-900">
+          <ChemicalVisual product={product} showBadge={false} />
         </div>
       </Link>
       <div className="flex-1 min-w-0">

@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import { getProducts } from "@/lib/db";
 import { B2B_CATEGORIES } from "@/lib/constants";
+import ChemicalVisual from "@/components/ui/ChemicalVisual";
 
 const PAGE_SIZE = 16;
 
@@ -248,56 +249,63 @@ export default function FeaturedProducts() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.25, delay: (idx % 8) * 0.03 }}
-                  className="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-sky-300 transition-all duration-200 flex flex-col justify-between p-5"
+                  className="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-cyan-300 transition-all duration-200 flex flex-col justify-between overflow-hidden"
                 >
-                  <div>
-                    {/* Top Row: Category tag + CAS pill */}
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-sky-50 text-sky-700 border border-sky-100 truncate max-w-[130px]">
-                        {p.category}
-                      </span>
-                      {p.cas_number && (
-                        <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200 shrink-0">
-                          CAS: {p.cas_number}
+                  {/* Product Visual Container (Photo / 3D Icon) */}
+                  <Link href={`/shop/${p.slug || p.id}`} className="block relative h-40 w-full overflow-hidden bg-slate-900">
+                    <ChemicalVisual product={p} />
+                  </Link>
+
+                  <div className="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                      {/* Top Row: Category tag + CAS pill */}
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-cyan-50 text-cyan-700 border border-cyan-100 truncate max-w-[130px]">
+                          {p.category}
                         </span>
+                        {p.cas_number && (
+                          <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200 shrink-0">
+                            CAS: {p.cas_number}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Product Arabic Name */}
+                      <Link href={`/shop/${p.slug || p.id}`}>
+                        <h3 className="text-sm sm:text-base font-bold text-navy-950 mb-1 group-hover:text-cyan-600 transition-colors line-clamp-2 leading-snug">
+                          {p.name_ar || p.name}
+                        </h3>
+                      </Link>
+
+                      {/* Product English Name */}
+                      {p.name_en && (
+                        <p className="text-[11px] font-mono text-slate-400 mb-3 truncate">
+                          {p.name_en}
+                        </p>
                       )}
                     </div>
 
-                    {/* Product Arabic Name */}
-                    <Link href={`/shop/${p.slug || p.id}`}>
-                      <h3 className="text-sm sm:text-base font-bold text-navy-950 mb-1 group-hover:text-sky-600 transition-colors line-clamp-2 leading-snug">
-                        {p.name_ar || p.name}
-                      </h3>
-                    </Link>
-
-                    {/* Product English Name */}
-                    {p.name_en && (
-                      <p className="text-[11px] font-mono text-slate-400 mb-4 truncate">
-                        {p.name_en}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Actions Footer: RFQ + Details */}
-                  <div className="pt-3 border-t border-slate-100 flex items-center gap-2 mt-2">
-                    <Button
-                      size="sm"
-                      onClick={() => setRfqProduct(p)}
-                      className="flex-1 bg-navy-950 hover:bg-sky-600 text-white font-bold h-9 text-xs rounded-xl shadow-sm transition-colors"
-                    >
-                      <FileText className="w-3.5 h-3.5 ml-1.5" />
-                      طلب تسعير
-                    </Button>
-                    <Link href={`/shop/${p.slug || p.id}`}>
+                    {/* Actions Footer: RFQ + Details */}
+                    <div className="pt-3 border-t border-slate-100 flex items-center gap-2 mt-2">
                       <Button
                         size="sm"
-                        variant="outline"
-                        className="h-9 px-3 rounded-xl border-slate-200 text-slate-600 hover:text-navy-950 hover:bg-slate-50 text-xs font-bold"
-                        title="تفاصيل المادة"
+                        onClick={() => setRfqProduct(p)}
+                        className="flex-1 bg-[#070e22] hover:bg-cyan-600 text-white font-bold h-9 text-xs rounded-xl shadow-sm transition-colors"
                       >
-                        <Info className="w-3.5 h-3.5" />
+                        <FileText className="w-3.5 h-3.5 ml-1.5" />
+                        طلب تسعير
                       </Button>
-                    </Link>
+                      <Link href={`/shop/${p.slug || p.id}`}>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="h-9 px-3 rounded-xl border-slate-200 text-slate-600 hover:text-navy-950 hover:bg-slate-50 text-xs font-bold"
+                          title="تفاصيل المادة"
+                        >
+                          <Info className="w-3.5 h-3.5" />
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                 </motion.div>
               ))}
