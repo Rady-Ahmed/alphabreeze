@@ -63,6 +63,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://alphabreeze.vercel.app",
   },
+  icons: {
+    icon: "/logo-icon.png",
+    shortcut: "/logo-icon.png",
+    apple: "/logo-icon.png",
+  },
 };
 
 export default function RootLayout({

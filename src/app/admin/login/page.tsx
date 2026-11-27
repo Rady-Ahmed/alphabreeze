@@ -109,8 +109,8 @@ export default function AdminLoginPage() {
           
           {/* Brand Header */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-sky-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-cyan-500/25 p-3">
-              <Logo className="w-full h-full text-white" />
+            <div className="w-16 h-16 rounded-2xl bg-white shadow-xl shadow-cyan-500/20 flex items-center justify-center mx-auto mb-4 p-2.5 border border-white/20">
+              <Logo className="w-full h-full" />
             </div>
             <h1 className="text-2xl font-black text-white tracking-tight">
               لوحة إدارة <span className="text-transparent bg-clip-text bg-gradient-to-l from-cyan-300 to-sky-400">ألفا بريز</span>

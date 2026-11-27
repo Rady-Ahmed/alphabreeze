@@ -1,5 +1,7 @@
 "use client";
 
+import { Logo } from "@/components/ui/logo";
+
 export default function Loading() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white">
@@ -15,9 +17,9 @@ export default function Loading() {
             style={{ animationDuration: "1.5s", animationDirection: "reverse" }}
           />
         </div>
-        {/* Center icon */}
+        {/* Center official emblem */}
         <div className="w-28 h-28 flex items-center justify-center">
-          <span className="text-4xl">🌬️</span>
+          <Logo className="w-14 h-14" priority />
         </div>
       </div>
 
