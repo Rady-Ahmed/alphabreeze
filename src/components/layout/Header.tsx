@@ -12,6 +12,7 @@ import { getSiteSettings } from "@/lib/db";
 const navLinks = [
   { href: "/", label: "الرئيسية" },
   { href: "/shop", label: "كتالوج المواد الخام", highlight: true },
+  { href: "/calculator", label: "حاسبة التركيبات", newBadge: true },
   { href: "/services", label: "خدماتنا الصناعية" },
   { href: "/about", label: "عن ألفا بريز" },
   { href: "/articles", label: "المقالات الفنية" },

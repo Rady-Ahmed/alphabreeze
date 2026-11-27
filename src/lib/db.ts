@@ -1153,6 +1153,22 @@ export async function updateOrderStatus(orderId: string, status: string) {
   return null;
 }
 
+export async function deleteOrder(orderId: string) {
+  const supabase = getSupabase();
+  if (supabase) {
+    const { error } = await supabase.from("orders").delete().eq("id", orderId);
+    if (error) throw new Error(error.message);
+    return true;
+  }
+  if (typeof window !== "undefined") {
+    const orders = JSON.parse(localStorage.getItem("alphabreeze_all_orders") || "[]");
+    const filtered = orders.filter((o: any) => o.id !== orderId);
+    localStorage.setItem("alphabreeze_all_orders", JSON.stringify(filtered));
+    return true;
+  }
+  return false;
+}
+
 // ============================================
 // CONTACT MESSAGES
 // ============================================

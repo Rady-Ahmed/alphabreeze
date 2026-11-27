@@ -1,351 +1,472 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Plus, Search, Edit, Trash2, Star, X, Loader2, Save } from "lucide-react";
+import {
+  Plus, Search, Edit2, Trash2, Star, X, Loader2, Save,
+  FlaskConical, CheckCircle2, AlertCircle, Eye, RefreshCw, Filter, Layers
+} from "lucide-react";
 import { toast } from "sonner";
-import { getAllProducts, createProduct, updateProduct, deleteProduct, getSupabase } from "@/lib/db";
+import { getAllProducts, createProduct, updateProduct, deleteProduct } from "@/lib/db";
+import { B2B_CATEGORIES } from "@/lib/constants";
+import ChemicalVisual from "@/components/ui/ChemicalVisual";
 
-const CATEGORIES = ["خامات طبيعية", "زيوت طبيعية", "مواد فعالة", "شموع", "فيتامينات", "مواد حافظة"];
-const EMOJIS = ["📦", "🧴", "🫒", "🍯", "💧", "✨", "🥥", "🐚", "🍫", "🌰", "🧪", "🌿", "⚗️"];
-
-const EMPTY_FORM = { name: "", category: "خامات طبيعية", price: "", stock: "", emoji: "📦", description: "" };
-
-export default function ProductsPage() {
+export default function AdminProductsPage() {
   const [products, setProducts] = useState<any[]>([]);
   const [search, setSearch] = useState("");
-  const [mounted, setMounted] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [loading, setLoading] = useState(true);
+
+  // Add & Edit modal states
+  const [showModal, setShowModal] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState<any>({
+    name_ar: "",
+    name_en: "",
+    category: "الزيوت والمستخلصات النباتية",
+    category_slug: "oils-and-extracts",
+    cas_number: "",
+    price: "",
+    stock_quantity: 100,
+    package_size: "برميل 25 كجم",
+    description_ar: "",
+    is_active: true,
+    is_featured: false,
+  });
+
   const [saving, setSaving] = useState(false);
 
-  // Add Modal
-  const [showAddModal, setShowAddModal] = useState(false);
-  const [newProduct, setNewProduct] = useState({ ...EMPTY_FORM });
-
-  // Edit Modal
-  const [showEditModal, setShowEditModal] = useState(false);
-  const [editProduct, setEditProduct] = useState<any>(null);
-
   useEffect(() => {
-    loadData();
+    loadProducts();
   }, []);
 
-  async function loadData() {
+  async function loadProducts() {
     setLoading(true);
     try {
       const data = await getAllProducts();
-      const supabase = getSupabase();
-      if (supabase) {
-        setProducts(data || []);
-      } else {
-        const saved = localStorage.getItem("alphabreeze_products");
-        const fallback = saved ? JSON.parse(saved) : [
-          { id: 1, name: "زبدة الشيا الخام", category: "خامات طبيعية", price: 250, stock: 45, is_active: true, is_featured: true, emoji: "🧴" },
-          { id: 2, name: "زيت الأرجان المغربي", category: "زيوت طبيعية", price: 180, stock: 30, is_active: true, is_featured: false, emoji: "🫒" },
-          { id: 3, name: "شمع العسل الطبيعي", category: "شموع", price: 150, stock: 60, is_active: true, is_featured: false, emoji: "🍯" },
-          { id: 4, name: "حمض الهيالورونيك", category: "مواد فعالة", price: 450, stock: 20, is_active: true, is_featured: true, emoji: "💧" },
-          { id: 5, name: "فيتامين سي بودرة", category: "فيتامينات", price: 380, stock: 15, is_active: false, is_featured: false, emoji: "✨" },
-        ];
-        setProducts(fallback);
-      }
-    } catch (e) {
-      console.error(e);
+      setProducts(data || []);
+    } catch {
+      toast.error("تعذر تحميل المنتجات من قاعدة البيانات");
     } finally {
-      setMounted(true);
       setLoading(false);
     }
   }
 
-  const handleDelete = async (id: any) => {
-    if (!window.confirm("هل أنت متأكد من حذف هذا المنتج؟")) return;
+  const filteredProducts = useMemo(() => {
+    return products.filter((p) => {
+      const matchCat =
+        selectedCategory === "all" ||
+        p.category_slug === selectedCategory ||
+        p.technical_specs?.category_slug === selectedCategory ||
+        (B2B_CATEGORIES.find((c) => c.slug === selectedCategory)?.name_ar === p.category);
+
+      const q = search.trim().toLowerCase();
+      const matchSearch =
+        !q ||
+        (p.name_ar && p.name_ar.toLowerCase().includes(q)) ||
+        (p.name && p.name.toLowerCase().includes(q)) ||
+        (p.name_en && p.name_en.toLowerCase().includes(q)) ||
+        (p.cas_number && p.cas_number.toLowerCase().includes(q));
+
+      return matchCat && matchSearch;
+    });
+  }, [products, selectedCategory, search]);
+
+  const handleOpenAdd = () => {
+    setIsEditing(false);
+    setCurrentProduct({
+      name_ar: "",
+      name_en: "",
+      category: "الزيوت والمستخلصات النباتية",
+      category_slug: "oils-and-extracts",
+      cas_number: "",
+      price: "",
+      stock_quantity: 100,
+      package_size: "برميل 25 كجم",
+      description_ar: "",
+      is_active: true,
+      is_featured: false,
+    });
+    setShowModal(true);
+  };
+
+  const handleOpenEdit = (p: any) => {
+    setIsEditing(true);
+    setCurrentProduct({ ...p });
+    setShowModal(true);
+  };
+
+  const handleSave = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!currentProduct.name_ar) {
+      toast.error("يرجى إدخال اسم المادة بالعربية");
+      return;
+    }
+
+    setSaving(true);
+    try {
+      if (isEditing) {
+        await updateProduct(currentProduct.id, currentProduct);
+        setProducts((prev) =>
+          prev.map((item) => (item.id === currentProduct.id ? { ...item, ...currentProduct } : item))
+        );
+        toast.success("تم تحديث المادة الكيميائية بنجاح ✓");
+      } else {
+        const created = await createProduct({
+          ...currentProduct,
+          price: Number(currentProduct.price) || 0,
+        });
+        setProducts((prev) => [created || { ...currentProduct, id: String(Date.now()) }, ...prev]);
+        toast.success("تمت إضافة المادة الكيميائية للكتالوج بنجاح ✓");
+      }
+      setShowModal(false);
+    } catch {
+      toast.error("حدث خطأ أثناء حفظ التعديلات");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleDelete = async (id: string, name: string) => {
+    if (!confirm(`هل أنت متأكد من حذف المادة "${name}" نهائياً من الكتالوج؟`)) return;
+
     try {
       await deleteProduct(id);
-      setProducts(products.filter((p) => p.id !== id));
-      toast.success("تم حذف المنتج بنجاح");
-    } catch (e: any) {
-      toast.error(e.message || "حدث خطأ أثناء الحذف");
+      setProducts((prev) => prev.filter((item) => item.id !== id));
+      toast.success("تم حذف المادة بنجاح");
+    } catch {
+      toast.error("تعذر حذف المادة");
     }
   };
 
-  const toggleStatus = async (id: any, currentStatus: boolean) => {
+  const handleToggleActive = async (p: any) => {
+    const updatedStatus = !p.is_active;
     try {
-      await updateProduct(id, { is_active: !currentStatus });
-      setProducts(products.map((p) => p.id === id ? { ...p, is_active: !currentStatus } : p));
-      toast.success(`تم ${!currentStatus ? "تفعيل" : "إخفاء"} المنتج`);
-    } catch (e: any) {
-      toast.error(e.message || "حدث خطأ");
+      await updateProduct(p.id, { is_active: updatedStatus });
+      setProducts((prev) =>
+        prev.map((item) => (item.id === p.id ? { ...item, is_active: updatedStatus } : item))
+      );
+      toast.success(updatedStatus ? "تم تفعيل المادة في المتجر" : "تم تعطيل ظهور المادة");
+    } catch {
+      toast.error("تعذر تحديث الحالة");
     }
   };
-
-  const toggleFeatured = async (id: any, currentFeatured: boolean) => {
-    try {
-      await updateProduct(id, { is_featured: !currentFeatured });
-      setProducts(products.map((p) => p.id === id ? { ...p, is_featured: !currentFeatured } : p));
-      toast.success("تم تحديث حالة التميز");
-    } catch (e: any) {
-      toast.error(e.message || "حدث خطأ");
-    }
-  };
-
-  const handleAdd = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newProduct.name || !newProduct.price || !newProduct.stock) {
-      toast.error("يرجى تعبئة جميع الحقول المطلوبة");
-      return;
-    }
-    setSaving(true);
-    try {
-      const added = await createProduct({
-        name: newProduct.name,
-        category: newProduct.category,
-        price: Number(newProduct.price),
-        stock: Number(newProduct.stock),
-        description: newProduct.description || null,
-        is_active: true,
-        is_featured: false,
-        emoji: newProduct.emoji,
-        image: (newProduct as any).image || null,
-      });
-      setProducts([added, ...products]);
-      setShowAddModal(false);
-      setNewProduct({ ...EMPTY_FORM });
-      toast.success("تم إضافة المنتج بنجاح ✅");
-    } catch (e: any) {
-      toast.error(e.message || "حدث خطأ أثناء الإضافة");
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  const openEdit = (product: any) => {
-    setEditProduct({
-      ...product,
-      price: String(product.price),
-      stock: String(product.stock),
-      category: typeof product.category === 'object' ? product.category?.name_ar : product.category,
-    });
-    setShowEditModal(true);
-  };
-
-  const handleEdit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!editProduct?.name || !editProduct?.price || !editProduct?.stock) {
-      toast.error("يرجى تعبئة جميع الحقول المطلوبة");
-      return;
-    }
-    setSaving(true);
-    try {
-      const updated = await updateProduct(editProduct.id, {
-        name: editProduct.name,
-        category: editProduct.category,
-        price: Number(editProduct.price),
-        stock: Number(editProduct.stock),
-        description: editProduct.description || null,
-        emoji: editProduct.emoji,
-        image: editProduct.image || null,
-      });
-      setProducts(products.map((p) => p.id === editProduct.id ? { ...p, ...editProduct, price: Number(editProduct.price), stock: Number(editProduct.stock) } : p));
-      setShowEditModal(false);
-      toast.success("تم تعديل المنتج بنجاح ✅");
-    } catch (e: any) {
-      toast.error(e.message || "حدث خطأ أثناء التعديل");
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  if (!mounted) return null;
-
-  const filtered = products.filter((p) => p.name?.toLowerCase().includes(search.toLowerCase()));
 
   return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div className="flex items-center justify-between">
+    <div className="space-y-6" dir="rtl">
+      
+      {/* Top Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm">
         <div>
-          <h1 className="text-2xl font-bold text-navy-900">إدارة المنتجات</h1>
-          <p className="text-gray-500 text-sm">{products.length} منتج في قاعدة البيانات</p>
+          <div className="flex items-center gap-2 mb-1">
+            <h1 className="text-2xl font-black text-slate-900">إدارة كتالوج المواد الخام</h1>
+            <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-800">
+              {products.length} مادة مسجلة
+            </span>
+          </div>
+          <p className="text-slate-500 text-xs">
+            تحكم كامل في أسعار الخامات، أرقام الـ CAS، الأوزان، وحالات التوفر في المتجر
+          </p>
         </div>
+
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={loadData} disabled={loading}>
-            <Loader2 className={`w-4 h-4 ml-1 ${loading ? "animate-spin" : ""}`} />
+          <Button
+            variant="outline"
+            onClick={loadProducts}
+            disabled={loading}
+            className="rounded-xl text-xs gap-1.5 h-10 border-slate-200"
+          >
+            <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
             تحديث
           </Button>
-          <Button onClick={() => { setNewProduct({ ...EMPTY_FORM }); setShowAddModal(true); }}>
-            <Plus className="w-4 h-4 ml-1" />
-            إضافة منتج
+          <Button
+            onClick={handleOpenAdd}
+            className="bg-gradient-to-l from-cyan-500 to-sky-600 hover:from-cyan-600 hover:to-sky-700 text-white rounded-xl text-xs font-bold gap-1.5 h-10 shadow-md shadow-cyan-500/20"
+          >
+            <Plus className="w-4 h-4" />
+            إضافة مادة خام جديدة
           </Button>
         </div>
       </div>
 
-      {/* Table */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-center gap-3">
-            <div className="relative flex-1 max-w-sm">
-              <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-              <Input placeholder="بحث عن منتج..." className="pr-9" value={search} onChange={(e) => setSearch(e.target.value)} />
-            </div>
-            <p className="text-sm text-gray-500">{filtered.length} نتيجة</p>
+      {/* Filter and Search Bar */}
+      <div className="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col md:flex-row items-center gap-3">
+        <div className="relative flex-1 w-full">
+          <Search className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+          <Input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="ابحث بالاسم العربي أو الإنجليزي أو رقم CAS..."
+            className="pr-10 h-10 rounded-xl text-xs bg-slate-50 border-slate-200 focus:bg-white"
+          />
+        </div>
+
+        <div className="flex items-center gap-2 w-full md:w-auto overflow-x-auto">
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="h-10 px-3 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          >
+            <option value="all">جميع الأقسام ({products.length})</option>
+            {B2B_CATEGORIES.map((cat) => (
+              <option key={cat.slug} value={cat.slug}>
+                {cat.name_ar}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      {/* Products Table */}
+      <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden">
+        {loading ? (
+          <div className="text-center py-20">
+            <Loader2 className="w-8 h-8 animate-spin text-cyan-500 mx-auto mb-2" />
+            <p className="text-xs text-slate-400">جاري تحميل كتالوج الخامات...</p>
           </div>
-        </CardHeader>
-        <CardContent>
-          {loading ? (
-            <div className="flex justify-center items-center py-20">
-              <Loader2 className="w-8 h-8 animate-spin text-sky-500" />
-            </div>
-          ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-gray-100">
-                    <th className="text-right py-3 px-3 font-medium text-gray-500">المنتج</th>
-                    <th className="text-right py-3 px-3 font-medium text-gray-500">التصنيف</th>
-                    <th className="text-right py-3 px-3 font-medium text-gray-500">السعر</th>
-                    <th className="text-right py-3 px-3 font-medium text-gray-500">المخزون</th>
-                    <th className="text-right py-3 px-3 font-medium text-gray-500">الحالة</th>
-                    <th className="text-right py-3 px-3 font-medium text-gray-500">إجراءات</th>
+        ) : filteredProducts.length === 0 ? (
+          <div className="text-center py-16">
+            <FlaskConical className="w-10 h-10 text-slate-300 mx-auto mb-2" />
+            <p className="text-sm font-bold text-slate-700">لا توجد مواد مطابقة للبحث</p>
+            <p className="text-xs text-slate-400 mt-1">تأكد من كتابة الكلمة بشكل صحيح أو اختر قسماً آخر.</p>
+          </div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-right text-xs">
+              <thead className="bg-slate-50 border-b border-slate-200/80 text-slate-500 font-bold">
+                <tr>
+                  <th className="py-3.5 px-4">المادة الكيميائية</th>
+                  <th className="py-3.5 px-4">القسم</th>
+                  <th className="py-3.5 px-4">رقم CAS</th>
+                  <th className="py-3.5 px-4">السعر التقديري</th>
+                  <th className="py-3.5 px-4">حجم العبوة</th>
+                  <th className="py-3.5 px-4">المخزون</th>
+                  <th className="py-3.5 px-4">الحالة</th>
+                  <th className="py-3.5 px-4 text-center">إجراءات</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {filteredProducts.map((p) => (
+                  <tr key={p.id} className="hover:bg-slate-50/80 transition-colors">
+                    {/* Visual & Name */}
+                    <td className="py-3 px-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-slate-200/80 bg-slate-900">
+                          <ChemicalVisual product={p} showBadge={false} />
+                        </div>
+                        <div>
+                          <p className="font-bold text-slate-900 text-sm">{p.name_ar || p.name}</p>
+                          {p.name_en && <p className="text-[11px] font-mono text-slate-400">{p.name_en}</p>}
+                        </div>
+                      </div>
+                    </td>
+
+                    {/* Category */}
+                    <td className="py-3 px-4">
+                      <span className="px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 text-[11px] font-medium">
+                        {p.category || "عام"}
+                      </span>
+                    </td>
+
+                    {/* CAS */}
+                    <td className="py-3 px-4 font-mono font-semibold text-slate-600">
+                      {p.cas_number || "—"}
+                    </td>
+
+                    {/* Price */}
+                    <td className="py-3 px-4 font-bold text-slate-800">
+                      {p.price ? `${p.price} ج.م` : "عند الطلب"}
+                    </td>
+
+                    {/* Package */}
+                    <td className="py-3 px-4 text-slate-600">
+                      {p.package_size || p.packaging_options || "برميل صناعي"}
+                    </td>
+
+                    {/* Stock */}
+                    <td className="py-3 px-4">
+                      <span className="font-mono font-bold text-slate-700">
+                        {p.stock_quantity ?? 100} كجم
+                      </span>
+                    </td>
+
+                    {/* Status */}
+                    <td className="py-3 px-4">
+                      <button
+                        onClick={() => handleToggleActive(p)}
+                        className={`px-2.5 py-1 rounded-full text-[10px] font-bold transition ${
+                          p.is_active !== false
+                            ? "bg-emerald-100 text-emerald-800 hover:bg-emerald-200"
+                            : "bg-slate-100 text-slate-500 hover:bg-slate-200"
+                        }`}
+                      >
+                        {p.is_active !== false ? "مفعل بالمتجر" : "معطل"}
+                      </button>
+                    </td>
+
+                    {/* Actions */}
+                    <td className="py-3 px-4 text-center">
+                      <div className="flex items-center justify-center gap-1.5">
+                        <button
+                          onClick={() => handleOpenEdit(p)}
+                          className="p-1.5 rounded-lg border border-slate-200 hover:bg-cyan-50 hover:text-cyan-600 text-slate-600 transition"
+                          title="تعديل المادة"
+                        >
+                          <Edit2 className="w-3.5 h-3.5" />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(p.id, p.name_ar || p.name)}
+                          className="p-1.5 rounded-lg border border-slate-200 hover:bg-red-50 hover:text-red-600 text-slate-600 transition"
+                          title="حذف نهائي"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {filtered.map((product) => (
-                    <tr key={product.id} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
-                      <td className="py-3 px-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-xl overflow-hidden shrink-0">
-                            {product.image ? (
-                              <img src={product.image} alt={product.name} className="w-full h-full object-cover" onError={(e) => (e.currentTarget.style.display = "none")} />
-                            ) : (
-                              product.emoji || "📦"
-                            )}
-                          </div>
-                          <div>
-                            <p className="font-medium text-navy-900 flex items-center gap-2">
-                              {product.name}
-                              <button onClick={() => toggleFeatured(product.id, product.is_featured)} title={product.is_featured ? "إلغاء التميز" : "تمييز المنتج"}>
-                                <Star className={`w-3.5 h-3.5 transition-colors ${product.is_featured ? "text-amber-400 fill-amber-400" : "text-gray-300 hover:text-amber-300"}`} />
-                              </button>
-                            </p>
-                            {product.description && <p className="text-xs text-gray-400 truncate max-w-[200px]">{product.description}</p>}
-                          </div>
-                        </div>
-                      </td>
-                      <td className="py-3 px-3 text-gray-600 text-sm">
-                        {typeof product.category === 'object' && product.category !== null
-                          ? product.category.name_ar
-                          : product.category}
-                      </td>
-                      <td className="py-3 px-3 font-bold text-navy-900">{Number(product.price).toLocaleString()} ج.م</td>
-                      <td className="py-3 px-3">
-                        <span className={`font-medium ${product.stock < 10 ? "text-red-500" : product.stock < 20 ? "text-amber-500" : "text-gray-600"}`}>
-                          {product.stock}
-                          {product.stock < 10 && <span className="text-xs mr-1">(منخفض)</span>}
-                        </span>
-                      </td>
-                      <td className="py-3 px-3 cursor-pointer" onClick={() => toggleStatus(product.id, product.is_active)}>
-                        <Badge variant={product.is_active ? "success" : "destructive"} className="cursor-pointer">
-                          {product.is_active ? "✓ نشط" : "✕ مخفي"}
-                        </Badge>
-                      </td>
-                      <td className="py-3 px-3">
-                        <div className="flex items-center gap-1">
-                          <button
-                            onClick={() => openEdit(product)}
-                            className="p-2 rounded-lg hover:bg-sky-50 text-sky-500 transition-colors"
-                            title="تعديل المنتج"
-                          >
-                            <Edit className="w-4 h-4" />
-                          </button>
-                          <button
-                            onClick={() => handleDelete(product.id)}
-                            className="p-2 rounded-lg hover:bg-red-50 text-red-500 transition-colors"
-                            title="حذف المنتج"
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                  {filtered.length === 0 && (
-                    <tr>
-                      <td colSpan={6} className="py-12 text-center text-gray-400">
-                        <p className="text-lg mb-1">لا توجد منتجات</p>
-                        <p className="text-sm">اضغط على &quot;إضافة منتج&quot; لإضافة أول منتج</p>
-                      </td>
-                    </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+
+      {/* Add / Edit Modal */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <div className="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-100 max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
+              <h3 className="font-bold text-slate-900 text-base">
+                {isEditing ? "تعديل بيانات مادة خام" : "إضافة مادة خام كيميائية جديدة"}
+              </h3>
+              <button onClick={() => setShowModal(false)} className="p-1 rounded-lg hover:bg-slate-100 text-slate-400">
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <form onSubmit={handleSave} className="space-y-4 text-xs">
+              <div>
+                <label className="font-bold text-slate-700 block mb-1">اسم المادة بالعربية *</label>
+                <Input
+                  required
+                  value={currentProduct.name_ar || ""}
+                  onChange={(e) => setCurrentProduct({ ...currentProduct, name_ar: e.target.value })}
+                  placeholder="مثال: زيت أرجان نقي معصور على البارد"
+                  className="rounded-xl"
+                />
+              </div>
+
+              <div>
+                <label className="font-bold text-slate-700 block mb-1">الاسم بالإنجليزي / INCI Name</label>
+                <Input
+                  dir="ltr"
+                  value={currentProduct.name_en || ""}
+                  onChange={(e) => setCurrentProduct({ ...currentProduct, name_en: e.target.value })}
+                  placeholder="Argania Spinosa Kernel Oil"
+                  className="rounded-xl font-mono text-left"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="font-bold text-slate-700 block mb-1">القسم</label>
+                  <select
+                    value={currentProduct.category_slug || "oils-and-extracts"}
+                    onChange={(e) => {
+                      const slug = e.target.value;
+                      const cat = B2B_CATEGORIES.find((c) => c.slug === slug);
+                      setCurrentProduct({
+                        ...currentProduct,
+                        category_slug: slug,
+                        category: cat?.name_ar || "عام",
+                      });
+                    }}
+                    className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white"
+                  >
+                    {B2B_CATEGORIES.map((cat) => (
+                      <option key={cat.slug} value={cat.slug}>
+                        {cat.name_ar}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="font-bold text-slate-700 block mb-1">رقم الـ CAS Number</label>
+                  <Input
+                    dir="ltr"
+                    value={currentProduct.cas_number || ""}
+                    onChange={(e) => setCurrentProduct({ ...currentProduct, cas_number: e.target.value })}
+                    placeholder="223747-87-3"
+                    className="rounded-xl font-mono text-left"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="font-bold text-slate-700 block mb-1">السعر التقديري (ج.م / كجم)</label>
+                  <Input
+                    type="number"
+                    value={currentProduct.price || ""}
+                    onChange={(e) => setCurrentProduct({ ...currentProduct, price: e.target.value })}
+                    placeholder="250"
+                    className="rounded-xl"
+                  />
+                </div>
+
+                <div>
+                  <label className="font-bold text-slate-700 block mb-1">المخزون المتاح (كجم)</label>
+                  <Input
+                    type="number"
+                    value={currentProduct.stock_quantity ?? 100}
+                    onChange={(e) => setCurrentProduct({ ...currentProduct, stock_quantity: Number(e.target.value) })}
+                    placeholder="500"
+                    className="rounded-xl"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="font-bold text-slate-700 block mb-1">حجم ونوع التعبئة</label>
+                <Input
+                  value={currentProduct.package_size || ""}
+                  onChange={(e) => setCurrentProduct({ ...currentProduct, package_size: e.target.value })}
+                  placeholder="مثال: برميل 25 كجم / درم 200 كجم"
+                  className="rounded-xl"
+                />
+              </div>
+
+              <div>
+                <label className="font-bold text-slate-700 block mb-1">الوصف والاستخدام المعملي</label>
+                <textarea
+                  rows={3}
+                  value={currentProduct.description_ar || ""}
+                  onChange={(e) => setCurrentProduct({ ...currentProduct, description_ar: e.target.value })}
+                  placeholder="شرح موجز لأهم استخدامات المادة ونسب التركيز..."
+                  className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                />
+              </div>
+
+              <div className="flex items-center justify-end gap-2 pt-3 border-t border-slate-100">
+                <Button type="button" variant="outline" onClick={() => setShowModal(false)} className="rounded-xl">
+                  إلغاء
+                </Button>
+                <Button
+                  type="submit"
+                  disabled={saving}
+                  className="bg-gradient-to-l from-cyan-500 to-sky-600 text-white rounded-xl font-bold"
+                >
+                  {saving ? (
+                    <span className="flex items-center gap-1.5">
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                      جاري الحفظ...
+                    </span>
+                  ) : (
+                    <span>حفظ المادة في الكتالوج</span>
                   )}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-
-      {/* ──── ADD MODAL ──── */}
-      {showAddModal && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl p-6 w-full max-w-md shadow-2xl">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-navy-900">إضافة منتج جديد</h2>
-              <button onClick={() => setShowAddModal(false)} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <form onSubmit={handleAdd} className="space-y-4">
-              {/* Emoji Picker */}
-              <div>
-                <label className="text-sm font-medium text-gray-700 block mb-2">أيقونة المنتج</label>
-                <div className="flex flex-wrap gap-2">
-                  {EMOJIS.map(em => (
-                    <button
-                      key={em} type="button"
-                      onClick={() => setNewProduct({ ...newProduct, emoji: em })}
-                      className={`w-10 h-10 rounded-xl text-xl flex items-center justify-center transition-all ${newProduct.emoji === em ? "bg-sky-100 ring-2 ring-sky-500" : "bg-gray-50 hover:bg-gray-100"}`}
-                    >{em}</button>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-700">اسم المنتج *</label>
-                <Input required value={newProduct.name} onChange={e => setNewProduct({ ...newProduct, name: e.target.value })} className="mt-1" placeholder="مثال: زبدة الشيا الخام" />
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-700">التصنيف *</label>
-                <select
-                  value={newProduct.category}
-                  onChange={e => setNewProduct({ ...newProduct, category: e.target.value })}
-                  className="mt-1 w-full h-10 rounded-lg border border-gray-200 px-3 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none"
-                >
-                  {CATEGORIES.map(cat => <option key={cat} value={cat}>{cat}</option>)}
-                </select>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-medium text-gray-700">السعر (ج.م) *</label>
-                  <Input required type="number" min="0" value={newProduct.price} onChange={e => setNewProduct({ ...newProduct, price: e.target.value })} className="mt-1" placeholder="250" />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700">المخزون *</label>
-                  <Input required type="number" min="0" value={newProduct.stock} onChange={e => setNewProduct({ ...newProduct, stock: e.target.value })} className="mt-1" placeholder="50" />
-                </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-700">رابط الصورة (اختياري)</label>
-                <Input value={(newProduct as any).image || ""} onChange={e => setNewProduct({ ...newProduct, image: e.target.value } as any)} className="mt-1" placeholder="https://example.com/image.jpg" dir="ltr" />
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-700">وصف قصير (اختياري)</label>
-                <Input value={newProduct.description} onChange={e => setNewProduct({ ...newProduct, description: e.target.value })} className="mt-1" placeholder="وصف مختصر للمنتج" />
-              </div>
-              <div className="flex gap-3 pt-2">
-                <Button type="button" variant="outline" onClick={() => setShowAddModal(false)} className="flex-1">إلغاء</Button>
-                <Button type="submit" className="flex-1" disabled={saving}>
-                  {saving ? <Loader2 className="w-4 h-4 animate-spin ml-2" /> : <Plus className="w-4 h-4 ml-2" />}
-                  {saving ? "جاري الحفظ..." : "إضافة المنتج"}
                 </Button>
               </div>
             </form>
@@ -353,84 +474,6 @@ export default function ProductsPage() {
         </div>
       )}
 
-      {/* ──── EDIT MODAL ──── */}
-      {showEditModal && editProduct && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl p-6 w-full max-w-md shadow-2xl">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-navy-900">تعديل المنتج</h2>
-              <button onClick={() => setShowEditModal(false)} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <form onSubmit={handleEdit} className="space-y-4">
-              {/* Emoji Picker */}
-              <div>
-                <label className="text-sm font-medium text-gray-700 block mb-2">أيقونة المنتج</label>
-                <div className="flex flex-wrap gap-2">
-                  {EMOJIS.map(em => (
-                    <button
-                      key={em} type="button"
-                      onClick={() => setEditProduct({ ...editProduct, emoji: em })}
-                      className={`w-10 h-10 rounded-xl text-xl flex items-center justify-center transition-all ${editProduct.emoji === em ? "bg-sky-100 ring-2 ring-sky-500" : "bg-gray-50 hover:bg-gray-100"}`}
-                    >{em}</button>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-700">اسم المنتج *</label>
-                <Input required value={editProduct.name} onChange={e => setEditProduct({ ...editProduct, name: e.target.value })} className="mt-1" />
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-700">التصنيف *</label>
-                <select
-                  value={editProduct.category}
-                  onChange={e => setEditProduct({ ...editProduct, category: e.target.value })}
-                  className="mt-1 w-full h-10 rounded-lg border border-gray-200 px-3 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none"
-                >
-                  {CATEGORIES.map(cat => <option key={cat} value={cat}>{cat}</option>)}
-                </select>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-medium text-gray-700">السعر (ج.م) *</label>
-                  <Input required type="number" min="0" value={editProduct.price} onChange={e => setEditProduct({ ...editProduct, price: e.target.value })} className="mt-1" />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700">المخزون *</label>
-                  <Input required type="number" min="0" value={editProduct.stock} onChange={e => setEditProduct({ ...editProduct, stock: e.target.value })} className="mt-1" />
-                </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-700">رابط الصورة (اختياري)</label>
-                <Input value={editProduct.image || ""} onChange={e => setEditProduct({ ...editProduct, image: e.target.value })} className="mt-1" placeholder="https://example.com/image.jpg" dir="ltr" />
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-700">وصف قصير (اختياري)</label>
-                <Input value={editProduct.description || ""} onChange={e => setEditProduct({ ...editProduct, description: e.target.value })} className="mt-1" placeholder="وصف مختصر للمنتج" />
-              </div>
-              {/* Toggle Active */}
-              <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
-                <span className="text-sm font-medium text-gray-700">حالة المنتج</span>
-                <button
-                  type="button"
-                  onClick={() => setEditProduct({ ...editProduct, is_active: !editProduct.is_active })}
-                  className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${editProduct.is_active ? "bg-emerald-100 text-emerald-700" : "bg-red-100 text-red-700"}`}
-                >
-                  {editProduct.is_active ? "✓ نشط" : "✕ مخفي"}
-                </button>
-              </div>
-              <div className="flex gap-3 pt-2">
-                <Button type="button" variant="outline" onClick={() => setShowEditModal(false)} className="flex-1">إلغاء</Button>
-                <Button type="submit" className="flex-1 bg-sky-500 hover:bg-sky-600" disabled={saving}>
-                  {saving ? <Loader2 className="w-4 h-4 animate-spin ml-2" /> : <Save className="w-4 h-4 ml-2" />}
-                  {saving ? "جاري الحفظ..." : "حفظ التعديلات"}
-                </Button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
