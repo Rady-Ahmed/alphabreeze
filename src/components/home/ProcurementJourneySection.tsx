@@ -108,7 +108,7 @@ export default function ProcurementJourneySection() {
         {/* Action Button */}
         <div className="text-center mt-12">
           <a
-            href="https://wa.me/201119446474?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A5%D8%B1%D8%B3%D8%A7%D9%84%20%D9%82%D8%A7%D8%A6%D9%85%D8%A9%20%D8%AE%D8%A7%D9%85%D8%A7%D8%AA%20(RFQ)%20%D9%84%D9%85%D8%B5%D9%86%D8%B9%D9%86%D8%A7"
+            href="https://wa.me/201019946409?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A5%D8%B1%D8%B3%D8%A7%D9%84%20%D9%82%D8%A7%D8%A6%D9%85%D8%A9%20%D8%AE%D8%A7%D9%85%D8%A7%D8%AA%20(RFQ)%20%D9%84%D9%85%D8%B5%D9%86%D8%B9%D9%86%D8%A7"
             target="_blank"
             rel="noopener noreferrer"
           >

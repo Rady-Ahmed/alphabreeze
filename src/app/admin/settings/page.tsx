@@ -22,7 +22,7 @@ const DEFAULT_SETTINGS = {
   siteDescAr: "شريك نجاحك في صناعة مستحضرات التجميل والخامات",
   phone1: "01119446474",
   phone2: "01016067979",
-  whatsapp: "01119446474",
+  whatsapp: "01019946409",
   email: "info@alphabreeze.com",
   addressAr: "طريق جسر السويس الرئيسي، أمام محطة مترو نادي الشمس، القاهرة، مصر",
   mapsLink: "https://maps.google.com",

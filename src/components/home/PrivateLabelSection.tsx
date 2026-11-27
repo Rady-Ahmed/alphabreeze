@@ -33,7 +33,7 @@ export default function PrivateLabelSection() {
     const text = encodeURIComponent(
       `طلب تصنيع لحساب الغير (Private Label):\nالاسم: ${formData.name}\nالشركة / العلامة التجارية: ${formData.company || "غير محدد"}\nالهاتف: ${formData.phone}\nنوع المنتج: ${formData.productType}\nملاحظات: ${formData.notes || "لا يوجد"}`
     );
-    window.open(`https://wa.me/201119446474?text=${text}`, "_blank");
+    window.open(`https://wa.me/201019946409?text=${text}`, "_blank");
     setTimeout(() => setSubmitted(false), 4000);
   };
 

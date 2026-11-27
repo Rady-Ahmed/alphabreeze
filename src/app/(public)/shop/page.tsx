@@ -13,7 +13,7 @@ import ChemicalVisual from "@/components/ui/ChemicalVisual";
 
 const PAGE_SIZE = 24;
 
-const WHATSAPP = "201119446474";
+const WHATSAPP = "201019946409";
 
 const CATEGORY_IMAGES: Record<string, string> = {
   oils: "https://images.unsplash.com/photo-1608181831688-8e3fc5bab4cf?w=800&q=80",

@@ -20,7 +20,7 @@ import {
   FileText
 } from "lucide-react";
 
-const WHATSAPP_NUMBER = "201119446474";
+const WHATSAPP_NUMBER = "201019946409";
 
 const services = [
   {

@@ -132,7 +132,7 @@ export default function FeaturedProducts() {
     const msg = encodeURIComponent(
       `طلب عرض سعر (RFQ):\nالمادة: ${rfqProduct.name_ar} (${rfqProduct.name_en || ""})\nالكمية: ${rfqForm.quantity}\nالاسم: ${rfqForm.name}\nالشركة: ${rfqForm.company || "غير محدد"}\nالهاتف: ${rfqForm.phone}\nملاحظات: ${rfqForm.notes || "لا يوجد"}`
     );
-    window.open(`https://wa.me/201119446474?text=${msg}`, "_blank");
+    window.open(`https://wa.me/201019946409?text=${msg}`, "_blank");
     setTimeout(() => {
       setRfqSubmitted(false);
       setRfqProduct(null);

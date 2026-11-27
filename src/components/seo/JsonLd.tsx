@@ -16,7 +16,7 @@ export default function JsonLd() {
       "addressCountry": "EG"
     },
     "sameAs": [
-      "https://wa.me/201119446474"
+      "https://wa.me/201019946409"
     ]
   };
 

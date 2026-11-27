@@ -7,7 +7,7 @@ import {
   CheckCircle2, MessageCircle, Package, Atom, Layers
 } from "lucide-react";
 
-const WHATSAPP = "201119446474";
+const WHATSAPP = "201019946409";
 
 const STATS = [
   { value: "431+", label: "مادة خام في الكتالوج" },

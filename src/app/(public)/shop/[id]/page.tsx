@@ -11,7 +11,7 @@ import {
 import { getProductById, getProducts } from "@/lib/db";
 import ChemicalVisual from "@/components/ui/ChemicalVisual";
 
-const WHATSAPP = "201119446474";
+const WHATSAPP = "201019946409";
 
 const CATEGORY_IMAGES: Record<string, string> = {
   oils: "https://images.unsplash.com/photo-1608181831688-8e3fc5bab4cf?w=1200&q=85",

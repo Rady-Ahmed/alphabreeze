@@ -1575,7 +1575,7 @@ const DEFAULT_SITE_SETTINGS = {
   siteDescAr: "شريك نجاحك في صناعة مستحضرات التجميل والخامات",
   phone1: "01119446474",
   phone2: "01016067979",
-  whatsapp: "01119446474",
+  whatsapp: "01019946409",
   email: "info@alphabreeze.com",
   addressAr: "طريق جسر السويس الرئيسي، أمام محطة مترو نادي الشمس، القاهرة، مصر",
   mapsLink: "https://maps.google.com",
@@ -1597,7 +1597,7 @@ const DEFAULT_SOCIAL_LINKS = [
   { platform: "Facebook", id: "facebook", url: "https://facebook.com/alphabreeze", color: "bg-blue-100 text-blue-600" },
   { platform: "Instagram", id: "instagram", url: "https://instagram.com/alphabreeze", color: "bg-pink-100 text-pink-600" },
   { platform: "TikTok", id: "tiktok", url: "https://tiktok.com/@alphabreeze", color: "bg-gray-100 text-gray-800" },
-  { platform: "WhatsApp", id: "whatsapp", url: "https://wa.me/201119446474", color: "bg-green-100 text-green-600" },
+  { platform: "WhatsApp", id: "whatsapp", url: "https://wa.me/201019946409", color: "bg-green-100 text-green-600" },
   { platform: "YouTube", id: "youtube", url: "https://youtube.com/@alphabreeze", color: "bg-red-100 text-red-600" },
 ];
 

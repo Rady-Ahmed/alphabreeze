@@ -13,7 +13,7 @@ const defaultSocials = [
   { platform: "Facebook", id: "facebook", url: "https://facebook.com/alphabreeze", color: "bg-blue-100 text-blue-600" },
   { platform: "Instagram", id: "instagram", url: "https://instagram.com/alphabreeze", color: "bg-pink-100 text-pink-600" },
   { platform: "TikTok", id: "tiktok", url: "https://tiktok.com/@alphabreeze", color: "bg-gray-100 text-gray-800" },
-  { platform: "WhatsApp", id: "whatsapp", url: "https://wa.me/201119446474", color: "bg-green-100 text-green-600" },
+  { platform: "WhatsApp", id: "whatsapp", url: "https://wa.me/201019946409", color: "bg-green-100 text-green-600" },
   { platform: "YouTube", id: "youtube", url: "https://youtube.com/@alphabreeze", color: "bg-red-100 text-red-600" },
 ];
 

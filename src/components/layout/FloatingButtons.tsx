@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, ChevronUp } from "lucide-react";
 
-const WHATSAPP_NUMBER = "201119446474";
+const WHATSAPP_NUMBER = "201019946409";
 const PHONE_NUMBER = "01119446474";
 const WA_MESSAGE = encodeURIComponent("مرحباً، أود الاستفسار عن المواد الخام المتاحة لدى ألفا بريز");
 

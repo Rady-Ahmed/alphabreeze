@@ -34,7 +34,7 @@ export default function Footer() {
     facebook: "#",
     instagram: "#",
     youtube: "#",
-    whatsapp: "01119446474"
+    whatsapp: "01019946409"
   });
 
   useEffect(() => {

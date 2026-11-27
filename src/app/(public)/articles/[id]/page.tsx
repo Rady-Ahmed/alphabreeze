@@ -18,7 +18,7 @@ import {
 import { toast } from "sonner";
 import { getArticles } from "@/lib/db";
 
-const WHATSAPP_NUMBER = "201119446474";
+const WHATSAPP_NUMBER = "201019946409";
 
 const defaultArticles = [
   {

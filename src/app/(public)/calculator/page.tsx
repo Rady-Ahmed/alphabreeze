@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
-const WHATSAPP_NUMBER = "201119446474";
+const WHATSAPP_NUMBER = "201019946409";
 
 interface FormulaItem {
   id: string;

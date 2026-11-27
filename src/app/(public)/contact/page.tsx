@@ -10,7 +10,7 @@ import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, MessageCircle, Loader2,
 import { toast } from "sonner";
 import { getSiteSettings } from "@/lib/db";
 
-const WHATSAPP_NUMBER = "201119446474";
+const WHATSAPP_NUMBER = "201019946409";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -25,7 +25,7 @@ export default function ContactPage() {
   const [settings, setSettings] = useState({
     phone1: "01119446474",
     phone2: "01016067979",
-    whatsapp: "01119446474",
+    whatsapp: "01019946409",
     email: "info@alphabreeze.com",
     address: "طريق جسر السويس الرئيسي، أمام محطة مترو نادي الشمس، القاهرة، مصر"
   });
