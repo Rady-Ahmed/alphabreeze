@@ -52,22 +52,8 @@ export default function Loading() {
 
       {/* Progress bar */}
       <div className="mt-8 w-48 h-1 bg-gray-100 rounded-full overflow-hidden">
-        <div
-          className="h-full bg-gradient-to-r from-sky-400 to-sky-600 rounded-full"
-          style={{
-            animation: "progress 1.5s ease-in-out infinite",
-            transformOrigin: "left",
-          }}
-        />
+        <div className="h-full w-full bg-gradient-to-r from-sky-400 to-sky-600 rounded-full animate-pulse" />
       </div>
-
-      <style jsx>{`
-        @keyframes progress {
-          0% { width: 0%; }
-          50% { width: 70%; }
-          100% { width: 100%; }
-        }
-      `}</style>
     </div>
   );
 }
