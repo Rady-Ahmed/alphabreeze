@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 // ── Realistic Photography Database for 50+ Specific Chemicals ───
 const SPECIFIC_PHOTOS: Record<string, string> = {

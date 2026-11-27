@@ -72,10 +72,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" className={`${inter.variable} ${cairo.variable}`} suppressHydrationWarning>
-      <head>
-        <JsonLd />
-      </head>
       <body className="font-arabic antialiased" suppressHydrationWarning>
+        <JsonLd />
         <Analytics />
         <Toaster position="top-center" richColors />
         {children}
