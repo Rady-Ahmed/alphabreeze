@@ -63,6 +63,7 @@ export default function ProcurementJourneySection() {
 
         {/* 5 Connected Steps */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative">
+          <div className="hidden lg:block absolute top-11 right-10 left-10 h-0.5 bg-gradient-to-l from-sky-200 via-sky-400/60 to-sky-200 pointer-events-none" />
           {journeySteps.map((s, idx) => {
             const Icon = s.icon;
             return (
@@ -70,9 +71,10 @@ export default function ProcurementJourneySection() {
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="relative bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-sky-300 hover:bg-white hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+                whileHover={{ y: -6 }}
+                className="relative z-10 bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-sky-300 hover:bg-white hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   {/* Step Number + Icon */}

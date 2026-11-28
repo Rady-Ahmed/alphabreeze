@@ -20,18 +20,18 @@ const bentoCategories: BentoCategory[] = [
     name_ar: "الزيوت والمستخلصات النباتية",
     name_en: "Oils & Botanical Extracts",
     count: 82,
-    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800&auto=format&fit=crop",
+    image: "/images/raw-materials-supply.jpg",
     colSpan: "lg:col-span-2 lg:row-span-2",
-    accent: "from-navy-950/90 via-navy-950/40 to-transparent",
+    accent: "from-navy-950/90 via-navy-950/35 to-transparent",
   },
   {
     slug: "raw-powders-and-actives",
     name_ar: "البودرات والمواد الفعالة",
     name_en: "Raw Powders & Actives",
     count: 81,
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+    image: "/images/home/powders-actives.jpg",
     colSpan: "lg:col-span-2 lg:row-span-1",
-    accent: "from-navy-950/90 via-navy-950/40 to-transparent",
+    accent: "from-navy-950/90 via-navy-950/35 to-transparent",
   },
   {
     slug: "colors-and-pigments",
@@ -56,18 +56,18 @@ const bentoCategories: BentoCategory[] = [
     name_ar: "السوائل والمذيبات والسيليكون",
     name_en: "Chemical Liquids & Solvents",
     count: 59,
-    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=800&auto=format&fit=crop",
+    image: "/images/home/liquids-solvents.jpg",
     colSpan: "lg:col-span-1 lg:row-span-1",
-    accent: "from-navy-950/90 via-navy-950/40 to-transparent",
+    accent: "from-navy-950/90 via-navy-950/35 to-transparent",
   },
   {
     slug: "vitamins-and-nutrients",
     name_ar: "الفيتامينات والمغذيات",
     name_en: "Vitamins & Nutrients",
     count: 29,
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop",
+    image: "/images/home/vitamins-nutrients.jpg",
     colSpan: "lg:col-span-1 lg:row-span-1",
-    accent: "from-navy-950/90 via-navy-950/40 to-transparent",
+    accent: "from-navy-950/90 via-navy-950/35 to-transparent",
   },
   {
     slug: "flavors",
@@ -83,7 +83,7 @@ const bentoCategories: BentoCategory[] = [
     name_ar: "الشموع والبوليمرات",
     name_en: "Waxes & Polymers",
     count: 5,
-    image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?q=80&w=800&auto=format&fit=crop",
+    image: "/images/products/stearic-acid.jpg",
     colSpan: "lg:col-span-1 lg:row-span-1",
     accent: "from-navy-950/90 via-navy-950/40 to-transparent",
   },
@@ -115,15 +115,16 @@ export default function CategoryBentoGrid() {
         </div>
 
         {/* Clean Bento Grid - Image Focused & Spacious */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[240px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[200px] sm:auto-rows-[235px]">
           {bentoCategories.map((cat, idx) => (
             <motion.div
               key={cat.slug}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: idx * 0.04 }}
-              className={`group relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 ${cat.colSpan}`}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.4, delay: idx * 0.04 }}
+              whileHover={{ y: -4 }}
+              className={`group relative rounded-2xl overflow-hidden border border-slate-200/90 hover:border-sky-400/60 shadow-sm hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300 ${cat.colSpan}`}
             >
               <Link href={`/shop?category=${cat.slug}`} className="block h-full w-full">
                 {/* Full Background Photography */}
@@ -131,7 +132,7 @@ export default function CategoryBentoGrid() {
                   <img
                     src={cat.image}
                     alt={cat.name_ar}
-                    className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500 ease-out"
+                    className="w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-500 ease-out"
                   />
                 </div>
 

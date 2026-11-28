@@ -102,11 +102,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       if (user) {
         setCurrentUser(JSON.parse(user));
       } else {
-        const defaultUser = { name: "المدير العام", role: "super_admin" };
-        setCurrentUser(defaultUser);
-        localStorage.setItem("alphabreeze_current_user", JSON.stringify(defaultUser));
+        router.replace("/admin/login");
       }
-    } catch(e) {}
+    } catch(e) {
+      router.replace("/admin/login");
+    }
     const interval = setInterval(fetchNotificationsCount, 10000);
     return () => {
       window.removeEventListener('new_order_placed', fetchNotificationsCount);
@@ -115,7 +115,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       }
       clearInterval(interval);
     };
-  }, []);
+  }, [router]);
 
   const visibleSidebarItems = sidebarItems.filter(item => {
     if (item.superAdminOnly) return currentUser?.role === "super_admin";

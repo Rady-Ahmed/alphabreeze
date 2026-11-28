@@ -42,8 +42,17 @@ export default function CheckoutPage() {
 
   useEffect(() => {
     try {
-      const cart = JSON.parse(localStorage.getItem('alphabreeze_cart') || '[]');
-      setItems(cart);
+      const raw = JSON.parse(localStorage.getItem('alphabreeze_cart') || '[]');
+      const normalized = Array.isArray(raw)
+        ? raw.map((item: any) => ({
+            id: item.id ?? item.product?.id ?? String(Math.random()),
+            name: item.name ?? item.product?.name_ar ?? item.product?.name ?? "منتج",
+            price: Number(item.price ?? item.product?.price ?? 0),
+            qty: Number(item.qty ?? item.quantity ?? 1),
+            image: item.image ?? item.product?.image ?? "",
+          }))
+        : [];
+      setItems(normalized);
     } catch (e) {
       setItems([]);
     }

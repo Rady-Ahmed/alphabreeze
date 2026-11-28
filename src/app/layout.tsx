@@ -21,8 +21,10 @@ const cairo = Cairo({
   fallback: ["system-ui", "arial"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://alphabreeze.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alphabreeze.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Alpha Breeze Chemicals | توريد وتوزيع المواد الخام الكيميائية B2B",
     template: "%s | Alpha Breeze Chemicals",

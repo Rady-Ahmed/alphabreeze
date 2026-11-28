@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { createClient } from "@/lib/supabase/client";
+import { signSessionToken, verifySessionToken } from "@/lib/session";
 
 const MASTER_ADMIN_EMAIL = (process.env.ADMIN_EMAIL || "admin@alphabreeze.com").toLowerCase().trim();
 const MASTER_ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "Admin@2024";
@@ -65,7 +66,7 @@ export async function POST(request: Request) {
 
     const cookieStore = await cookies();
     const isProduction = process.env.NODE_ENV === "production";
-    const sessionToken = `session_${Date.now()}_${Buffer.from(trimmedEmail).toString("base64")}`;
+    const sessionToken = await signSessionToken(authenticatedUser);
 
     // Set secure HttpOnly session cookie
     cookieStore.set("alphabreeze_session", sessionToken, {
@@ -112,16 +113,17 @@ export async function DELETE() {
 export async function GET() {
   try {
     const cookieStore = await cookies();
-    const session = cookieStore.get("alphabreeze_session") || cookieStore.get("alphabreeze_auth");
-    if (!session || !session.value) {
+    const sessionCookie = cookieStore.get("alphabreeze_session");
+    const payload = await verifySessionToken(sessionCookie?.value);
+    if (!payload) {
       return NextResponse.json({ authenticated: false }, { status: 401 });
     }
     return NextResponse.json({
       authenticated: true,
       user: {
-        name: "المدير العام",
-        email: MASTER_ADMIN_EMAIL,
-        role: "super_admin",
+        name: payload.name,
+        email: payload.email,
+        role: payload.role,
       },
     });
   } catch {

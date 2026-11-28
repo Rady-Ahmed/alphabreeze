@@ -79,10 +79,12 @@ export default function TechnicalAssuranceSection() {
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.4, delay: idx * 0.06 }}
-                className="p-7 rounded-3xl bg-white/5 border border-white/10 hover:border-sky-400/40 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between"
+                whileHover={{ y: -6 }}
+                className="relative overflow-hidden p-7 rounded-3xl bg-white/[0.06] border border-white/10 hover:border-sky-400/50 hover:bg-white/[0.09] backdrop-blur-md transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/10 group flex flex-col justify-between"
               >
+                <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div>
                   <div className="flex items-center justify-between mb-5">
                     <div className="w-12 h-12 rounded-2xl bg-sky-500/15 text-sky-400 flex items-center justify-center group-hover:bg-sky-500 group-hover:text-white transition-colors duration-300 shadow-sm">

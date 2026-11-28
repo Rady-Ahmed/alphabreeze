@@ -53,23 +53,12 @@ export default function PrivateLabelSection() {
               transition={{ duration: 0.5 }}
               className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-white p-3"
             >
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+              <div className="relative aspect-square rounded-2xl overflow-hidden bg-white">
                 <img
-                  src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1000&auto=format&fit=crop"
-                  alt="تصنيع مستحضرات التجميل لحساب الغير"
+                  src="/images/private-label-brand.jpg"
+                  alt="عايز تبدأ براندك؟ التصنيع لحساب الغير"
                   className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent" />
-                
-                {/* Floating Badge */}
-                <div className="absolute bottom-6 right-6 left-6 text-white p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20">
-                  <p className="text-xs font-mono text-sky-300 uppercase tracking-wider mb-1">
-                    TURNKEY SOLUTIONS
-                  </p>
-                  <p className="text-sm font-bold">
-                    من فكرة التركيبة المعملية إلى المنتج التام على أرفف المتاجر
-                  </p>
-                </div>
               </div>
             </motion.div>
           </div>

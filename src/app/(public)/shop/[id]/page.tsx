@@ -6,8 +6,9 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import {
   ArrowRight, FlaskConical, ShieldCheck, FileText, Tag,
-  MessageCircle, ChevronLeft, Loader2, CheckCircle2, Package, Atom
+  MessageCircle, ChevronLeft, Loader2, CheckCircle2, Package, Atom, X, Send
 } from "lucide-react";
+import { toast } from "sonner";
 import { getProductById, getProducts } from "@/lib/db";
 import ChemicalVisual from "@/components/ui/ChemicalVisual";
 
@@ -63,6 +64,16 @@ export default function ProductDetailPage() {
   const [product, setProduct] = useState<any>(null);
   const [related, setRelated] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [rfqOpen, setRfqOpen] = useState(false);
+  const [rfqSending, setRfqSending] = useState(false);
+  const [rfqForm, setRfqForm] = useState({
+    full_name: "",
+    company_name: "",
+    phone: "",
+    expected_quantity: "",
+    packaging_type: "عبوة معملية / 25 كجم",
+    notes: "",
+  });
 
   useEffect(() => {
     if (!id) return;
@@ -117,6 +128,42 @@ export default function ProductDetailPage() {
   const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
     `مرحباً، أود الاستفسار عن: ${nameAr}\nرقم CAS: ${product.cas_number ?? "—"}\nالكمية المطلوبة: \nاسم الشركة: `
   )}`;
+
+  const handleRfqSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!rfqForm.full_name || !rfqForm.phone) {
+      toast.error("يرجى إدخال الاسم ورقم الهاتف");
+      return;
+    }
+    setRfqSending(true);
+    try {
+      const res = await fetch("/api/rfq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...rfqForm,
+          product_name: nameAr,
+          cas_number: product.cas_number || "",
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "تعذر إرسال الطلب");
+      toast.success("تم إرسال طلب عرض السعر / شهادة COA بنجاح!");
+      setRfqOpen(false);
+      setRfqForm({
+        full_name: "",
+        company_name: "",
+        phone: "",
+        expected_quantity: "",
+        packaging_type: "عبوة معملية / 25 كجم",
+        notes: "",
+      });
+    } catch (err: any) {
+      toast.error(err?.message || "حدث خطأ أثناء إرسال الطلب");
+    } finally {
+      setRfqSending(false);
+    }
+  };
 
   const specs = product.technical_specs ?? {};
   const hasSpecs = product.cas_number || product.inci_name || specs.purity || specs.origin || specs.appearance || specs.ph || specs.solubility;
@@ -229,6 +276,15 @@ export default function ProductDetailPage() {
                 طلب تسعير عبر واتساب
               </a>
 
+              <button
+                type="button"
+                onClick={() => setRfqOpen(true)}
+                className="flex items-center justify-center gap-2 w-full py-3.5 bg-navy-950 hover:bg-navy-900 text-white font-bold rounded-2xl transition-colors text-sm shadow-md"
+              >
+                <FileText className="h-4 w-4 text-sky-400" />
+                طلب عرض سعر رسمي وشهادة COA / MSDS
+              </button>
+
               <Link
                 href="/shop"
                 className="flex items-center justify-center gap-2 w-full py-3 border border-slate-200 text-slate-600 font-medium rounded-2xl hover:border-cyan-400 hover:text-cyan-600 transition-colors text-sm"
@@ -239,6 +295,80 @@ export default function ProductDetailPage() {
             </div>
           </motion.div>
         </div>
+
+        {/* ── Direct RFQ & COA Modal ── */}
+        {rfqOpen && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+            onClick={() => setRfqOpen(false)}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-6 border border-slate-100"
+            >
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h3 className="font-bold text-slate-900 text-base">طلب عرض سعر وشهادة COA</h3>
+                  <p className="text-xs text-slate-500 mt-0.5 line-clamp-1">{nameAr}</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setRfqOpen(false)}
+                  className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-400"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+              <form onSubmit={handleRfqSubmit} className="space-y-3">
+                <input
+                  type="text"
+                  required
+                  placeholder="الاسم الكامل *"
+                  value={rfqForm.full_name}
+                  onChange={(e) => setRfqForm({ ...rfqForm, full_name: e.target.value })}
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-cyan-500"
+                />
+                <input
+                  type="tel"
+                  required
+                  placeholder="رقم الهاتف / واتساب *"
+                  value={rfqForm.phone}
+                  onChange={(e) => setRfqForm({ ...rfqForm, phone: e.target.value })}
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-cyan-500"
+                />
+                <input
+                  type="text"
+                  placeholder="اسم المصنع أو المعمل (اختياري)"
+                  value={rfqForm.company_name}
+                  onChange={(e) => setRfqForm({ ...rfqForm, company_name: e.target.value })}
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-cyan-500"
+                />
+                <input
+                  type="text"
+                  placeholder="الكمية المطلوبة (مثال: 25 كجم / 200 كجم)"
+                  value={rfqForm.expected_quantity}
+                  onChange={(e) => setRfqForm({ ...rfqForm, expected_quantity: e.target.value })}
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-cyan-500"
+                />
+                <textarea
+                  rows={2}
+                  placeholder="ملاحظات أو طلب شهادة COA / MSDS..."
+                  value={rfqForm.notes}
+                  onChange={(e) => setRfqForm({ ...rfqForm, notes: e.target.value })}
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-cyan-500"
+                />
+                <button
+                  type="submit"
+                  disabled={rfqSending}
+                  className="w-full py-3 rounded-xl bg-gradient-to-l from-cyan-500 to-sky-600 text-white font-bold text-sm flex items-center justify-center gap-2 disabled:opacity-50"
+                >
+                  {rfqSending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
+                  <span>{rfqSending ? "جاري الإرسال..." : "إرسال الطلب"}</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
 
         {/* ── Related Products ── */}
         {related.length > 0 && (

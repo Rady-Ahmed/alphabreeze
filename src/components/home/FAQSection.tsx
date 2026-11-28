@@ -70,6 +70,7 @@ export default function FAQSection() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                aria-expanded={openIndex === index}
                 className="w-full flex items-center justify-between p-5 sm:p-6 text-right hover:bg-slate-50/70 transition-colors"
               >
                 <div className="flex items-center gap-3.5 pl-4">

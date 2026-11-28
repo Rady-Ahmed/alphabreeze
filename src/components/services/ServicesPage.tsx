@@ -35,7 +35,7 @@ const services = [
       "ضمان الاستقرار الكيميائي وسرعة التوريد لخطوط الإنتاج"
     ],
     color: "from-cyan-500 to-sky-600",
-    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=900&q=80",
+    image: "/images/raw-materials-supply.jpg",
     badge: "الخدمة الأساسية"
   },
   {
@@ -50,7 +50,7 @@ const services = [
       "حد أدنى مرن للطلب (MOQ) لتشجيع العلامات التجارية الناشئة"
     ],
     color: "from-blue-600 to-indigo-700",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=900&q=80",
+    image: "/images/private-label-brand.jpg",
     badge: "حلول متكاملة"
   },
   {
@@ -65,7 +65,7 @@ const services = [
       "استشارات فورية عبر الهاتف والواتساب لحل مشكلات التشغيل"
     ],
     color: "from-teal-500 to-emerald-600",
-    image: "https://images.unsplash.com/photo-1579165466741-7f35e4755660?w=900&q=80",
+    image: "/images/formula-development.jpg",
     badge: "دعم فني استشاري"
   },
   {
@@ -80,7 +80,7 @@ const services = [
       "فحص مسبق لمدى توافق العبوة مع كيميائية المادة المخزنة"
     ],
     color: "from-sky-500 to-blue-700",
-    image: "https://images.unsplash.com/photo-1556760544-74068565f05c?w=900&q=80",
+    image: "/images/packaging-solutions.jpg",
     badge: "جودة التغليف"
   },
 ];

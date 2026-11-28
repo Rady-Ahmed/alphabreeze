@@ -102,17 +102,49 @@ export default function ArticleDetailPage({ params }: { params: Promise<{ id: st
   const [related, setRelated] = useState<any[]>([]);
 
   useEffect(() => {
+    const normalizeArticle = (a: any) => ({
+      ...a,
+      id: String(a.id),
+      title: a.title_ar || a.title || "مقال فني",
+      category:
+        typeof a.category === "object" && a.category
+          ? a.category.name_ar || "خامات تجميل"
+          : a.category || "خامات تجميل",
+      excerpt:
+        a.excerpt ||
+        a.excerpt_ar ||
+        (a.content_ar ? a.content_ar.replace(/<[^>]+>/g, "").substring(0, 140) + "..." : ""),
+      content: a.content || a.content_ar || "",
+      image:
+        a.featured_image ||
+        a.og_image_url ||
+        a.image_url ||
+        a.image ||
+        defaultArticles[0].image,
+      readTime: a.reading_time || a.readTime || "5 دقائق",
+      date:
+        a.date ||
+        (a.published_at || a.created_at
+          ? new Date(a.published_at || a.created_at).toLocaleDateString("ar-EG")
+          : "2026"),
+    });
+
     async function load() {
       try {
         const dbArticles = await getArticles();
-        const pool = (dbArticles && dbArticles.length > 0) ? dbArticles : defaultArticles;
-        const found = pool.find((a: any) => String(a.id) === resolvedParams.id) || defaultArticles[0];
+        const pool =
+          dbArticles && dbArticles.length > 0
+            ? dbArticles.map(normalizeArticle)
+            : defaultArticles;
+        const found =
+          pool.find((a: any) => String(a.id) === resolvedParams.id || a.slug === resolvedParams.id) ||
+          defaultArticles[0];
         setArticle(found);
-        setRelated(pool.filter((a: any) => String(a.id) !== resolvedParams.id).slice(0, 3));
+        setRelated(pool.filter((a: any) => String(a.id) !== String(found.id)).slice(0, 3));
       } catch {
         const found = defaultArticles.find((a) => a.id === resolvedParams.id) || defaultArticles[0];
         setArticle(found);
-        setRelated(defaultArticles.filter((a) => a.id !== resolvedParams.id).slice(0, 3));
+        setRelated(defaultArticles.filter((a) => a.id !== found.id).slice(0, 3));
       }
     }
     load();

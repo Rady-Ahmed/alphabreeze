@@ -159,6 +159,16 @@ export default function ShopPage() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlCategory = params.get("category");
+    const urlQuery = params.get("q");
+    if (urlCategory && B2B_CATEGORIES.some((c) => c.slug === urlCategory)) {
+      setSelectedCategory(urlCategory);
+    }
+    if (urlQuery) {
+      setSearchQuery(urlQuery);
+    }
+
     getProducts()
       .then((data) => setProducts(data ?? []))
       .catch(() => {})

@@ -33,7 +33,11 @@ export default function Header() {
   const updateCartCount = () => {
     try {
       const cart = JSON.parse(localStorage.getItem('alphabreeze_cart') || '[]');
-      setCartCount(cart.reduce((total: number, item: any) => total + item.qty, 0));
+      setCartCount(
+        Array.isArray(cart)
+          ? cart.reduce((total: number, item: any) => total + (Number(item?.qty ?? item?.quantity) || 0), 0)
+          : 0
+      );
     } catch (e) {
       setCartCount(0);
     }
