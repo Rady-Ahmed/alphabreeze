@@ -17,17 +17,20 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("alphabreeze_cart");
     if (saved) {
       try { setItems(JSON.parse(saved)); } catch {}
     }
+    setHydrated(true);
   }, []);
 
   useEffect(() => {
+    if (!hydrated) return;
     localStorage.setItem("alphabreeze_cart", JSON.stringify(items));
-  }, [items]);
+  }, [items, hydrated]);
 
   const addItem = (product: Product, quantity = 1) => {
     setItems((prev) => {

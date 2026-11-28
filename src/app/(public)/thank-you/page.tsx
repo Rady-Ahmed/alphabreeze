@@ -33,11 +33,20 @@ function ThankYouContent() {
             يمكنك متابعة حالة طلبك من خلال رقم الطلب أعلاه.
           </p>
           
-          <Link href="/shop">
-            <Button size="lg" className="w-full text-lg h-14 rounded-xl">
-              متابعة التسوق <ArrowLeft className="w-5 h-5 ml-2" />
-            </Button>
-          </Link>
+          <div className="space-y-3">
+            {orderId && (
+              <Link href={`/track-order?orderId=${encodeURIComponent(orderId)}`} className="block">
+                <Button variant="outline" size="lg" className="w-full text-base h-12 rounded-xl border-sky-200 text-sky-700 hover:bg-sky-50">
+                  متابعة حالة الطلب
+                </Button>
+              </Link>
+            )}
+            <Link href="/shop" className="block">
+              <Button size="lg" className="w-full text-lg h-14 rounded-xl">
+                متابعة التسوق <ArrowLeft className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

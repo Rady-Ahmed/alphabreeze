@@ -90,8 +90,33 @@ export default function ArticlesPage() {
       try {
         const fetched = await getArticles();
         if (fetched && fetched.length > 0) {
-          // Merge DB articles with our rich technical fallback
-          setArticles(fetched);
+          const normalized = fetched.map((a: any) => ({
+            ...a,
+            id: String(a.id),
+            title: a.title_ar || a.title || "مقال فني",
+            category:
+              typeof a.category === "object" && a.category
+                ? a.category.name_ar || "خامات تجميل"
+                : a.category || "خامات تجميل",
+            excerpt:
+              a.excerpt ||
+              a.excerpt_ar ||
+              (a.content_ar ? a.content_ar.replace(/<[^>]+>/g, "").substring(0, 120) + "..." : ""),
+            image:
+              a.featured_image ||
+              a.og_image_url ||
+              a.image_url ||
+              a.image ||
+              defaultArticles[0].image,
+            readTime: a.reading_time || a.readTime || "5 دقائق",
+            date:
+              a.date ||
+              (a.published_at || a.created_at
+                ? new Date(a.published_at || a.created_at).toLocaleDateString("ar-EG")
+                : "2026"),
+            published: a.published !== false && a.is_published !== false,
+          }));
+          setArticles(normalized);
         }
       } catch {
         // Keep default articles
@@ -109,8 +134,8 @@ export default function ArticlesPage() {
       const q = searchQuery.toLowerCase().trim();
       return (
         !q ||
-        a.title.toLowerCase().includes(q) ||
-        (a.excerpt && a.excerpt.toLowerCase().includes(q))
+        (a.title || "").toLowerCase().includes(q) ||
+        (a.excerpt || "").toLowerCase().includes(q)
       );
     });
 

@@ -10,6 +10,7 @@ const services = [
     title: "توريد خامات تجميل",
     description: "نوفر أجود أنواع الخامات والمواد الأولية لصناعة مستحضرات التجميل بأسعار تنافسية.",
     slug: "raw-materials",
+    image: "/images/raw-materials-supply.jpg",
     color: "from-sky-400 to-sky-600",
     bgColor: "bg-sky-50",
   },
@@ -18,6 +19,7 @@ const services = [
     title: "تصنيع برايفت ليبل",
     description: "خدمة تصنيع كاملة باسم علامتك التجارية الخاصة من التطوير حتى التعبئة.",
     slug: "private-label",
+    image: "/images/private-label-brand.jpg",
     color: "from-navy-700 to-navy-900",
     bgColor: "bg-navy-50",
   },
@@ -26,6 +28,7 @@ const services = [
     title: "تطوير التركيبات",
     description: "فريق متخصص في تطوير تركيبات مبتكرة وفعالة تناسب السوق المصري والعربي.",
     slug: "formula-development",
+    image: "/images/formula-development.jpg",
     color: "from-emerald-400 to-emerald-600",
     bgColor: "bg-emerald-50",
   },
@@ -34,6 +37,7 @@ const services = [
     title: "حلول التعبئة والتغليف",
     description: "حلول تعبئة وتغليف احترافية لمنتجاتك بتصاميم عصرية وجودة عالية.",
     slug: "packaging",
+    image: "/images/packaging-solutions.jpg",
     color: "from-amber-400 to-amber-600",
     bgColor: "bg-amber-50",
   },
@@ -71,9 +75,19 @@ export default function ServicesSection() {
                   <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.color} opacity-5 group-hover:opacity-10 blur-2xl rounded-full transition-opacity duration-500 -z-10`} />
                   
                   <div className="flex flex-col h-full z-10 relative">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-lg shadow-sky-500/20`}>
-                      <service.icon className="w-8 h-8 text-white drop-shadow-md" />
-                    </div>
+                    {service.image ? (
+                      <div className="mb-5 -mx-2 -mt-2 rounded-2xl overflow-hidden border border-sky-100 aspect-[16/10] bg-slate-50">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    ) : (
+                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-lg shadow-sky-500/20`}>
+                        <service.icon className="w-8 h-8 text-white drop-shadow-md" />
+                      </div>
+                    )}
                     <h3 className="text-xl font-bold text-navy-900 mb-3 group-hover:text-sky-600 transition-colors">{service.title}</h3>
                     <p className="text-sm text-gray-500 leading-relaxed mb-6 flex-grow">{service.description}</p>
                     

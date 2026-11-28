@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { verifySessionToken } from '@/lib/session';
 
 // ── In-Memory Sliding Window Rate Limiter ─────────────────────────
 interface RateLimitRecord {
@@ -46,7 +47,7 @@ const SUSPICIOUS_PATHS = [
   '/etc/passwd', 'cmd.exe', '..', '.git', 'xmlrpc.php', 'cgi-bin'
 ];
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const userAgent = (request.headers.get('user-agent') || '').toLowerCase();
   
@@ -129,16 +130,17 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // 5. Admin Authentication Guard
-  const authCookie = request.cookies.get('alphabreeze_auth') || request.cookies.get('alphabreeze_session');
-  if (pathname.startsWith('/admin') && !pathname.startsWith('/admin/login')) {
-    if (!authCookie) {
+  // 5. Admin Authentication Guard (Verified HMAC Session Token)
+  const sessionCookie = request.cookies.get('alphabreeze_session');
+  const isAdminRoute = pathname.startsWith('/admin');
+  if (isAdminRoute) {
+    const session = await verifySessionToken(sessionCookie?.value);
+    if (!pathname.startsWith('/admin/login') && !session) {
       return NextResponse.redirect(new URL('/admin/login', request.url));
     }
-  }
-
-  if (pathname.startsWith('/admin/login') && authCookie) {
-    return NextResponse.redirect(new URL('/admin', request.url));
+    if (pathname.startsWith('/admin/login') && session) {
+      return NextResponse.redirect(new URL('/admin', request.url));
+    }
   }
 
   // 6. Security Headers Injection on All Responses

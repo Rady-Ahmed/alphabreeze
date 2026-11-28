@@ -15,6 +15,8 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
+  const isDev = process.env.NODE_ENV !== "production";
+
   const handleQuickFill = () => {
     setEmail("admin@alphabreeze.com");
     setPassword("Admin@2024");
@@ -41,19 +43,7 @@ export default function AdminLoginPage() {
 
       if (res.ok && data.success) {
         localStorage.setItem("alphabreeze_current_user", JSON.stringify(data.user));
-        // Set client auth cookie
-        document.cookie = "alphabreeze_auth=1; path=/; max-age=604800";
         toast.success(`مرحباً بك، ${data.user.name} 👋`);
-        router.push("/admin");
-        return;
-      }
-
-      // Client-side fallback if server returned error
-      if (email.trim().toLowerCase() === "admin@alphabreeze.com" && password === "Admin@2024") {
-        const fallbackUser = { name: "المدير العام", email: "admin@alphabreeze.com", role: "super_admin" };
-        localStorage.setItem("alphabreeze_current_user", JSON.stringify(fallbackUser));
-        document.cookie = "alphabreeze_auth=1; path=/; max-age=604800";
-        toast.success("تم تسجيل الدخول بنجاح!");
         router.push("/admin");
         return;
       }
@@ -61,15 +51,6 @@ export default function AdminLoginPage() {
       toast.error(data.error || "البريد الإلكتروني أو كلمة المرور غير صحيحة");
       setLoading(false);
     } catch {
-      // Offline fallback
-      if (email.trim().toLowerCase() === "admin@alphabreeze.com" && password === "Admin@2024") {
-        const fallbackUser = { name: "المدير العام", email: "admin@alphabreeze.com", role: "super_admin" };
-        localStorage.setItem("alphabreeze_current_user", JSON.stringify(fallbackUser));
-        document.cookie = "alphabreeze_auth=1; path=/; max-age=604800";
-        toast.success("تم تسجيل الدخول (وضع العمل المحلي)!");
-        router.push("/admin");
-        return;
-      }
       toast.error("تعذر الاتصال بخادم المصادقة، يرجى المحاولة لاحقاً");
       setLoading(false);
     }
@@ -169,17 +150,19 @@ export default function AdminLoginPage() {
               </div>
             </div>
 
-            {/* Quick Fill Helper */}
-            <div className="pt-1">
-              <button
-                type="button"
-                onClick={handleQuickFill}
-                className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 text-xs font-medium border border-cyan-400/20 transition"
-              >
-                <KeyRound className="w-3.5 h-3.5" />
-                <span>تعبئة بيانات حساب الأدمن التجريبي (Admin@2024)</span>
-              </button>
-            </div>
+            {/* Quick Fill Helper (dev only) */}
+            {isDev && (
+              <div className="pt-1">
+                <button
+                  type="button"
+                  onClick={handleQuickFill}
+                  className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 text-xs font-medium border border-cyan-400/20 transition"
+                >
+                  <KeyRound className="w-3.5 h-3.5" />
+                  <span>تعبئة بيانات حساب الأدمن التجريبي (Admin@2024)</span>
+                </button>
+              </div>
+            )}
 
             {/* Submit Button */}
             <button

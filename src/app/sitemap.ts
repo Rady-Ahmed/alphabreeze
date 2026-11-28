@@ -3,7 +3,7 @@ import { getProducts } from "@/lib/db";
 import { B2B_CATEGORIES } from "@/lib/constants";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://alphabreeze.vercel.app";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://alphabreeze.vercel.app";
   const now = new Date();
 
   // Core static pages

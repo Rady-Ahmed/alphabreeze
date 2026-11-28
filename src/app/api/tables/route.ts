@@ -1,7 +1,15 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import { getSupabase } from "@/lib/db";
+import { verifySessionToken } from "@/lib/session";
 
 export async function GET() {
+  const cookieStore = await cookies();
+  const session = await verifySessionToken(cookieStore.get("alphabreeze_session")?.value);
+  if (!session) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const supabase = getSupabase();
   if (!supabase) return NextResponse.json({ error: "No supabase" });
 

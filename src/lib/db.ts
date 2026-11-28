@@ -7,7 +7,13 @@
 import { createClient } from "@/lib/supabase/client";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const isSupabaseConfigured = !!SUPABASE_URL && SUPABASE_URL !== "YOUR_SUPABASE_URL";
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const isSupabaseConfigured =
+  !!SUPABASE_URL &&
+  !!SUPABASE_ANON_KEY &&
+  SUPABASE_URL !== "YOUR_SUPABASE_URL" &&
+  !SUPABASE_URL.includes("your-project") &&
+  !SUPABASE_ANON_KEY.includes("your-anon-key");
 
 export function getSupabase() {
   if (!isSupabaseConfigured) return null;

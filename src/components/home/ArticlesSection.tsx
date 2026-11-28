@@ -101,9 +101,10 @@ export default function ArticlesSection() {
               key={article.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.4 }}
-              className="group bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ delay: index * 0.08, duration: 0.4 }}
+              whileHover={{ y: -6 }}
+              className="group bg-white rounded-3xl overflow-hidden border border-slate-200/90 hover:border-sky-300 shadow-sm hover:shadow-2xl hover:shadow-sky-500/10 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Image Cover */}
@@ -111,7 +112,7 @@ export default function ArticlesSection() {
                   <img
                     src={article.image}
                     alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4">
                     <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-navy-950/80 backdrop-blur-md text-sky-300 border border-sky-400/20">

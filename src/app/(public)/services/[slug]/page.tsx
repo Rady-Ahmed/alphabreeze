@@ -8,29 +8,34 @@ import { Label } from "@/components/ui/label";
 import { CheckCircle, Send, ArrowLeft, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useState, use } from "react";
+import { toast } from "sonner";
 
-const serviceData: Record<string, { title: string; description: string; benefits: string[]; steps: { title: string; desc: string }[] }> = {
+const serviceData: Record<string, { title: string; description: string; image?: string; benefits: string[]; steps: { title: string; desc: string }[] }> = {
   "raw-materials": {
     title: "توريد خامات تجميل",
     description: "نوفر أجود أنواع الخامات والمواد الأولية لصناعة مستحضرات التجميل بأسعار تنافسية وجودة عالمية.",
+    image: "/images/raw-materials-supply.jpg",
     benefits: ["خامات طبيعية 100%", "أسعار جملة تنافسية", "شحن لجميع المحافظات", "شهادات جودة معتمدة", "عينات مجانية", "دعم فني متخصص"],
     steps: [{ title: "اختيار الخامات", desc: "حدد الخامات التي تحتاجها" }, { title: "طلب عروض الأسعار", desc: "نرسل لك أفضل الأسعار" }, { title: "تأكيد الطلب", desc: "أكد طلبك ونبدأ التجهيز" }, { title: "التسليم", desc: "نوصل طلبك بأمان" }],
   },
   "private-label": {
     title: "تصنيع برايفت ليبل",
     description: "خدمة تصنيع كاملة باسم علامتك التجارية من تطوير التركيبة حتى المنتج النهائي الجاهز للبيع.",
+    image: "/images/private-label-brand.jpg",
     benefits: ["تركيبات حصرية", "جودة عالمية", "حد أدنى منخفض", "تصميم عبوات مميز", "اختبارات جودة", "دعم تسويقي"],
     steps: [{ title: "الاستشارة", desc: "نفهم احتياجاتك" }, { title: "التطوير", desc: "نطور التركيبة" }, { title: "التصنيع", desc: "ننتج بأعلى جودة" }, { title: "التسليم", desc: "منتج جاهز للسوق" }],
   },
   "formula-development": {
     title: "تطوير التركيبات",
     description: "فريقنا المتخصص يطور تركيبات مبتكرة وفعالة تناسب احتياجاتك الخاصة.",
+    image: "/images/formula-development.jpg",
     benefits: ["فريق R&D متخصص", "أحدث التقنيات", "تركيبات فريدة", "اختبارات شاملة", "تعديلات مجانية", "تقارير تحليل"],
     steps: [{ title: "تحديد المتطلبات", desc: "نحدد مواصفات المنتج" }, { title: "البحث والتطوير", desc: "نطور التركيبة" }, { title: "الاختبار", desc: "نختبر الجودة والثبات" }, { title: "التسليم", desc: "تركيبة جاهزة للإنتاج" }],
   },
   "packaging": {
     title: "حلول التعبئة والتغليف",
     description: "حلول تعبئة وتغليف احترافية وشاملة لجميع أنواع منتجات التجميل.",
+    image: "/images/packaging-solutions.jpg",
     benefits: ["عبوات متنوعة", "طباعة عالية الجودة", "تصميم ملصقات", "تعبئة آلية", "تغليف حراري", "تخزين آمن"],
     steps: [{ title: "اختيار العبوات", desc: "نساعدك في الاختيار" }, { title: "التصميم", desc: "نصمم الملصقات" }, { title: "التعبئة", desc: "نعبئ بدقة" }, { title: "التسليم", desc: "منتج جاهز" }],
   },
@@ -65,8 +70,10 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
 
       setSubmitted(true);
       setFormData({ name: "", phone: "", email: "", company: "", details: "" });
-    } catch (err) {
+      toast.success("تم إرسال طلبك بنجاح، سنتواصل معك قريباً");
+    } catch (err: any) {
       console.error(err);
+      toast.error(err?.message || "حدث خطأ أثناء إرسال الطلب، يرجى المحاولة مرة أخرى");
     } finally {
       setLoading(false);
     }
@@ -78,13 +85,35 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 gradient-primary" />
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
-            <Link href="/services" className="inline-flex items-center gap-2 text-sky-300 hover:text-white mb-4 text-sm transition-colors">
-              <ArrowLeft className="w-4 h-4 rotate-180" /> العودة للخدمات
-            </Link>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{service.title}</h1>
-            <p className="text-white/70 text-lg">{service.description}</p>
-          </motion.div>
+          <div className={service.image ? "grid lg:grid-cols-12 gap-8 items-center" : ""}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={service.image ? "lg:col-span-7 max-w-3xl" : "max-w-3xl"}
+            >
+              <Link href="/services" className="inline-flex items-center gap-2 text-sky-300 hover:text-white mb-4 text-sm transition-colors">
+                <ArrowLeft className="w-4 h-4 rotate-180" /> العودة للخدمات
+              </Link>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{service.title}</h1>
+              <p className="text-white/70 text-lg">{service.description}</p>
+            </motion.div>
+            {service.image && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.1 }}
+                className="lg:col-span-5"
+              >
+                <div className="rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl bg-white">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </motion.div>
+            )}
+          </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 60" fill="none"><path d="M0 60L1440 60V30C1200 50 960 10 720 30C480 50 240 10 0 30V60Z" fill="white"/></svg>
